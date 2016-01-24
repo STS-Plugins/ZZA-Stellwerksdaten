@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+Version 1.0 von Florian Ellebrecht
+Bei Fehlern bitte eine PN an mich (floflo). Mit Zuggattung, Zugnummer, reguläres Gleis, Abfahrtszeit und am besten noch Name der Einfahrt und Ausfahrt des Zuges.
+Es kann vorkommen, dass einzelne Zugnummern in der Datei fehlen. Bitte an mich melden.
+Ebenso kann es vorkommen, dass bei manchen Zügen trotz soundreplace und/oder richiger Schreibweise totaler Schwachsinn gesprochen wrd.
+-->
+<zza>
+   <bahnhoefe>
+      <bahnhof name="Tiengen(Hochrhein)" gleise="RTI" ende="(Gleis RTI|Tiengen(Hochrhein))"></bahnhof>
+      <bahnhof name="Lauchringen" gleise="RLAU[12]" ende="(Gleis RLAU.*|Lauchringen)"></bahnhof>
+      <bahnhof name="Erzingen(Baden)" gleise="RERZ[1-3]" ende="(Gleis RERZ.*|Abst.|Erzingen(Baden))"></bahnhof>
+      <bahnhof name="Neunkirch" gleise="RNK[12]" ende="(Gleis RNK.*|Neunkirch)"></bahnhof>
+   </bahnhoefe>
+   <soundreplaces>
+	<replace find="Hbf">Hauptbahnhof</replace>
+	<replace find="HB">Hauptbahnhof</replace>
+	<replace find="Bad Bf">Badischer Bahnhof</replace>
+	<replace find="St\.">Sankt</replace>
+	<replace find="Neustadt">Neuschtadt</replace>
+	<replace find="\(Hohentwiel\)"> am Hohentwiel</replace>
+	<replace find="\(Htw\)"> am Hohentwiel</replace>
+	<replace find="Ravensburg">Rawensburg</replace>
+	<replace find=" Stadt"> Schtadt</replace>
+	<replace find="\(Hochrhein\)"> am Hochrhein</replace>
+	<replace find="\(Baden\)"> Baden</replace>
+	<replace find="-Hallau"> Hallau</replace>
+	<replace find="Rheinfelden">Reinfelden</replace>
+	<replace find="Tiengen">Tingen</replace>
+   </soundreplaces>
+   <rewrites>
+	   
+	   <!-- IRE Basel Bad Bf - Waldshut - Schaffhausen - Singen - Radolzell - Ueberlingen - Ulm -->
+	   
+	   <rewrite zug="IRE 312[13579]" simstart="Waldshut" simende="Schaffhausen" start="Basel Bad Bf" ende="Singen(Hohentwiel)">
+		   <via>Erzingen(Baden)</via>
+		   <via>Schaffhausen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="IRE 313[137]" simstart="Waldshut" simende="Schaffhausen" start="Basel Bad Bf" ende="Singen(Hohentwiel)">
+		   <via>Erzingen(Baden)</via>
+		   <via>Schaffhausen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="IRE 31[23][46]" simstart="Schaffhausen" simende="Waldshut" start="Singen(Hohentwiel)" ende="Basel Bad Bf">
+		   <via>Waldshut</via>
+		   <via>Bad S&#228;ckingen</via>
+		   <via>Rheinfelden</via>
+	   </rewrite>
+	   
+	   <rewrite zug="IRE 313[02]" simstart="Schaffhausen" simende="Waldshut" start="Singen(Hohentwiel)" ende="Basel Bad Bf">
+		   <via>Waldshut</via>
+		   <via>Bad S&#228;ckingen</via>
+		   <via>Rheinfelden</via>
+	   </rewrite>
+	   
+	   <rewrite zug="IRE 312[28]" simstart="Schaffhausen" simende="Waldshut" start="Singen(Hohentwiel)" ende="Basel Bad Bf">
+		   <via>Waldshut</via>
+		   <via>Bad S&#228;ckingen</via>
+		   <via>Rheinfelden</via>
+	   </rewrite>
+	   
+	   <rewrite zug="IRE 310[13579]" simstart="Waldshut" simende="Schaffhausen" start="Basel Bad Bf" ende="Ulm Hbf">
+		   <via>Singen(Htw)</via>
+		   <via>Friedrichshafen Stadt</via>
+		   <via>Ravensburg</via>
+	   </rewrite>
+	   
+	   <rewrite zug="IRE 311[13]" simstart="Waldshut" simende="Schaffhausen" start="Basel Bad Bf" ende="Ulm Hbf">
+		   <via>Singen(Htw)</via>
+		   <via>Friedrichshafen Stadt</via>
+		   <via>Ravensburg</via>
+	   </rewrite>
+	   
+	   <rewrite zug="IRE 310[2468]" simstart="Schaffhausen" simende="Waldshut" start="Ulm Hbf" ende="Basel Bad Bf">
+		   <via>Waldshut</via>
+		   <via>Bad S&#228;ckingen</via>
+		   <via>Rheinfelden</via>
+	   </rewrite>
+	   
+	   <rewrite zug="IRE 311[02]" simstart="Schaffhausen" simende="Waldshut" start="Ulm Hbf" ende="Basel Bad Bf">
+		   <via>Waldshut</via>
+		   <via>Bad S&#228;ckingen</via>
+		   <via>Rheinfelden</via>
+	   </rewrite>
+	   
+	   <rewrite zug="IRE 3120" simstart="Schaffhausen" simende="Waldshut" start="Friedrichshafen Stadt" ende="Basel Bad Bf">
+		   <via>Waldshut</via>
+		   <via>Bad S&#228;ckingen</via>
+		   <via>Rheinfelden</via>
+	   </rewrite>
+	   
+	   <rewrite zug="IRE 3100" simstart="Schaffhausen" simende="Waldshut" start="Lindau Hbf" ende="Basel Bad Bf">
+		   <via>Waldshut</via>
+		   <via>Bad S&#228;ckingen</via>
+		   <via>Rheinfelden</via>
+	   </rewrite>
+	   
+	   <!-- RB nach Weizen zur Wutachtalbahn -->
+	   
+	   <rewrite zug="RB 3139[468]" simstart="Weizen" simende="Waldshut" start="Weizen" ende="Waldshut">
+		   <via>Tiengen(Hochrhein)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3139[579]" simstart="Waldshut" simende="Weizen" start="Waldshut" ende="Weizen">
+		   <via>Wut&#246;schingen</via>
+		   <via>Eggingen</via>
+		   <via>St&#252;hlingen</via>
+	   </rewrite>
+	   
+	   <!-- RB Basel Bad Bf - Rheinfelden - Laufenburg - Albbruck - Waldshut - Lauchringen - Erzingen -->
+	   
+	   <rewrite zug="RB 3144[1357]" simstart="Waldshut" simende="Gleis RLAU.*" start="Basel Bad Bf" ende="Lauchringen"/>
+	   
+	   <rewrite zug="RB 3146[137]" simstart="Waldshut" simende="Gleis RLAU.*" start="Basel Bad Bf" ende="Lauchringen"/>
+	   
+	   <rewrite zug="RB 3147[17]" simstart="Waldshut" simende="Gleis RLAU.*" start="Basel Bad Bf" ende="Lauchringen"/>
+	   
+	   <rewrite zug="RB 31481" simstart="Waldshut" simende="Gleis RLAU.*" start="Basel Bad Bf" ende="Lauchringen"/>
+	   
+	   <rewrite zug="RB 3143[15]" simstart="Waldshut" simende="Gleis RLAU.*" start="Basel Bad Bf" ende="Lauchringen"/>
+	   
+	   <rewrite zug="RB 31427" simstart="Waldshut" simende="Schaffhausen" start="Basel Bad Bf" ende="Singen(Hohentwiel)">
+		   <via>Erzingen(Baden)</via>
+		   <via>Neunkirch</via>
+		   <via>Schaffhausen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31251" simstart="Waldshut" simende="Abst." start="Waldshut" ende="Erzingen(Baden)">
+		   <via>Lauchringen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31457" simstart="Waldshut" simende="Gleis RLAU.*" start="Waldshut" ende="Lauchringen"/>
+	   
+	   <rewrite zug="RB 3144[2468]" simstart="" simende="Waldshut" start="Lauchringen" ende="Basel Bad Bf">
+		   <via>Waldshut</via>
+		   <via>Laufenburg(Baden)</via>
+		   <via>Rheinfelden</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3145[02]" simstart="" simende="Waldshut" start="Lauchringen" ende="Basel Bad Bf">
+		   <via>Waldshut</via>
+		   <via>Laufenburg(Baden)</via>
+		   <via>Rheinfelden</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3146[048]" simstart="" simende="Waldshut" start="Lauchringen" ende="Basel Bad Bf">
+		   <via>Waldshut</via>
+		   <via>Laufenburg(Baden)</via>
+		   <via>Rheinfelden</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3147[26]" simstart="" simende="Waldshut" start="Lauchringen" ende="Basel Bad Bf">
+		   <via>Waldshut</via>
+		   <via>Laufenburg(Baden)</via>
+		   <via>Rheinfelden</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3148[04]" simstart="" simende="Waldshut" start="Lauchringen" ende="Basel Bad Bf">
+		   <via>Waldshut</via>
+		   <via>Laufenburg(Baden)</via>
+		   <via>Rheinfelden</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3144[2468]" simstart="Waldshut" simende="Waldshut" start="Lauchringen" ende="Basel Bad Bf">
+		   <via>Waldshut</via>
+		   <via>Laufenburg(Baden)</via>
+		   <via>Rheinfelden</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3145[02]" simstart="Waldshut" simende="Waldshut" start="Lauchringen" ende="Basel Bad Bf">
+		   <via>Waldshut</via>
+		   <via>Laufenburg(Baden)</via>
+		   <via>Rheinfelden</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3146[048]" simstart="Waldshut" simende="Waldshut" start="Lauchringen" ende="Basel Bad Bf">
+		   <via>Waldshut</via>
+		   <via>Laufenburg(Baden)</via>
+		   <via>Rheinfelden</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3147[26]" simstart="Waldshut" simende="Waldshut" start="Lauchringen" ende="Basel Bad Bf">
+		   <via>Waldshut</via>
+		   <via>Laufenburg(Baden)</via>
+		   <via>Rheinfelden</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3148[04]" simstart="Waldshut" simende="Waldshut" start="Lauchringen" ende="Basel Bad Bf">
+		   <via>Waldshut</via>
+		   <via>Laufenburg(Baden)</via>
+		   <via>Rheinfelden</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31230" simstart="Schaffhausen" simende="Waldshut" start="Schaffhausen" ende="Waldshut">
+		   <via>Neunkirch</via>
+		   <via>Erzingen(Baden)</via>
+		   <via>Tiengen(Hochrhein)</via>
+	   </rewrite>
+	   
+	   <!-- RB Erzingen - Wilchingen-Hallau - Neunkirch - Neuhausen - Schaffhausen -->
+	   
+	   <rewrite zug="RB 31229" simstart="Schaffhausen" simende="Schaffhausen" start="Erzingen(Baden)" ende="Schaffhausen">
+		   <via>Neunkirch</via>
+		   <via>Beringen Bad Bf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3123[1379]" simstart="Schaffhausen" simende="Schaffhausen" start="Erzingen(Baden)" ende="Schaffhausen">
+		   <via>Neunkirch</via>
+		   <via>Beringen Bad Bf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3124[13579]" simstart="Schaffhausen" simende="Schaffhausen" start="Erzingen(Baden)" ende="Schaffhausen">
+		   <via>Neunkirch</via>
+		   <via>Beringen Bad Bf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3125[357]" simstart="Schaffhausen" simende="Schaffhausen" start="Erzingen(Baden)" ende="Schaffhausen">
+		   <via>Neunkirch</via>
+		   <via>Beringen Bad Bf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3126[137]" simstart="Schaffhausen" simende="Schaffhausen" start="Erzingen(Baden)" ende="Schaffhausen">
+		   <via>Neunkirch</via>
+		   <via>Beringen Bad Bf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3127[135]" simstart="Schaffhausen" simende="Schaffhausen" start="Erzingen(Baden)" ende="Schaffhausen">
+		   <via>Neunkirch</via>
+		   <via>Beringen Bad Bf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31229" simstart="" simende="Schaffhausen" start="Erzingen(Baden)" ende="Schaffhausen">
+		   <via>Neunkirch</via>
+		   <via>Beringen Bad Bf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3123[1379]" simstart="" simende="Schaffhausen" start="Erzingen(Baden)" ende="Schaffhausen">
+		   <via>Neunkirch</via>
+		   <via>Beringen Bad Bf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3124[13579]" simstart="" simende="Schaffhausen" start="Erzingen(Baden)" ende="Schaffhausen">
+		   <via>Neunkirch</via>
+		   <via>Beringen Bad Bf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3125[357]" simstart="" simende="Schaffhausen" start="Erzingen(Baden)" ende="Schaffhausen">
+		   <via>Neunkirch</via>
+		   <via>Beringen Bad Bf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3126[137]" simstart="" simende="Schaffhausen" start="Erzingen(Baden)" ende="Schaffhausen">
+		   <via>Neunkirch</via>
+		   <via>Beringen Bad Bf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3127[135]" simstart="" simende="Schaffhausen" start="Erzingen(Baden)" ende="Schaffhausen">
+		   <via>Neunkirch</via>
+		   <via>Beringen Bad Bf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31228" simstart="Schaffhausen" simende="Gleis RERZ.*" start="Schaffhausen" ende="Erzingen(Baden)">
+		   <via>Neunkirch</via>
+		   <via>Wilchingen-Hallau</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3123[2468]" simstart="Schaffhausen" simende="Gleis RERZ.*" start="Schaffhausen" ende="Erzingen(Baden)">
+		   <via>Neunkirch</via>
+		   <via>Wilchingen-Hallau</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3124[0246]" simstart="Schaffhausen" simende="Gleis RERZ.*" start="Schaffhausen" ende="Erzingen(Baden)">
+		   <via>Neunkirch</via>
+		   <via>Wilchingen-Hallau</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3125[048]" simstart="Schaffhausen" simende="Gleis RERZ.*" start="Schaffhausen" ende="Erzingen(Baden)">
+		   <via>Neunkirch</via>
+		   <via>Wilchingen-Hallau</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3126[26]" simstart="Schaffhausen" simende="Gleis RERZ.*" start="Schaffhausen" ende="Erzingen(Baden)">
+		   <via>Neunkirch</via>
+		   <via>Wilchingen-Hallau</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3127[024]" simstart="Schaffhausen" simende="Gleis RERZ.*" start="Schaffhausen" ende="Erzingen(Baden)">
+		   <via>Neunkirch</via>
+		   <via>Wilchingen-Hallau</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31235" simstart="Abst." simende="Schaffhausen" start="Erzingen(Baden)" ende="Schaffhausen">
+		   <via>Neunkirch</via>
+		   <via>Beringen Bad Bf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31268" simstart="Schaffhausen" simende="Abst." start="Schaffhausen" ende="Erzingen(Baden)">
+		   <via>Neunkirch</via>
+		   <via>Wilchingen-Hallau</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31227" simstart="Schaffhausen" simende="Schaffhausen" start="Wilchingen-Hallau" ende="Schaffhausen">
+		   <via>Neunkirch</via>
+		   <via>Neuhausen Bad Bf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3126[59]" simstart="Schaffhausen" simende="Schaffhausen" start="Wilchingen-Hallau" ende="Schaffhausen">
+		   <via>Neunkirch</via>
+		   <via>Neuhausen Bad Bf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31281" simstart="Schaffhausen" simende="Schaffhausen" start="Wilchingen-Hallau" ende="Schaffhausen">
+		   <via>Neunkirch</via>
+		   <via>Neuhausen Bad Bf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31227" simstart="" simende="Schaffhausen" start="Wilchingen-Hallau" ende="Schaffhausen">
+		   <via>Neunkirch</via>
+		   <via>Neuhausen Bad Bf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3126[59]" simstart="" simende="Schaffhausen" start="Wilchingen-Hallau" ende="Schaffhausen">
+		   <via>Neunkirch</via>
+		   <via>Neuhausen Bad Bf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31281" simstart="" simende="Schaffhausen" start="Wilchingen-Hallau" ende="Schaffhausen">
+		   <via>Neunkirch</via>
+		   <via>Neuhausen Bad Bf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31226" simstart="Schaffhausen" simende="Gleis RWIN.*" start="Schaffhausen" ende="Wilchingen-Hallau">
+		   <via>Neunkirch</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3126[04]" simstart="Schaffhausen" simende="Gleis RWIN.*" start="Schaffhausen" ende="Wilchingen-Hallau">
+		   <via>Neunkirch</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31280" simstart="Schaffhausen" simende="Gleis RWIN.*" start="Schaffhausen" ende="Wilchingen-Hallau">
+		   <via>Neunkirch</via>
+	   </rewrite>
+	   
+   </rewrites>
+</zza>
