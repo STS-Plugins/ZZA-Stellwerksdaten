@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+Version 1.0 von Florian Ellebrecht
+Bei Fehlern bitte eine PN an mich (floflo). Mit Zuggattung, Zugnummer, reguläres Gleis, Abfahrtszeit und am besten noch Name der Einfahrt und Ausfahrt des Zuges.
+Es kann vorkommen, dass einzelne Zugnummern in der Datei fehlen. Bitte an mich melden.
+Ebenso kann es vorkommen, dass bei manchen Zügen trotz soundreplace und/oder richiger Schreibweise totaler Schwachsinn gesprochen wrd.
+-->
+<zza>
+   <bahnhoefe>
+      <bahnhof name="Berlin-Spandau" gleise="(Sp[1-4])" ende="(Gleis Sp.*|Berlin-Spandau)"></bahnhof>
+   </bahnhoefe>
+   <soundreplaces>
+	<replace find="Hbf">Hauptbahnhof</replace>
+	<replace find="HB">Hauptbahnhof</replace>
+	<replace find="St\.">Sankt</replace>
+	<replace find="Neustadt">Neuschtadt</replace>
+	<replace find="-Spandau"> Schpandau</replace>
+	<replace find="-Charlottenburg"> Scharlottenburg</replace>
+	<replace find="-Staaken"> Stahken</replace>
+	<replace find="Flgh">Flughafen</replace>
+	<replace find="-Sch&#246;nefeld"> Sch&#246;nefeld</replace>
+	<replace find="Stendal">Schtendal</replace>
+	<replace find="Cottbus">Kottbus</replace>
+	<replace find="\(Spreewald\)"> im Schpreewald</replace>
+	<replace find="Rathenow">Rahteno</replace>
+	<replace find="\(Dosse\)"> an der Dosse</replace>
+	<replace find="Teltow">Teltoh</replace>
+	<replace find="Wittstock">Wittschtock</replace>
+	<replace find="Paris Gare de l&apos;Est">Parieh Garr d&#246; lest</replace>
+	<replace find="Schiphol">Schiehpol</replace>
+	<replace find="Hannover">Hannofer</replace>
+	<replace find="Villach">Willach</replace>
+	<replace find="Praha hl\.n\.">Prraha halavni nadrraschi</replace>
+	<replace find="Budapest-Keleti pu\.">Budapescht k&#228;l&#228;ti paljodwarr</replace>
+	<replace find="Bratislava hl\.St\.">Brratislawa halavna staniza</replace>
+	<replace find="Brno hl\.n\.">Brr&#252;no halavni nadrraschi</replace>
+	<replace find="Uelzen">&#214;hlzen</replace>
+	<replace find="Krakow Glowny Osobow">Krrakohv Goovne Ossobov</replace>
+	<replace find="Wroclaw Glowny">Wrrotschlav Goovne</replace>
+	<replace find="Zabrze">Sabscha</replace>
+	<replace find="\(M\)"> am Main</replace>
+	<replace find="\(Sylt\)"> auf Sylt</replace>
+	<replace find="Stuttgart">Schtuttgart</replace>
+	<replace find="\(Westf\)"> in Westfahlen</replace>
+	<replace find="Szczecin Glowny">Schtetschin Goovne</replace>
+	<replace find="\(&#214;rtze\)"> an der &#214;rtze</replace>
+	<replace find="/K&#246;ln Hbf"> mit Zugteil nach K&#246;ln Hauptbahnhof &#252;ber Wuppertal. Die Zugtrennung erfolgt in Hamm. Der andere Zugteil f&#228;hrt weiter </replace>
+	<replace find="Oldenburg\(Oldb\) Hbf">Oldenburg Hauptbahnhof mit Zugnummernwechsel in Hannofer Hauptbahnhof </replace>
+	<replace find="/ K&#246;ln"> mit Zugteil nach K&#246;ln Hauptbahnhof &#252;ber Wuppertal. Die Zugtrennung erfolgt in Hamm. Der andere Zugteil f&#228;hrt weiter </replace>
+	<replace find="K&#246;ln/Bonn Flgh">Flughafen K&#246;ln-Bonn</replace>
+	<replace find="/Bonn Hbf"> mit Zugteil nach Bonn Hauptbahnhof &#252;ber Wuppertal. Die Zugtrennung erfolgt in Hamm. Der andere Zugteil f&#228;hrt weiter </replace>
+	<replace find="/ Bonn"> mit Zugteil nach Bonn Hauptbahnhof &#252;ber Wuppertal. Die Zugtrennung erfolgt in Hamm. Der andere Zugteil f&#228;hrt weiter </replace>
+	<replace find="/Trier Hbf"> mit Zugteil nach Trier Hauptbahnhof &#252;ber Wuppertal, Bonn und Koblenz. Die Zugtrennung erfolgt in Hamm. Der andere Zugteil f&#228;hrt weiter </replace>
+	<replace find="/ Koblenz"> mit Zugteil nach Koblenz Hauptbahnhof &#252;ber Wuppertal und Bonn. Die Zugtrennung erfolgt in Hamm. Der andere Zugteil f&#228;hrt weiter </replace>
+	<replace find="\(M\)"> am Main</replace>
+	<replace find="Darmstadt">Darmschtadt</replace>
+	<replace find="SBB">ess beh beh</replace>
+	<replace find="\(Brsg\)"> Breisgau</replace>
+	<replace find="Hannover Messe/Laatzen \(CeBIT\)">Hannofer Messe Laatzen zur zebit</replace>
+	<replace find="Lutherstadt">Lutterschtadt</replace>
+   </soundreplaces>
+   <rewrites>
+	   
+	   <!-- RB-Linie 10 Charlottenburg - Nauen -->
+	   
+	   <rewrite zug="RB 28408" simstart="Chab" simende="Falkensee" start="Berlin-Charlottenburg" ende="Nauen">
+		   <via>Falkensee</via>
+		   <via>Brieselang</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 2841[024]" simstart="Chab" simende="Falkensee" start="Berlin-Charlottenburg" ende="Nauen">
+		   <via>Falkensee</via>
+		   <via>Brieselang</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 2842[468]" simstart="Chab" simende="Falkensee" start="Berlin-Charlottenburg" ende="Nauen">
+		   <via>Falkensee</via>
+		   <via>Brieselang</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 2843[0246]" simstart="Chab" simende="Falkensee" start="Berlin-Charlottenburg" ende="Nauen">
+		   <via>Falkensee</via>
+		   <via>Brieselang</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 2840[46]" simstart="Falkensee" simende="Falkensee" start="Berlin-Spandau" ende="Nauen">
+		   <via>Falkensee</via>
+		   <via>Brieselang</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 2841[68]" simstart="Falkensee" simende="Falkensee" start="Berlin-Spandau" ende="Nauen">
+		   <via>Falkensee</via>
+		   <via>Brieselang</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 2842[02]" simstart="Falkensee" simende="Falkensee" start="Berlin-Spandau" ende="Nauen">
+		   <via>Falkensee</via>
+		   <via>Brieselang</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 28438" simstart="Falkensee" simende="Falkensee" start="Berlin-Spandau" ende="Nauen">
+		   <via>Falkensee</via>
+		   <via>Brieselang</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 2840[46]" simstart="" simende="Falkensee" start="Berlin-Spandau" ende="Nauen">
+		   <via>Falkensee</via>
+		   <via>Brieselang</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 2841[68]" simstart="" simende="Falkensee" start="Berlin-Spandau" ende="Nauen">
+		   <via>Falkensee</via>
+		   <via>Brieselang</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 2842[02]" simstart="" simende="Falkensee" start="Berlin-Spandau" ende="Nauen">
+		   <via>Falkensee</via>
+		   <via>Brieselang</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 28438" simstart="" simende="Falkensee" start="Berlin-Spandau" ende="Nauen">
+		   <via>Falkensee</via>
+		   <via>Brieselang</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 2840[79]" simstart="Falkensee" simende="Chab" start="Nauen" ende="Berlin-Charlottenburg"/>
+	   
+	   <rewrite zug="RB 2842[3579]" simstart="Falkensee" simende="Chab" start="Nauen" ende="Berlin-Charlottenburg"/>
+	   
+	   <rewrite zug="RB 2841[13]" simstart="Falkensee" simende="Chab" start="Nauen" ende="Berlin-Charlottenburg"/>
+	   
+	   <rewrite zug="RB 2843[135]" simstart="Falkensee" simende="Chab" start="Nauen" ende="Berlin-Charlottenburg"/>
+	   
+	   <rewrite zug="RB 28405" simstart="Falkensee" simende="Gleis .*" start="Nauen" ende="Berlin-Spandau"/>
+	   
+	   <rewrite zug="RB 2841[579]" simstart="Falkensee" simende="Gleis .*" start="Nauen" ende="Berlin-Spandau"/>
+	   
+	   <rewrite zug="RB 28421" simstart="Falkensee" simende="Gleis .*" start="Nauen" ende="Berlin-Spandau"/>
+	   
+	   <rewrite zug="RB 28437" simstart="Falkensee" simende="Gleis .*" start="Nauen" ende="Berlin-Spandau"/>
+	   
+	   <!-- RB-Linie 13 Spandau - Wustermark -->
+	   
+	   <rewrite zug="RB 28381" simstart="Chag" simende="Gleis .*" start="Berlin-Spandau" ende="Wustermark">
+		   <via>Berlin-Staaken</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 28381" simstart="" simende="Gleis .*" start="Berlin-Spandau" ende="Wustermark">
+		   <via>Berlin-Staaken</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 2838[357]" simstart="" simende="Gleis .*" start="Berlin-Spandau" ende="Wustermark">
+		   <via>Berlin-Staaken</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 28389" simstart="Chag" simende="Gleis .*" start="Berlin-Spandau" ende="Wustermark">
+		   <via>Berlin-Staaken</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 28389" simstart="" simende="Gleis .*" start="Berlin-Spandau" ende="Wustermark">
+		   <via>Berlin-Staaken</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 2839[13579]" simstart="" simende="Gleis .*" start="Berlin-Spandau" ende="Wustermark">
+		   <via>Berlin-Staaken</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 283[89][02468]" simstart="" simende="Gleis .*" start="Wustermark" ende="Berlin-Spandau"/>
+	   
+	   <rewrite zug="RB 28400" simstart="" simende="Gleis .*" start="Wustermark" ende="Berlin-Spandau"/>
+	   
+	   <!-- RB-Linie 14 Nauen - Flghf Berlin-Schoenefeld -->
+	   
+	   <rewrite zug="RB 28349" simstart="Falkensee" simende="Chab" start="Nauen" ende="Flgh Berlin-Sch&#246;nefeld">
+		   <via>Berlin Hbf</via>
+		   <via>Berlin Ostbahnhof</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 2830[579]" simstart="Falkensee" simende="Chab" start="Nauen" ende="Flgh Berlin-Sch&#246;nefeld">
+		   <via>Berlin Hbf</via>
+		   <via>Berlin Ostbahnhof</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 283[12][13579]" simstart="Falkensee" simende="Chab" start="Nauen" ende="Flgh Berlin-Sch&#246;nefeld">
+		   <via>Berlin Hbf</via>
+		   <via>Berlin Ostbahnhof</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 2833[1357]" simstart="Falkensee" simende="Chab" start="Nauen" ende="Flgh Berlin-Sch&#246;nefeld">
+		   <via>Berlin Hbf</via>
+		   <via>Berlin Ostbahnhof</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 2830[468]" simstart="Chab" simende="Falkensee" start="Flgh Berlin-Sch&#246;nefeld" ende="Nauen">
+		   <via>Falkensee</via>
+		   <via>Brieselang</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 283[12][02468]" simstart="Chab" simende="Falkensee" start="Flgh Berlin-Sch&#246;nefeld" ende="Nauen">
+		   <via>Falkensee</via>
+		   <via>Brieselang</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 2833[024]" simstart="Chab" simende="Falkensee" start="Flgh Berlin-Sch&#246;nefeld" ende="Nauen">
+		   <via>Falkensee</via>
+		   <via>Brieselang</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 2830[02]" simstart="Chag" simende="Falkensee" start="Berlin-Spandau" ende="Nauen">
+		   <via>Falkensee</via>
+		   <via>Brieselang</via>
+	   </rewrite>
+	   
+	   <!-- RE-Linie 2 Stendal - Cottbus -->
+	   
+	   <rewrite zug="RE 38133" simstart="Ribbeck" simende="Chab" start="Stendal" ende="Cottbus">
+		   <via>Berlin Hbf</via>
+		   <via>L&#252;bbenau(Spreewald)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3813[579]" simstart="Ribbeck" simende="Chab" start="Rathenow" ende="Cottbus">
+		   <via>Berlin Hbf</via>
+		   <via>L&#252;bbenau(Spreewald)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3814[13579]" simstart="Ribbeck" simende="Chab" start="Rathenow" ende="Cottbus">
+		   <via>Berlin Hbf</via>
+		   <via>L&#252;bbenau(Spreewald)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3816[3579]" simstart="Ribbeck" simende="Chab" start="Rathenow" ende="Cottbus">
+		   <via>Berlin Hbf</via>
+		   <via>L&#252;bbenau(Spreewald)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3817[1357]" simstart="Ribbeck" simende="Chab" start="Rathenow" ende="Cottbus">
+		   <via>Berlin Hbf</via>
+		   <via>L&#252;bbenau(Spreewald)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 38162" simstart="Chab" simende="Ribbeck" start="Berlin Zoologischer Garten" ende="Rathenow">
+		   <via>Wustermark</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3816[468]" simstart="Chab" simende="Ribbeck" start="Cottbus" ende="Rathenow">
+		   <via>Wustermark</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3817[02468]" simstart="Chab" simende="Ribbeck" start="Cottbus" ende="Rathenow">
+		   <via>Wustermark</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 38180" simstart="Chab" simende="Ribbeck" start="Cottbus" ende="Rathenow">
+		   <via>Wustermark</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3813[2468]" simstart="Chab" simende="Ribbeck" start="Cottbus" ende="Rathenow">
+		   <via>Wustermark</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3814[02468]" simstart="Chab" simende="Ribbeck" start="Cottbus" ende="Rathenow">
+		   <via>Wustermark</via>
+	   </rewrite>
+	   
+	   <!-- RE-Linie 4 Wismar - Jueterbog -->
+	   
+	   <rewrite zug="RE 38256" simstart="Moabit" simende="Falkensee" start="J&#252;terbog" ende="Wittenberge">
+		   <via>Nauen</via>
+		   <via>Neustadt(Dosse)</via>
+		   <via>Gl&#246;wen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3826[06]" simstart="Moabit" simende="Falkensee" start="J&#252;terbog" ende="Wittenberge">
+		   <via>Nauen</via>
+		   <via>Neustadt(Dosse)</via>
+		   <via>Gl&#246;wen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3823[2468]" simstart="Moabit" simende="Falkensee" start="Ludwigsfelde" ende="Wittenberge">
+		   <via>Nauen</via>
+		   <via>Neustadt(Dosse)</via>
+		   <via>Gl&#246;wen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3825[48]" simstart="Moabit" simende="Falkensee" start="J&#252;terbog" ende="Wismar">
+		   <via>Neustadt(Dosse)</via>
+		   <via>Wittenberge</via>
+		   <via>Schwerin Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3826[48]" simstart="Moabit" simende="Falkensee" start="J&#252;terbog" ende="Wismar">
+		   <via>Neustadt(Dosse)</via>
+		   <via>Wittenberge</via>
+		   <via>Schwerin Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3821[0246]" simstart="Moabit" simende="Falkensee" start="Ludwigsfelde" ende="Wismar">
+		   <via>Neustadt(Dosse)</via>
+		   <via>Wittenberge</via>
+		   <via>Schwerin Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3824[24]" simstart="Moabit" simende="Falkensee" start="Ludwigsfelde" ende="Wismar">
+		   <via>Neustadt(Dosse)</via>
+		   <via>Wittenberge</via>
+		   <via>Schwerin Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 38227" simstart="Falkensee" simende="Moabit" start="Wittenberge" ende="J&#252;terbog">
+		   <via>Berlin Hbf</via>
+		   <via>Teltow</via>
+		   <via>Ludwigsfelde</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 38253" simstart="Falkensee" simende="Moabit" start="Wittenberge" ende="J&#252;terbog">
+		   <via>Berlin Hbf</via>
+		   <via>Teltow</via>
+		   <via>Ludwigsfelde</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3826[37]" simstart="Falkensee" simende="Moabit" start="Wittenberge" ende="J&#252;terbog">
+		   <via>Berlin Hbf</via>
+		   <via>Teltow</via>
+		   <via>Ludwigsfelde</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3823[135]" simstart="Falkensee" simende="Moabit" start="Wittenberge" ende="Ludwigsfelde">
+		   <via>Berlin Hbf</via>
+		   <via>Teltow</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 38241" simstart="Falkensee" simende="Moabit" start="Wittenberge" ende="Ludwigsfelde">
+		   <via>Berlin Hbf</via>
+		   <via>Teltow</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3820[79]" simstart="Falkensee" simende="Moabit" start="Wismar" ende="Ludwigsfelde">
+		   <via>Berlin Hbf</via>
+		   <via>Teltow</via>
+	   </rewrite>
+	   
+	    <rewrite zug="RE 3821[1379]" simstart="Falkensee" simende="Moabit" start="Wismar" ende="Ludwigsfelde">
+		   <via>Berlin Hbf</via>
+		   <via>Teltow</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 38257" simstart="Falkensee" simende="Moabit" start="Wismar" ende="Ludwigsfelde">
+		   <via>Berlin Hbf</via>
+		   <via>Teltow</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 38265" simstart="Falkensee" simende="Moabit" start="Wismar" ende="J&#252;terbog">
+		   <via>Berlin Hbf</via>
+		   <via>Teltow</via>
+		   <via>Ludwigsfelde</via>
+	   </rewrite>
+	   
+	   <!-- RE-Linie 6 Berlin-Spandau - Wittenberge -->
+	   
+	   <rewrite zug="RE 386[012567][02468]" simstart="Falkensee" simende="Falkensee" start="Berlin-Spandau" ende="Wittenberge">
+		   <via>Henningsdorf</via>
+		   <via>Wittstock(Dosse)</via>
+		   <via>Pritzwalk</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 386[012456][13579]" simstart="Falkensee" simende="Gleis .*" start="Wittenberge" ende="Berlin-Spandau"/>
+	   
+	   <!-- CNL Perseus -->
+	   
+	   <rewrite zug="CNL 450" simstart="Moabit" simende="Ribbeck" start="Berlin S&#252;dkreuz" ende="Paris Gare de l&apos;Est">
+		   <via>Hannover Hbf</via>
+		   <via>G&#246;ttingen</via>
+		   <via>Saarbr&#252;cken</via>
+	   </rewrite>
+	   
+	   <rewrite zug="CNL 451" simstart="Ribbeck" simende="Moabit" start="Paris Gare de l&apos;Est" ende="Berlin S&#252;dkreuz"/>
+	   
+	   <!-- EC-Linie 27 Hamburg - Budapest -->
+	   
+	   <rewrite zug="EC 173" simstart="Falkensee" simende="Moabit" start="Hamburg-Altona" ende="Villach Hbf">
+		   <via>Dresden Hbf</via>
+		   <via>Praha hl.n.</via>
+		   <via>Wien Meidling</via>
+	   </rewrite>
+	   
+	   <rewrite zug="EC 175" simstart="Falkensee" simende="Moabit" start="Hamburg-Altona" ende="Budapest-Keleti pu.">
+		   <via>Dresden Hbf</via>
+		   <via>Praha hl.n.</via>
+		   <via>Bratislava hl.St.</via>
+	   </rewrite>
+	   
+	   <rewrite zug="EC 176" simstart="Moabit" simende="Falkensee" start="Brno hl.n." ende="Hamburg-Altona">
+		   <via>Wittenberge</via>
+	   </rewrite>
+	   
+	   <rewrite zug="EC 174" simstart="Moabit" simende="Falkensee" start="Budapest-Keleti pu." ende="Hamburg-Altona">
+		   <via>Wittenberge</via>
+	   </rewrite>
+	   
+	   <rewrite zug="EC 172" simstart="Moabit" simende="Falkensee" start="Villach Hbf" ende="Hamburg-Altona">
+		   <via>Wittenberge</via>
+	   </rewrite>
+	   
+	   <rewrite zug="EC 340" simstart="Chab" simende="Ribbeck" start="Krakow Glowny Osobow" ende="Hamburg-Altona">
+		   <via>Stendal</via>
+		   <via>Uelzen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="EC 341" simstart="Ribbeck" simende="Chab" start="Hamburg-Altona" ende="Krakow Glowny Osobow">
+		   <via>Cottbus</via>
+		   <via>Wroclaw Glowny</via>
+		   <via>Zabrze</via>
+	   </rewrite>
+	   
+	   <!-- IC-Linie 10 Berlin - Koeln (Ersatzverkehre fuer ICE) -->
+	   
+	   <rewrite zug="IC 2860" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="K&#246;ln Hbf">
+		   <via>Hannover Hbf</via>
+		   <via>Dortmund Hbf</via>
+		   <via>Essen Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="IC 2861" simstart="Ribbeck" simende="Chab" start="K&#246;ln Hbf" ende="Berlin Ostbahnhof"/>
+	   
+	   <!-- IC-Linie 16 Berlin-Suedkreuz - Frankfurt(M) Hbf -->
+	   
+	   <rewrite zug="IC 189[13]" simstart="Moabit" simende="Ribbeck" start="Berlin S&#252;dkreuz" ende="Frankfurt(M) Hbf">
+		   <via>Hannover Hbf</via>
+		   <via>Kassel-Wilhelmsh&#246;he</via>
+	   </rewrite>
+	   
+	   <rewrite zug="IC 1890" simstart="Ribbeck" simende="Moabit" start="Frankfurt(M) Hbf" ende="Berlin S&#252;dkreuz"/>
+	   
+	   <!-- IC-Linie 27 Dresden - Berlin - Hamburg - Westerland -->
+	   
+	   <rewrite zug="IC 2071" simstart="Falkensee" simende="Moabit" start="Hamburg-Altona" ende="Dresden Hbf">
+		   <via>Elsterwerda</via>
+	   </rewrite>
+	   
+	   <rewrite zug="IC 2072" simstart="Moabit" simende="Falkensee" start="Dresden Hbf" ende="Westerland(Sylt)">
+		   <via>Hamburg Hbf</via>
+		   <via>Nieb&#252;ll</via>
+	   </rewrite>
+	   
+	   <rewrite zug="IC 1871" simstart="Falkensee" simende="Moabit" start="Flensburg" ende="Berlin S&#252;dkreuz"/>
+	   
+	   <!-- IC-Linie 32 Koeln - Duesseldorf - Hannover - Berlin -->
+	   
+	   <rewrite zug="IC 2010" simstart="Ribbeck" simende="Moabit" start="T&#252;bingen" ende="Berlin S&#252;dkreuz"/>
+	   
+	   <rewrite zug="IC 192[26]" simstart="Ribbeck" simende="Moabit" start="K&#246;ln Hbf" ende="Berlin S&#252;dkreuz"/>
+	   
+	   <rewrite zug="IC 1918" simstart="Ribbeck" simende="Moabit" start="Aachen Hbf" ende="Berlin S&#252;dkreuz"/>
+	   
+	   <rewrite zug="IC 1916" simstart="Ribbeck" simende="Moabit" start="Salzburg Hbf" ende="Berlin S&#252;dkreuz"/>
+	   
+	   <rewrite zug="IC 1915" simstart="Moabit" simende="Ribbeck" start="Berlin S&#252;dkreuz" ende="Stuttgart Hbf">
+		   <via>Hannover Hbf</via>
+		   <via>K&#246;ln Hbf</via>
+		   <via>Mainz Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="IC 1917" simstart="Moabit" simende="Ribbeck" start="Berlin S&#252;dkreuz" ende="K&#246;ln Hbf">
+		   <via>Hannover Hbf</via>
+		   <via>Dortmund Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="IC 1921" simstart="Moabit" simende="Ribbeck" start="Leipzig Hbf" ende="K&#246;ln Hbf">
+		   <via>Hannover Hbf</via>
+		   <via>Dortmund Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="IC 192[35]" simstart="Moabit" simende="Ribbeck" start="Berlin S&#252;dkreuz" ende="K&#246;ln Hbf">
+		   <via>Hannover Hbf</via>
+		   <via>Dortmund Hbf</via>
+	   </rewrite>
+	   
+	   <!-- IC-Linie 77 Berlin - Bad Bentheim - Schiphol -->
+	   
+	   <rewrite zug="IC 2241" simstart="Ribbeck" simende="Chab" start="M&#252;nster(Westf) Hbf" ende="Berlin Ostbahnhof"/>
+	   
+	   <rewrite zug="IC 2243" simstart="Ribbeck" simende="Chab" start="Bad Bentheim" ende="Berlin Ostbahnhof"/>
+	   
+	   <rewrite zug="IC 14[1379]" simstart="Ribbeck" simende="Chab" start="Schiphol" ende="Berlin Ostbahnhof"/>
+	   
+	   <rewrite zug="IC 241" simstart="Ribbeck" simende="Chab" start="Schiphol" ende="Berlin Ostbahnhof"/>
+	   
+	   <rewrite zug="IC 145" simstart="Ribbeck" simende="Moabit" start="Schiphol" ende="Szczecin Glowny">
+		   <via>Angerm&#252;nde</via>
+	   </rewrite>
+	   
+	   <rewrite zug="IC 240" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="Schiphol">
+		   <via>Hannover Hbf</via>
+		   <via>Bad Bentheim</via>
+		   <via>Amersfoort</via>
+	   </rewrite>
+	   
+	   <rewrite zug="IC 14[0246]" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="Schiphol">
+		   <via>Hannover Hbf</via>
+		   <via>Bad Bentheim</via>
+		   <via>Amersfoort</via>
+	   </rewrite>
+	   
+	   <rewrite zug="IC 148" simstart="Moabit" simende="Ribbeck" start="Szczecin Glowny" ende="Schiphol">
+		   <via>Hannover Hbf</via>
+		   <via>Bad Bentheim</via>
+		   <via>Amersfoort</via>
+	   </rewrite>
+	   
+	   <rewrite zug="IC 2242" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="M&#252;nster(Westf) Hbf">
+		   <via>Hannover Hbf</via>
+		   <via>Osnabr&#252;ck Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="IC 1931" simstart="Ribbeck" simende="Moabit" start="Munster(&#214;rtze)" ende="Berlin S&#252;dkreuz"/>
+	   
+	   <!-- ICE-Linie 10 Berlin - Hannover  - Köln -->
+	   
+	   <rewrite zug="ICE 94[04]" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="D&#252;sseldorf Hbf/K&#246;ln Hbf">
+		   <via>Hannover Hbf</via>
+		   <via>Hamm(Westf)</via>
+		   <via>Dortmund Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 848" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="D&#252;sseldorf Hbf/K&#246;ln Hbf">
+		   <via>Hannover Hbf</via>
+		   <via>Hamm(Westf)</via>
+		   <via>Dortmund Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE [58]44" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="K&#246;ln Hbf/K&#246;ln Hbf">
+		   <via>Hannover Hbf</via>
+		   <via>Dortmund Hbf</via>
+		   <via>Essen Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 842" simstart="Chab" simende="Ribbech" start="Berlin Ostbahnhof" ende="Oldenburg(Oldb) Hbf">
+		   <via>Hannover Hbf</via>
+		   <via>Bremen Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 942" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="K&#246;ln/Bonn Flgh / K&#246;ln">
+		   <via>Hannover Hbf</via>
+		   <via>Dortmund Hbf</via>
+		   <via>D&#252;sseldorf Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 640" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="D&#252;sseldorf Hbf/K&#246;ln Hbf">
+		   <via>Hannover Hbf</via>
+		   <via>Hamm(Westf)</via>
+		   <via>Dortmund Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 946" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="D&#252;sseldorf Hbf/K&#246;ln Hbf">
+		   <via>Hannover Hbf</via>
+		   <via>Hamm(Westf)</via>
+		   <via>Dortmund Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 1046" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="M&#246;nchengladbach Hbf/Trier Hbf">
+		   <via>Hannover Hbf</via>
+		   <via>Hamm(Westf)</via>
+		   <via>D&#252;sseldorf Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 548" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="K&#246;ln/Bonn Flgh / K&#246;ln">
+		   <via>Hannover Hbf</via>
+		   <via>Dortmund Hbf</via>
+		   <via>D&#252;sseldorf Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 546" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="K&#246;ln/Bonn Flgh / Koblenz">
+		   <via>Hannover Hbf</via>
+		   <via>Dortmund Hbf</via>
+		   <via>D&#252;sseldorf Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 542" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="K&#246;ln Hbf/Bonn Hbf">
+		   <via>Hannover Hbf</via>
+		   <via>Dortmund Hbf</via>
+		   <via>Essen Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 644" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="K&#246;ln/Bonn Flgh / Bonn">
+		   <via>Hannover Hbf</via>
+		   <via>Dortmund Hbf</via>
+		   <via>D&#252;sseldorf Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE [85]57" simstart="Ribbeck" simende="Chab" start="K&#246;ln Hbf" ende="Berlin Ostbahnhof"/>
+	   
+	   <rewrite zug="ICE 65[35]" simstart="Ribbeck" simende="Chab" start="K&#246;ln Hbf" ende="Berlin Ostbahnhof"/>
+	   
+	   <rewrite zug="ICE 85[39]" simstart="Ribbeck" simende="Chab" start="K&#246;ln Hbf" ende="Berlin Ostbahnhof"/>
+	   
+	   <rewrite zug="ICE 95[135]" simstart="Ribbeck" simende="Chab" start="K&#246;ln Hbf" ende="Berlin Ostbahnhof"/>
+	   
+	  <rewrite zug="ICE 855" simstart="Ribbeck" simende="Chab" start="Trier Hbf" ende="Berlin Ostbahnhof"/>
+	  
+	  <rewrite zug="ICE 55[59]" simstart="Ribbeck" simende="Chab" start="Bonn Hbf" ende="Berlin Ostbahnhof"/>
+	  
+	  <rewrite zug="ICE 841" simstart="Ribbeck" simende="Chab" start="Hannover Hbf" ende="Berlin Ostbahnhof"/>
+	  
+	  <rewrite zug="ICE 553" simstart="Ribbeck" simende="Chab" start="Koblenz Hbf" ende="Berlin Ostbahnhof"/>
+	  
+	  <rewrite zug="ICE 541" simstart="Ribbeck" simende="Chab" start="K&#246;ln Hbf" ende="Berlin Ostbahnhof"/>
+	  
+	  <rewrite zug="ICE 649" simstart="Ribbeck" simende="Chab" start="Hannover Hbf" ende="Berlin Ostbahnhof"/>
+	  
+	  <!-- ICE-Sprinter 109x -->
+	  
+	  <rewrite zug="ICE 1091" simstart="Moabit" simende="Ribbeck" start="Berlin S&#252;dkreuz" ende="M&#252;nchen Hbf">
+		  <via>Frankfurt(M) Hbf</via>
+		  <via>Stuttgart Hbf</via>
+		  <via>Augsburg Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ICE 1092" simstart="Ribbeck" simende="Chab" start="Darmstadt Hbf" ende="Berlin Ostbahnhof"/>
+	  
+	  <rewrite zug="ICE 1093" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="Stuttgart Hbf">
+		  <via>Frankfurt(M) Hbf</via>
+		  <via>Mannheim Hbf</via>
+	  </rewrite>
+	  
+	  <!-- ICE-Linie 11 Berlin - Frankfurt -  Muenchen -->
+	  
+	  <rewrite zug="ICE 696" simstart="Ribbeck" simende="Chab" start="Kassel-Wilhelmsh&#246;he" ende="Berlin Ostbahnhof"/>
+	  
+	  <rewrite zug="ICE 876" simstart="Ribbeck" simende="Chab" start="Kassel-Wilhelmsh&#246;he" ende="Berlin Ostbahnhof"/>
+	  
+	  <rewrite zug="ICE 694" simstart="Ribbeck" simende="Chab" start="Stuttgart Hbf" ende="Berlin Ostbahnhof"/>
+	  
+	  <rewrite zug="ICE 69[02]" simstart="Ribbeck" simende="Chab" start="M&#252;nchen Hbf" ende="Berlin Ostbahnhof"/>
+	  
+	  <rewrite zug="ICE 59[68]" simstart="Ribbeck" simende="Chab" start="M&#252;nchen Hbf" ende="Berlin Ostbahnhof"/>
+	  
+	  <rewrite zug="ICE 1184" simstart="Ribbeck" simende="Moabit" start="M&#252;nchen Hbf" ende="Berlin S&#252;dkreuz"/>
+	  
+	  <rewrite zug="ICE 59[579]" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="M&#252;nchen Hbf">
+		  <via>G&#246;ttingen</via>
+		  <via>Frankfurt(M) Hbf</via>
+		  <via>Stuttgart Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ICE 69[13]" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="M&#252;nchen Hbf">
+		  <via>G&#246;ttingen</via>
+		  <via>Frankfurt(M) Hbf</via>
+		  <via>Stuttgart Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ICE 697" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="Frankfurt(M) Hbf">
+		  <via>G&#246;ttingen</via>
+		  <via>Fulda</via>
+	  </rewrite>
+	  
+	  <!-- ICE-Linie 12 Berlin - Frankfurt - Freiburg - Basel - Interlaken -->
+	  
+	  <rewrite zug="ICE 1172" simstart="Ribbeck" simende="Moabit" start="Darmstadt Hbf" ende="Berlin S&#252;dkreuz"/>
+	  
+	  <rewrite zug="ICE 874" simstart="Ribbeck" simende="Chab" start="Karlsruhe Hbf" ende="Berlin Ostbahnhof"/>
+	  
+	  <rewrite zug="ICE 87[02]" simstart="Ribbeck" simende="Chab" start="Basel SBB" ende="Berlin Ostbahnhof"/>
+	  
+	  <rewrite zug="ICE 27[68]" simstart="Ribbeck" simende="Chab" start="Interlaken Ost" ende="Berlin Ostbahnhof"/>
+	  
+	  <rewrite zug="ICE 374" simstart="Ribbeck" simende="Chab" start="Bern" ende="Berlin Ostbahnhof"/>
+	  
+	  <rewrite zug="ICE 370" simstart="Ribbeck" simende="Chab" start="Interlaken Ost" ende="Berlin Ostbahnhof"/>
+	  
+	  <rewrite zug="ICE 87[135]" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="Basel SBB">
+		  <via>G&#246;ttingen</via>
+		  <via>Frankfurt(M) Hbf</via>
+		  <via>Freiburg(Brsg) Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ICE 877" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="Karlsruhe Hbf">
+		  <via>G&#246;ttingen</via>
+		  <via>Frankfurt(M) Hbf</via>
+		  <via>Mannheim Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ICE 37[35]" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="Interlaken Ost">
+		  <via>Frankfurt(M) Hbf</via>
+		  <via>Freiburg(Brsg) Hbf</via>
+		  <via>Bern</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ICE 27[79]" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="Interlaken Ost">
+		  <via>Frankfurt(M) Hbf</via>
+		  <via>Freiburg(Brsg) Hbf</via>
+		  <via>Bern</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ICE 2637" simstart="Chab" simende="Ribbeck" start="Berlin Ostbahnhof" ende="Hannover Messe/Laatzen (CeBIT)">
+		  <via>Wolfsburg Hbf</via>
+		  <via>Hannover Messe/Laatzen</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ICE 2638" simstart="Ribbeck" simende="Chab" start="Hannover Messe/Laatzen (CeBIT)" ende="Berlin Ostbahnhof"/>
+	   
+	  <!-- ICE-Linie 28 Hamburg - Berlin (- Muenchen) -->
+	  
+	  <rewrite zug="ICE 1607" simstart="Falkensee" simende="Moabit" start="Hamburg-Altona" ende="M&#252;nchen Hbf">
+		  <via>Leipzig Hbf</via>
+		  <via>Lichtenfels</via>
+		  <via>N&#252;rnberg Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ICE 705" simstart="Falkensee" simende="Moabit" start="Hamburg-Altona" ende="Berlin S&#252;dkreuz"/>
+
+	  <rewrite zug="ICE 709" simstart="Falkensee" simende="Moabit" start="Hamburg-Altona" ende="Berlin S&#252;dkreuz"/>
+	  
+	  <rewrite zug="ICE 80[13]" simstart="Falkensee" simende="Moabit" start="Hamburg-Altona" ende="Berlin S&#252;dkreuz"/>
+	  
+	  <rewrite zug="ICE 90[15]" simstart="Falkensee" simende="Moabit" start="Hamburg-Altona" ende="Berlin S&#252;dkreuz"/>
+	  
+	  <rewrite zug="ICE 110[57]" simstart="Falkensee" simende="Moabit" start="Hamburg-Altona" ende="Berlin S&#252;dkreuz"/>
+	  
+	  <rewrite zug="ICE 893" simstart="Falkensee" simende="Moabit" start="Hamburg-Altona" ende="Leipzig Hbf">
+		  <via>Lutherstadt Wittenberg</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ICE 1006" simstart="Moabit" simende="Falkensee" start="Berlin S&#252;dkreuz" ende="Hamburg Hbf">
+		  <via>Ludwigslust</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ICE 1004" simstart="Moabit" simende="Falkensee" start="Berlin S&#252;dkreuz" ende="Hamburg-Altona">
+		  <via>Ludwigslust</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ICE 790" simstart="Moabit" simende="Falkensee" start="Leipzig Hbf" ende="Hamburg-Altona"/>
+	  
+	  <rewrite zug="ICE 792" simstart="Moabit" simende="Falkensee" start="Berlin S&#252;dkreuz" ende="Hamburg-Altona"/>
+	  
+	  <rewrite zug="ICE 110[06]" simstart="Moabit" simende="Falkensee" start="Berlin S&#252;dkreuz" ende="Hamburg-Altona"/>
+	  
+	  <rewrite zug="ICE 80[248]" simstart="Moabit" simende="Falkensee" start="Berlin S&#252;dkreuz" ende="Hamburg-Altona"/>
+	  
+	  <rewrite zug="ICE 706" simstart="Moabit" simende="Falkensee" start="Berlin S&#252;dkreuz" ende="Hamburg-Altona"/>
+	  
+	  <rewrite zug="ICE 1604" simstart="Moabit" simende="Falkensee" start="M&#252;nchen Hbf" ende="Hamburg-Altona"/>
+	  
+   </rewrites>
+</zza>
