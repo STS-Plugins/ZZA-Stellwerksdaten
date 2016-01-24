@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!--
+Version 1.0 von Florian Ellebrecht
+Bei Fehlern bitte eine PN an mich (floflo).
+Es kann vorkommen, dass einzelne Zugnummern in der Datei fehlen.
+Ebenso kann es vorkommen, dass bei manchen Zügen trotz soundreplace und/oder richiger Schreibweise totaler Schwachsinn gesprochen wrd.
+-->
+
+<zza>
+   <bahnhoefe>
+      <bahnhof name="Hamburg-Neugraben" gleise="ANR[1-3]" ende="(Gleis ANR.*|Gleis ANR2[a]|Abstell ANR|Hamburg-Neugraben)"></bahnhof>
+	  <bahnhof name="Buxtehude" gleise="ABX[1-4]" ende="(Gleis ABX.*|Buxtehude)"></bahnhof>
+	  <bahnhof name="Stade" gleise="AST[1-3]" ende="(Gleis AST.*|Abstell AST|Bundeswehr|Ott.*|Stade)"></bahnhof>
+   </bahnhoefe>
+
+   <soundreplaces>
+      <replace find="Hbf">Hauptbahnhof</replace>
+	  <replace find="HB">Hauptbahnhof</replace>
+	  <replace find="-Neugraben"> Neugraben</replace>
+	  <replace find="\(W&#252;mme\)">W&#252;mme</replace>
+	  <replace find="Bremerhaven">Bremerhafen</replace>
+	  <replace find="Bremervörde">Bremerf&#246;rde</replace>
+	  <replace find="Stade">Schtaade</replace>
+	  <replace find="Bargstadt">Bargschteet</replace>
+	  <replace find="Cuxhaven">Kuckshafen</replace>
+   </soundreplaces>
+   
+   <rewrites>
+	   
+	   <!-- S-Bahn 3 Pinneberg - Stade -->
+	   
+	   <rewrite zug="S 3 6[123456][0123456789]3" simstart="Hamburg Hbf S" simende="Gleis AST.*" start="Pinneberg" ende="Stade">
+		   <via>Horneburg</via>
+		   <via>Dollern</via>
+		   <via>Agathenburg</via>
+	   </rewrite>
+	  
+	  <!-- S-Bahn 3 Stade - Pinneberg -->
+	  
+	  <rewrite zug="S 3 6[123456][0123456789]6" simstart="Hamburg Hbf S" simende="Hamburg Hbf S" start="Stade" ende="Pinneberg">
+		   <via>Harburg-Rathaus</via>
+		   <via>Hauptbahnhof</via>
+		   <via>Altona</via>
+	   </rewrite>
+	   
+	  <!-- S-Bahn 3 Pinneberg - Buxtehude -->
+	  
+	  <rewrite zug="S 3 6[012345][0123456789][37]" simstart="Hamburg Hbf S" simende="Gleis ABX.*" start="Pinneberg" ende="Buxtehude"/>
+	  
+      <!-- S-Bahn 3 Buxtehude - Pinneberg -->
+	  
+	  <rewrite zug="S 3 6[12345][0123456789][26]" simstart="Hamburg Hbf S" simende="Hamburg Hbf S" start="Buxtehude" ende="Pinneberg">
+		  <via>Harburg-Rathaus</via>
+		  <via>Hauptbahnhof</via>
+		  <via>Altona</via>
+	  </rewrite>
+	  
+	  <!-- S-Bahn 3 Pinneberg - Neugraben -->
+	  
+	  <rewrite zug="S 3 6[012345][0123456789]7" simstart="Hamburg Hbf S" simende="Gleis ANR2[a]" start="Pinneberg" ende="Hamburg-Neugraben"/>
+	  
+	  <!-- S-Bahn 3 Neugraben - Pinneberg -->
+	  
+	  <rewrite zug="S 3 6[012345][0123456789][26]" simstart="" simende="Hamburg Hbf S" start="Hamburg-Neugraben" ende="Pinneberg">
+		  <via>Harburg-Rathaus</via>
+		  <via>Hauptbahnhof</via>
+		  <via>Altona</via>
+	  </rewrite>
+	  
+	  <!-- S-Bahn 3 Elbgaustr. - Neugraben -->
+	  
+	  <rewrite zug="S 3 65[345]7" simstart="Hamburg Hbf S" simende="Abstell ANR" start="Elbgaustra&#223;e" ende="Hamburg-Neugraben"/>
+	  
+	  <!-- S-Bahn 3 Neugraben - Elbgaustr. -->
+	  
+	  <rewrite zug="S 3 6[56][0123456789]2" simstart="Hamburg Hbf S" simende="Hamburg Hbf S" start="Hamburg-Neugraben" ende="Elbaustra&#223;e">
+		  <via>Harburg-Rathaus</via>
+		  <via>Hauptbahnhof</via>
+		  <via>Altona</via>
+	  </rewrite>
+	  
+	  <!-- S-Bahn 3 6077 Neugraben - Buxtehude -->
+	  
+	  <rewrite zug="S 3 6077" simstart="Abstell ANR" simende="Gleis ABX.*" start="Hamburg-Neurgaben" ende="Buxtehude"/>
+	  
+	  <!-- S-Bahn 3 Stade Abstellung - Pinneberg -->
+	  
+	  <rewrite zug="S 3 6[0123][0123456789]6" simstart="Abstell AST" simende="Hamburg Hbf S" start="Stade" ende="Pinneberg">
+		  <via>Harburg-Rathaus</via>
+		  <via>Hauptbahnhof</via>
+		  <via>Altona</via>
+	  </rewrite>
+	  
+	  <!-- S-Bahn 3 Pinneberg Abstellung - Stade -->
+	  
+	  <rewrite zug="S 3 6[01][57890]3" simstart="Hamburg Hbf S" simende="Gleis AST.*" start="Pinneberg" ende="Stade">
+		  <via>Horneburg</via>
+		  <via>Dollern</via>
+		  <via>Agathenburg</via>
+	  </rewrite>
+	  
+	  <!-- S-Bahn 3 Pinneberg - Stade Abstellung -->
+	  
+	  <rewrite zug="S 3 64[57]3" simstart="Hamburg Hbf S" simende="Abstell AST" start="Pinneberg" ende="Stade">
+		  <via>Horneburg</via>
+		  <via>Dollern</via>
+		  <via>Agathenburg</via>
+	  </rewrite>
+	  
+      <!-- S-Bahn 3 Neugraben Abstellung - Pinneberg -->
+	  
+	  <rewrite zug="S 3 6[014][8901]2" simstart="Abstell ANR" simende="Hamburg Hbf S" start="Hamburg-Neurgaben" ende="Pinneberg">
+		  <via>Harburg-Rathaus</via>
+		  <via>Hauptbahnhof</via>
+		  <via>Altona</via>
+	  </rewrite>
+	  
+	  <!-- S-Bahn 3 Pinneberg - Neugraben Abstellung -->
+	  
+	  <rewrite zug="S 3 6[14][45]7" simstart="Hamburg Hbf S" simende="Abstell ANR" start="Pinneberg" ende="Hamburg-Neugraben"/>
+	  
+	  <!-- S-Bahn 31 Altona - Neugraben -->
+	  
+	  <rewrite zug="S 31 6[012345][0123456789][15]" simstart="Hamburg Hbf S" simende="Gleis ANR.*" start="Altona" ende="Hamburg-Neugraben"/>
+	  
+	  <!-- S-Bahn 31 Neugraben - Altona -->
+	  
+	  <rewrite zug="S 31 6[1245][0123456789][04]" simstart="Hamburg Hbf S" simende="Hamburg Hbf S" start="Hamburg-Neurgaben" ende="Pinneberg">
+		  <via>Harburg-Rathaus</via>
+		  <via>Hauptbahnhof</via>
+		  <via>Dammtor</via>
+	  </rewrite>
+	  
+	  <!-- S-Bahn 31 Altona - Neugraben Abstellung -->
+	  
+	  <rewrite zug="S 31 6[145][156][15]" simstart="Hamburg Hbf S" simende="Abstell ANR" start="Altona" ende="Hamburg-Neugraben"/>
+	  
+	  <!-- S-Bahn 31 Neugraben Abstellung - Altona -->
+	  
+	  <rewrite zug="S 31 6[134][01239][04]" simstart="Abstell ANR" simende="Hamburg Hbf S" start="Hamburg-Neurgaben" ende="Altona">
+		  <via>Harburg-Rathaus</via>
+		  <via>Hauptbahnhof</via>
+		  <via>Dammtor</via>
+	  </rewrite>
+	  
+	  <!-- EVB Bremervoerde - Buxtehude -->
+	  
+	  <rewrite zug="EVB 80[89][890][13579]" simstart="Harsefeld" simende="Gleis ABX.*" start="Bremerv&#246;rde" ende="Buxtehude"/>
+	  
+	  <!-- EVB Buxtehude - Bremervoerde -->
+	  
+	  <rewrite zug="EVB 80[89][890][02468]" simstart="Harsefeld" simende="Harsefeld" start="Buxtehude" ende="Bremerv&#246;rde">
+		  <via>Harsefeld</via>
+		  <via>Brest-Aspe</via>
+		  <via>Hesedorf</via>
+	  </rewrite>
+	  
+	  <!-- EVB Bargstedt - Buxtehude -->
+	  
+	  <rewrite zug="EVB 81123" simstart="Harsefeld" simende="Gleis ABX.*" start="Bargstedt" ende="Buxtehude"/>
+	  
+	  <!-- EVB Buxtehude - Bremervoerde/Kutenholz -->
+	  
+	  <rewrite zug="EVB 80882" simstart="Harsefeld" simende="Harsefeld" start="Buxtehude" ende="Bremerv&#246;rde/Kutenholz">
+		  <via>Harsefeld</via>
+		  <via>Kutenholz</via>
+		  <via>Hesedorf</via>
+	  </rewrite>
+	  
+	  <!-- EVB Kutenholz - Buxtehude -->
+	  
+	  <rewrite zug="EVB 81125" simstart="Harsefeld" simende="Gleis ABX.*" start="Kutenholz" ende="Buxtehude"/>
+	  
+	  <!-- EVB Buxtehude - Bremervoerde (lange Kreuzung in Harsefeld) -->
+	  
+	  <rewrite zug="EVB 81124" simstart="Harsefeld" simende="Harsefeld" start="Buxtehude" ende="Bremerv&#246;rde">
+		  <via>Harsefeld</via>
+		  <via>Brest-Aspe</via>
+		  <via>Hesedorf</via>
+	  </rewrite>
+	  
+	  <!-- EVB Moorexpress Bremervoerde - Stade -->
+	  
+	  <rewrite zug="EVB 81111" simstart="Fredenbeck" simende="Gleis Ott.*" start="Bremerv&#246;rde" ende="Stade"/>
+	  
+	  <!-- EVB Moorexpress Stade - Bremen Hbf -->
+	  
+	  <rewrite zug="EVB 8111[246]" simstart="Fredenbeck" simende="Fredenbeck" start="Stade" ende="Bremen Hbf">
+		  <via>Bremerv&#246;rde</via>
+		  <via>Osterholz-Scharmbeck</via>
+		  <via>Bremen-Burg</via>
+	  </rewrite>
+	  
+	  <!-- EVB Moorexpress Bremen Hbf - Stade -->
+	  
+	  <rewrite zug="EVB 8111[357]" simstart="Fredenbeck" simende="Gleis AST.*" start="Bremen Hbf" ende="Stade"/>
+	  
+	  <!-- EVB Moorexpress Stade - Bremervoerde -->
+	  
+	  <rewrite zug="EVB 81118" simstart="Fredenbeck" simende="Fredenbeck" start="Stade" ende="Bremerv&#246;rde">
+		  <via>Fredenbeck</via>
+		  <via>Hesedorf</via>
+	  </rewrite>
+	  
+	  <!-- ME Cuxhaven - Hamburg-Harburg -->
+	  
+	  <rewrite zug="ME 39400" simstart="Cuxhaven" simende="Harburg" start="Cuxhaven" ende="Hamburg-Harburg"/>
+	  
+	  <!-- ME Hamburg-Harburg - Cuxhaven -->
+	  
+	  <rewrite zug="ME 39405" simstart="Harburg" simende="Cuxhaven" start="Hamburg-Harburg" ende="Cuxhaven">
+		  <via>Himmelpforten</via>
+		  <via>Wingst</via>
+		  <via>Otterndorf</via>
+	  </rewrite>
+	  
+	  <!-- ME Bremervoerde - Cuxhaven -->
+	  
+	  <rewrite zug="ME 3940[13]" simstart="Fredenbeck" simende="Cuxhaven" start="Bremerv&#246;rde" ende="Cuxhaven">
+		  <via>Himmelpforten</via>
+		  <via>Wingst</via>
+		  <via>Otterndorf</via>
+	  </rewrite>
+	  
+	  <!-- ME Cuxhaven - Hamburg Hbf -->
+	  
+	  <rewrite zug="ME 394[0123][02468]" simstart="Cuxhaven" simende="Harburg" start="Cuxhaven" ende="Hamburg Hbf">
+		  <via>Hamburg-Harburg</via>
+	  </rewrite>
+	  
+	  <!-- ME Hamburg Hbf - Cuxhaven -->
+	  
+	  <rewrite zug="ME 394[0123][13579]" simstart="Harburg" simende="Cuxhaven" start="Hamburg Hbf" ende="Cuxhaven">
+		  <via>Himmelpforten</via>
+		  <via>Wingst</via>
+		  <via>Otterndorf</via>
+	  </rewrite>
+	  
+   </rewrites>
+   
+</zza>
