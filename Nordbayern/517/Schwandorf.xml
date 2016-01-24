@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+Version 1.0 von Florian Ellebrecht
+Bei Fehlern bitte eine PN an mich (floflo). Mit Zuggattung, Zugnummer, reguläres Gleis, Abfahrtszeit und am besten noch Name der Einfahrt und Ausfahrt des Zuges.
+Es kann vorkommen, dass einzelne Zugnummern in der Datei fehlen. Bitte an mich melden.
+Ebenso kann es vorkommen, dass bei manchen Zügen trotz soundreplace und/oder richiger Schreibweise totaler Schwachsinn gesprochen wrd.
+-->
+<zza>
+   <bahnhoefe>
+      <bahnhof name="Schwandorf" gleise="([1-4]|5a|5b)" ende="(Gleis .*|VBG|Bw|Stadt Schwandorf|Schwandorf)"></bahnhof>
+      <bahnhof name="Amberg" gleise="AM[1-3]" ende="(Gleis AM.*|Schnaittenbach|Amberg)"></bahnhof>
+   </bahnhoefe>
+   <soundreplaces>
+	<replace find="Hbf">Hauptbahnhof</replace>
+	<replace find="HB">Hauptbahnhof</replace>
+	<replace find="St\.">Sankt</replace>
+	<replace find="Neustadt">Neuschtadt</replace>
+	<replace find="/Praha hl\.n\."> mit Zugteil nach Prraha halavni nadrraschi. Der Zug wird hier geteilt. W&#228;hrend des Vorgangs bleiben die T&#252;ren verschlossen. Der vordere Zugteil f&#228;hrt weiter nach Hof Hauptbahnhof &#228;ber </replace>
+	<replace find="Praha hl\.n\.">Prraha halavni nadrraschi</replace>
+	<replace find="Plzen hl\.n\.">Pilsen halavni nadrraschi</replace>
+	<replace find="Horovice">Horschovieze</replace>
+	<replace find="ALX">Alex</replace>
+	<replace find="\(Oberpf\)"> in der Oberpfalz</replace>
+	<replace find="Gera Hbf"> Hof Hauptbahnhof und weiter nach Gera Hauptbahnhof</replace>
+	<replace find="-Haidhof"> Heidhof</replace>
+	<replace find="\(b Sulzb\)"> bei Sulzbach Rosenberg</replace>
+	<replace find="\(r Pegnitz\)"> rechts der Pegnitz</replace>
+	<replace find="\(l Pegnitz\)"> links der Pegnitz</replace>
+	<replace find="VBG">fau beh geh</replace>
+	<replace find="\(Waldnaab\)"> Waldnahb</replace>
+	<replace find="/Hof Hbf"> mit Zugteil nach Hof Hauptbahnhof &#252;ber Marktredewitz. Die Zugteilung erfolgt in Weiden. Der andere Zugteil f&#228;hrt weiter nach Neuschtadt Waldnahb &#228;ber </replace>
+   </soundreplaces>
+   <rewrites>
+	   
+	   <!-- ALX-Linie 71 Muenchen Hbf/Nuernberg Hbf - Schwandorf - Furth im Wald - Plzen hl.n. - Praha hl.n. -->
+	   
+	   <rewrite zug="ALX 35[46]" simstart="Cham" simende="Max&#252;tte" start="Praha hl.n." ende="M&#252;nchen Hbf">
+		   <via>Regensburg Hbf</via>
+		   <via>Landshut</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ALX 35[02]" simstart="Cham" simende="Neukirchen" start="Praha hl.n." ende="N&#252;rnberg Hbf">
+		   <via>Sulzbach-Rosenberg</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ALX 355" simstart="Maxh&#252;tte" simende="Cham" start="M&#252;nchen Hbf" ende="Praha hl.n.">
+		   <via>Furth im Wald</via>
+		   <via>Plzen hl.n.</via>
+		   <via>Horovice</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ALX 357" simstart="Maxh&#252;tte" simende="Cham" start="M&#252;nchen Hbf" ende="Praha hl.n.">
+		   <via>Furth im Wald</via>
+		   <via>Plzen hl.n.</via>
+		   <via>Horovice</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ALX 357" simstart="" simende="Cham" start="M&#252;nchen Hbf" ende="Praha hl.n.">
+		   <via>Furth im Wald</via>
+		   <via>Plzen hl.n.</via>
+		   <via>Horovice</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ALX 35[13]" simstart="Neukirchen" simende="Cham" start="N&#252;rnberg Hbf" ende="Praha hl.n.">
+		   <via>Furth im Wald</via>
+		   <via>Plzen hl.n.</via>
+		   <via>Horovice</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ALX 81971" simstart="Neukirchen" simende="VBG" start="N&#252;rnberg Hbf" ende="Schwandorf"/>
+	   
+	   <!-- ALX-Linie 73 Muenchen Hbf - Regensburg Hbf - Hof Hbf -->
+	   
+	   <rewrite zug="ALX 870[12]1" simstart="Weiden" simende="Maxh&#252;tte" start="Hof Hbf" ende="M&#252;nchen Hbf">
+		   <via>Regensburg Hbf</via>
+		   <via>Landshut</via>
+		   <via>Freising</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ALX 87014" simstart="Maxh&#252;tte" simende="Weiden" start="M&#252;nchen Hbf" ende="Hof Hbf/Praha hl.n.">
+		   <via>Weiden</via>
+		   <via>Marktredewitz</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ALX 87017" simstart="VBG" simende="Maxh&#252;tte" start="Schwandorf" ende="M&#252;nchen Hbf">
+		   <via>Regensburg Hbf</via>
+		   <via>Landshut</via>
+		   <via>Freising</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ALX 8701[06]" simstart="Maxh&#252;tte" simende="Weiden" start="M&#252;nchen Hbf" ende="Hof Hbf">
+		   <via>Weiden</via>
+		   <via>Marktredewitz</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ALX 8700[26]" simstart="Maxh&#252;tte" simende="Weiden" start="M&#252;nchen Hbf" ende="Hof Hbf">
+		   <via>Weiden</via>
+		   <via>Marktredewitz</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ALX 87008" simstart="Maxh&#252;tte" simende="VBG" start="M&#252;nchen Hbf" ende="Schwandorf"/>
+	   
+	   <rewrite zug="ALX 87003" simstart="VBG" simende="Maxh&#252;tte" start="Schwandorf" ende="M&#252;nchen Hbf">
+		   <via>Regensburg Hbf</via>
+		   <via>Landshut</via>
+		   <via>Freising</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ALX 8700[79]" simstart="Weiden" simende="Maxh&#252;tte" start="Hof Hbf" ende="M&#252;nchen Hbf">
+		   <via>Regensburg Hbf</via>
+		   <via>Landshut</via>
+		   <via>Freising</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ALX 87015" simstart="Weiden" simende="Maxh&#252;tte" start="Hof Hbf" ende="M&#252;nchen Hbf">
+		   <via>Regensburg Hbf</via>
+		   <via>Landshut</via>
+		   <via>Freising</via>
+	   </rewrite>
+	   
+	   <!-- RB-Linie 870 Amberg - Schwandorf -->
+	   
+	   <rewrite zug="RB 32005" simstart="Neukirchen" simende="Gleis .*" start="Amberg" ende="Schwandorf"/>
+	   
+	   <!-- RB-Linie 875 Furth im Wald - Schwandorf -->
+	   
+	   <rewrite zug="RB 3220[1379]" simstart="" simende="Cham" start="Schwandorf" ende="Furth im Wald">
+		   <via>Cham (Oberpf)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3220[1379]" simstart="Cham" simende="Cham" start="Schwandorf" ende="Furth im Wald">
+		   <via>Cham (Oberpf)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 32213" simstart="" simende="Cham" start="Schwandorf" ende="Furth im Wald">
+		   <via>Cham (Oberpf)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 32213" simstart="Cham" simende="Cham" start="Schwandorf" ende="Furth im Wald">
+		   <via>Cham (Oberpf)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3222[3579]" simstart="" simende="Cham" start="Schwandorf" ende="Furth im Wald">
+		   <via>Cham (Oberpf)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3222[3579]" simstart="Cham" simende="Cham" start="Schwandorf" ende="Furth im Wald">
+		   <via>Cham (Oberpf)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3223[79]" simstart="" simende="Cham" start="Schwandorf" ende="Furth im Wald">
+		   <via>Cham (Oberpf)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3223[79]" simstart="Cham" simende="Cham" start="Schwandorf" ende="Furth im Wald">
+		   <via>Cham (Oberpf)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 32241" simstart="" simende="Cham" start="Schwandorf" ende="Furth im Wald">
+		   <via>Cham (Oberpf)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 32241" simstart="Cham" simende="Cham" start="Schwandorf" ende="Furth im Wald">
+		   <via>Cham (Oberpf)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 32211" simstart="Bw" simende="Cham" start="Schwandorf" ende="Furth im Wald">
+		   <via>Cham (Oberpf)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3220[048]" simstart="Cham" simende="Gleis .*" start="Furth im Wald" ende="Schwandorf"/>
+	   
+	   <rewrite zug="RB 3221[48]" simstart="Cham" simende="Gleis .*" start="Furth im Wald" ende="Schwandorf"/>
+	   
+	   <rewrite zug="RB 3222[048]" simstart="Cham" simende="Gleis .*" start="Furth im Wald" ende="Schwandorf"/>
+	   
+	   <rewrite zug="RB 3223[068]" simstart="Cham" simende="Gleis .*" start="Furth im Wald" ende="Schwandorf"/>
+	   
+	   <rewrite zug="RB 32240" simstart="Cham" simende="Gleis .*" start="Furth im Wald" ende="Schwandorf"/>
+	   
+	   <rewrite zug="RB 322[13]2" simstart="Cham" simende="Bw" start="Furth im Wald" ende="Schwandorf"/>
+	   
+	   <!-- RE-Linie 855 Regensburg Hbf - Weiden - Hof Hbf -->
+	   
+	   <rewrite zug="RE 369[024]" simstart="Maxh&#252;tte" simende="Weiden" start="Regensburg Hbf" ende="Gera Hbf">
+		   <via>Weiden</via>
+		   <via>Hof Hbf</via>
+		   <via>Weida</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3696" simstart="Maxh&#252;tte" simende="Weiden" start="Regensburg Hbf" ende="Hof Hbf">
+		   <via>Weiden</via>
+		   <via>Marktredewitz</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3206[48]" simstart="Maxh&#252;tte" simende="Weiden" start="Regensburg Hbf" ende="Marktredewitz">
+		   <via>Weiden</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 369[1357]" simstart="Weiden" simende="Maxh&#252;tte" start="Hof Hbf" ende="Regensburg Hbf">
+		   <via>Maxh&#252;tte-Haidhof</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3569" simstart="" simende="Maxh&#252;tte" start="Schwandorf" ende="Regensburg Hbf">
+		   <via>Maxh&#252;tte-Haidhof</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3569" simstart="Weiden" simende="Maxh&#252;tte" start="Schwandorf" ende="Regensburg Hbf">
+		   <via>Maxh&#252;tte-Haidhof</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3699" simstart="Weiden" simende="Maxh&#252;tte" start="Weiden" ende="Regensburg Hbf">
+		   <via>Maxh&#252;tte-Haidhof</via>
+	   </rewrite>
+	   
+	   <!-- RE-Linie 875 Furth im Wald - Schwandorf - Nuernberg Hbf -->
+	   
+	   <rewrite zug="RE 3545" simstart="Neukirchen" simende="Cham" start="N&#252;rnberg Hbf" ende="Furth im Wald">
+		   <via>Cham (Oberpf)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 35[45]4" simstart="Cham" simende="Neukirchen" start="Furth im Wald" ende="N&#252;rnberg Hbf">
+		   <via>Neukirchen (b Sulzb)</via>
+		   <via>Hersbruck (r Pegnitz)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3589" simstart="Neukirchen" simende="Cham" start="N&#252;rnberg Hbf" ende="Furth im Wald">
+		   <via>Cham (Oberpf)</via>
+	   </rewrite>
+	   
+	   <!-- RE-Linie 870 Regensburg - Schwandorf - Nuernberg Hbf -->
+	   
+	   <rewrite zug="RE 354[28]" simstart="Maxh&#252;tte" simende="Neukirchen" start="Regensburg Hbf" ende="N&#252;rnberg Hbf">
+		   <via>Neukirchen (b Sulzb)</via>
+		   <via>Hersbruck (r Pegnitz)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 355[08]" simstart="Maxh&#252;tte" simende="Neukirchen" start="Regensburg Hbf" ende="N&#252;rnberg Hbf">
+		   <via>Neukirchen (b Sulzb)</via>
+		   <via>Hersbruck (r Pegnitz)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3566" simstart="Maxh&#252;tte" simende="Neukirchen" start="Regensburg Hbf" ende="N&#252;rnberg Hbf">
+		   <via>Neukirchen (b Sulzb)</via>
+		   <via>Hersbruck (r Pegnitz)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 357[04]" simstart="Maxh&#252;tte" simende="Neukirchen" start="Regensburg Hbf" ende="N&#252;rnberg Hbf">
+		   <via>Neukirchen (b Sulzb)</via>
+		   <via>Hersbruck (r Pegnitz)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 35996" simstart="Bw" simende="Neukirchen" start="Schwandorf" ende="N&#252;rnberg Hbf">
+		   <via>Neukirchen (b Sulzb)</via>
+		   <via>Hersbruck (l Pegnitz)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 358[37]" simstart="Neukirchen" simende="Maxh&#252;tte" start="N&#252;rnberg Hbf" ende="Regensburg Hbf">
+		   <via>Maxh&#252;tte-Haidhof</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3593" simstart="Neukirchen" simende="Maxh&#252;tte" start="N&#252;rnberg Hbf" ende="Regensburg Hbf">
+		   <via>Maxh&#252;tte-Haidhof</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3563" simstart="Neukirchen" simende="Maxh&#252;tte" start="N&#252;rnberg Hbf" ende="Regensburg Hbf">
+		   <via>Maxh&#252;tte-Haidhof</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 354[37]" simstart="Neukirchen" simende="Gleis .*" start="N&#252;rnberg Hbf" ende="Schwandorf"/>
+	   
+	   <rewrite zug="RE 355[1359]" simstart="Neukirchen" simende="Gleis .*" start="N&#252;rnberg Hbf" ende="Schwandorf"/>
+	   
+	   <rewrite zug="RE 3567" simstart="Neukirchen" simende="Gleis .*" start="N&#252;rnberg Hbf" ende="Schwandorf"/>
+	   
+	   <rewrite zug="RE 359[1579]" simstart="Neukirchen" simende="Gleis .*" start="N&#252;rnberg Hbf" ende="Schwandorf"/>
+	   
+	   <rewrite zug="RE 3565" simstart="Neukirchen" simende="Gleis AM.*" start="N&#252;rnberg Hbf" ende="Amberg"/>
+	   
+	   <rewrite zug="RE 3561" simstart="Neukirchen" simende="Bw" start="N&#252;rnberg Hbf" ende="Schwandorf"/>
+	   
+	   <rewrite zug="RE 3586" simstart="Neukirchen" simende="Neukirchen" start="Amberg" ende="N&#252;rnberg Hbf"/>
+	   
+	   <rewrite zug="RE 3586" simstart="" simende="Neukirchen" start="Amberg" ende="N&#252;rnberg Hbf"/>
+	   
+	   <rewrite zug="RE 3540" simstart="" simende="Neukirchen" start="Schwandorf" ende="N&#252;rnberg Hbf">
+		   <via>Neukirchen (b Sulzb)</via>
+		   <via>Hersbruck (l Pegnitz)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3540" simstart="Neukirchen" simende="Neukirchen" start="Schwandorf" ende="N&#252;rnberg Hbf">
+		   <via>Neukirchen (b Sulzb)</via>
+		   <via>Hersbruck (l Pegnitz)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 355[26]" simstart="(Neukirchen|Bw)" simende="Neukirchen" start="Schwandorf" ende="N&#252;rnberg Hbf">
+		   <via>Neukirchen (b Sulzb)</via>
+		   <via>Hersbruck (l Pegnitz)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 35[67]2" simstart="(Neukirchen|Bw)" simende="Neukirchen" start="Schwandorf" ende="N&#252;rnberg Hbf">
+		   <via>Neukirchen (b Sulzb)</via>
+		   <via>Hersbruck (l Pegnitz)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 355[26]" simstart="" simende="Neukirchen" start="Schwandorf" ende="N&#252;rnberg Hbf">
+		   <via>Neukirchen (b Sulzb)</via>
+		   <via>Hersbruck (l Pegnitz)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 35[67]2" simstart="" simende="Neukirchen" start="Schwandorf" ende="N&#252;rnberg Hbf">
+		   <via>Neukirchen (b Sulzb)</via>
+		   <via>Hersbruck (l Pegnitz)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 356[48]" simstart="" simende="Neukirchen" start="Schwandorf" ende="N&#252;rnberg Hbf">
+		   <via>Neukirchen (b Sulzb)</via>
+		   <via>Hersbruck (l Pegnitz)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 356[048]" simstart="Neukirchen" simende="Neukirchen" start="Schwandorf" ende="N&#252;rnberg Hbf">
+		   <via>Neukirchen (b Sulzb)</via>
+		   <via>Hersbruck (l Pegnitz)</via>
+	   </rewrite>
+	   
+	   <!-- Vogtlandbahn KBS 855 Hof - Schwandorf - Regensburg -->
+	   
+	   <rewrite zug="VBG 8191[15]" simstart="Weiden" simende="Maxh&#252;tte" start="Hof Hbf" ende="Regensburg Hbf">
+		   <via>Maxh&#252;tte-Haidhof</via>
+	   </rewrite>
+	   
+	   <rewrite zug="VBG 8192[37]" simstart="Weiden" simende="Maxh&#252;tte" start="Hof Hbf" ende="Regensburg Hbf">
+		   <via>Maxh&#252;tte-Haidhof</via>
+	   </rewrite>
+	   
+	   <rewrite zug="VBG 81907" simstart="Weiden" simende="Maxh&#252;tte" start="Hof Hbf" ende="Regensburg Hbf">
+		   <via>Maxh&#252;tte-Haidhof</via>
+	   </rewrite>
+	   
+	   <rewrite zug="VBG 8193[15]" simstart="Weiden" simende="Maxh&#252;tte" start="Hof Hbf" ende="Regensburg Hbf">
+		   <via>Maxh&#252;tte-Haidhof</via>
+	   </rewrite>
+	   
+	   <rewrite zug="VBG 819[13][37]" simstart="Weiden" simende="Gleis .*" start="Hof Hbf" ende="Schwandorf"/>
+	   
+	   <rewrite zug="VBG 8192[159]" simstart="Weiden" simende="Gleis .*" start="Hof Hbf" ende="Schwandorf"/>
+	   
+	   <rewrite zug="VBG 81903" simstart="Weiden" simende="Gleis .*" start="Weiden" ende="Schwandorf"/>
+	   
+	   <rewrite zug="VBG 81905" simstart="Weiden" simende="Gleis .*" start="Hof Hbf" ende="Schwandorf"/>
+	   
+	   <rewrite zug="VBG 81909" simstart="Weiden" simende="Gleis .*" start="Neustadt(Waldnaab)" ende="Schwandorf"/>
+	   
+	   <rewrite zug="VBG 81912" simstart="Maxh&#252;tte" simende="Weiden" start="Regensburg Hbf" ende="Hof Hbf">
+		   <via>Weiden</via>
+		   <via>Marktredewitz</via>
+	   </rewrite>
+	   
+	   <rewrite zug="VBG 8192[048]" simstart="Maxh&#252;tte" simende="Weiden" start="Regensburg Hbf" ende="Hof Hbf">
+		   <via>Weiden</via>
+		   <via>Marktredewitz</via>
+	   </rewrite>
+	   
+	   <rewrite zug="VBG 8193[26]" simstart="Maxh&#252;tte" simende="Weiden" start="Regensburg Hbf" ende="Hof Hbf">
+		   <via>Weiden</via>
+		   <via>Marktredewitz</via>
+	   </rewrite>
+	   
+	   <rewrite zug="VBG 8195[15]" simstart="Weiden" simende="Maxh&#252;tte" start="Weiden" ende="Regensburg Hbf">
+		   <via>Maxh&#252;tte-Haidhof</via>
+	   </rewrite>
+	   
+	   <rewrite zug="VBG 81957" simstart="Weiden" simende="Maxh&#252;tte" start="Neustadt(Waldnaab)" ende="Regensburg Hbf">
+		   <via>Maxh&#252;tte-Haidhof</via>
+	   </rewrite>
+	   
+	   <rewrite zug="VBG 8190[24]" simstart="(Bw|Weiden)" simende="Weiden" start="Schwandorf" ende="Hof Hbf">
+		   <via>Weiden</via>
+		   <via>Marktredewitz</via>
+	   </rewrite>
+	   
+	   <rewrite zug="VBG 81918" simstart="(Bw|Weiden)" simende="Weiden" start="Schwandorf" ende="Hof Hbf">
+		   <via>Weiden</via>
+		   <via>Marktredewitz</via>
+	   </rewrite>
+	   
+	   <rewrite zug="VBG 8190[24]" simstart="" simende="Weiden" start="Schwandorf" ende="Hof Hbf">
+		   <via>Weiden</via>
+		   <via>Marktredewitz</via>
+	   </rewrite>
+	   
+	   <rewrite zug="VBG 81918" simstart="" simende="Weiden" start="Schwandorf" ende="Hof Hbf">
+		   <via>Weiden</via>
+		   <via>Marktredewitz</via>
+	   </rewrite>
+	   
+	   <rewrite zug="VBG 81916" simstart="Maxh&#252;tte" simende="Weiden" start="Regensburg Hbf" ende="Weiden"/>
+	   
+	   <rewrite zug="VBG 81950" simstart="Maxh&#252;tte" simende="Weiden" start="Regensburg Hbf" ende="Weiden"/>
+	   
+	   <rewrite zug="VBG 81956" simstart="Maxh&#252;tte" simende="Weiden" start="Regensburg Hbf" ende="Neustadt(Waldnaab)/Hof Hbf">
+		   <via>Weiden</via>
+	   </rewrite>
+	   
+	   <rewrite zug="VBG 81908" simstart="Maxh&#252;tte" simende="Weiden" start="Regensburg Hbf" ende="Hof Hbf">
+		   <via>Weiden</via>
+		   <via>Marktredewitz</via>
+	   </rewrite>
+	   
+	   <rewrite zug="VBG 8191[04]" simstart="Weiden" simende="Weiden" start="Schwandorf" ende="Hof Hbf">
+		   <via>Weiden</via>
+		   <via>Marktredewitz</via>
+	   </rewrite>
+	   
+	   <rewrite zug="VBG 8192[26]" simstart="Weiden" simende="Weiden" start="Schwandorf" ende="Hof Hbf">
+		   <via>Weiden</via>
+		   <via>Marktredewitz</via>
+	   </rewrite>
+	   
+	   <rewrite zug="VBG 8193[04]" simstart="Weiden" simende="Weiden" start="Schwandorf" ende="Hof Hbf">
+		   <via>Weiden</via>
+		   <via>Marktredewitz</via>
+	   </rewrite>
+	   
+	   <rewrite zug="VBG 8191[04]" simstart="" simende="Weiden" start="Schwandorf" ende="Hof Hbf">
+		   <via>Weiden</via>
+		   <via>Marktredewitz</via>
+	   </rewrite>
+	   
+	   <rewrite zug="VBG 8192[26]" simstart="" simende="Weiden" start="Schwandorf" ende="Hof Hbf">
+		   <via>Weiden</via>
+		   <via>Marktredewitz</via>
+	   </rewrite>
+	   
+	   <rewrite zug="VBG 8193[04]" simstart="" simende="Weiden" start="Schwandorf" ende="Hof Hbf">
+		   <via>Weiden</via>
+		   <via>Marktredewitz</via>
+	   </rewrite>
+	   
+   </rewrites>
+</zza>
