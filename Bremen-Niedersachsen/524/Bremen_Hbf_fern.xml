@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!--
+Version 1.0 von Florian Ellebrecht
+Beinhaltet den Regional- und Fernverkehr.
+Bei Fehlern bitte eine PN an mich (floflo).
+Es kann vorkommen, dass einzelne Zugnummern in der Datei fehlen.
+Ebenso kann es vorkommen, dass bei manchen Zügen trotz soundreplace und/oder richiger Schreibweise totaler Schwachsinn gesprochen wrd.
+-->
+
+<zza>
+   <bahnhoefe>
+      <bahnhof name="Bremen Hbf" gleise="(1|2|2N|2S|3|[5-9]|1[0])" ende="(Gleis .*|231-237|Wagenhalle|Bremen Hbf)"></bahnhof>
+   </bahnhoefe>
+
+   <soundreplaces>
+      	  <replace find="Hbf">Hauptbahnhof</replace>
+	  <replace find="HB">Hauptbahnhof</replace>
+	  <replace find="MEr">emm ee err</replace>
+	  <replace find="Bramsche">Brahmsche</replace>
+	  <replace find="Barrien">Bahrien</replace>
+	  <replace find="Kirchweyhe">Kirchweie</replace>
+	  <replace find="Tostedt">Toschteht</replace>
+	  <replace find="Vechta">Fechta</replace>
+	  <replace find="Wilhelmshaven">Wilhelmshafen</replace>
+	  <replace find="\(Oldb\)">Oldenburg</replace>
+	  <replace find="\(Aller\)">Aller</replace>
+	  <replace find="St\.">Sankt</replace>
+	  <replace find="Verden">Ferden</replace>
+	  <replace find="Vegesack">Fegesack</replace>
+	  <replace find="2N">2 Nord</replace>
+	  <replace find="2S">2 S&#252;d</replace>
+	  <replace find="\(W&#252;mme\)">W&#252;mme</replace>
+	  <replace find="Bremerhaven">Bremerhafen</replace>
+	  <replace find="Bremerv&#246;rde">Bremerf&#246;rde</replace>
+	  <replace find="Nordenham">Nordenhamm</replace>
+	  <replace find="Brake">Braake</replace>
+	  <replace find="Uelzen">&#246;lzen</replace>
+	  <replace find="Stralsund">Schtralsunt</replace>
+	  <replace find="DPE">dee-pee-ee</replace>
+	  <replace find="CNL">zeh-enn-ell</replace>
+	  <replace find="Stuttgart">Schtuttgart</replace>
+	  <replace find="\(Sylt\)">Sylt</replace>
+	  <replace find="Frankfurt\(M\)">Frankfurt am Main</replace>
+	  <replace find="\(Holst\)">Holstein</replace>
+	  <replace find="Hannover">Haanofer</replace>
+	  <replace find="\(Saale\)">Saale</replace>
+	  <replace find="\(Ostfriesl\)">Ostfriesland</replace>
+	  <replace find="Lunestedt">Luneschtedt</replace>
+	  <replace find="Twistringen">Twist-rin-gen</replace>
+	  <replace find="Syke">Sieke</replace>
+	  <replace find="Varel">Faarel</replace>
+	  <replace find="Bremen-Neustadt">Bremen-Neuschtadt</replace>
+	  <replace find="\(Brsg\)">Breisgau</replace>
+	  <replace find="\(Flghf\)">Flughafen</replace>
+   </soundreplaces>
+   
+   <rewrites>
+	   
+	   <!-- Regionalbahn Twistringen - Rotenburg (Wuemme) / Diepholz -->
+	   
+	   <rewrite zug="RB 24703" simstart="Kirchweyhe" simende="Rotenburg" start="Diepholz" ende="Rotenburg (W&#252;mme)">
+		   <via>Bremen-Oberneuland</via>
+		   <via>Sagehorn</via>
+		   <via>Sottrum</via>
+	   </rewrite>
+	   
+      <rewrite zug="RB 247[0-4][13579]" simstart="Kirchweyhe" simende="Rotenburg" start="Twistringen" ende="Rotenburg (W&#252;mme)">
+		  <via>Bremen-Oberneuland</via>
+		  <via>Sagehorn</via>
+		  <via>Sottrum</via>
+	  </rewrite>
+	  
+	  <rewrite zug="RB 24[47][012347][02468]" simstart="Rotenburg" simende="Kirchweyhe" start="Rotenburg (W&#252;mme)" ende="Twistringen">
+		  <via>Kirchweyhe</via>
+		  <via>Barrien</via>
+		  <via>Syke</via>
+	  </rewrite>
+	  
+	  <!-- Regionalbahn Bremen Hbf - Rotenburg (Wuemme) -->
+	  
+	  <rewrite zug="RB 24[47][178][13]" simstart="Wagenhalle" simende="Rotenburg" start="Bremen Hbf" ende="Rotenburg (W&#252;mme)">
+		  <via>Bremen-Oberneuland</via>
+		  <via>Sagehorn</via>
+		  <via>Sottrum</via>
+	  </rewrite>
+	  
+	  <rewrite zug="RB 24[47][0178][0264]" simstart="Rotenburg" simende="(Wagenhalle||Gleis .*)" start="Rotenburg (W&#252;mme)" ende="Bremen Hbf"/>
+	  
+	  <!-- Metronom Bremen Hbf - Hamburg Hbf -->
+	  
+	  <rewrite zug="ME 811[4-7][13579]" simstart="231-237" simende="Rotenburg" start="Bremen Hbf" ende="Hamburg Hbf">
+		  <via>Rotenburg (W&#252;mme)</via>
+		  <via>Tostedt</via>
+		  <via>Hamburg-Harburg</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ME 811[4-7][24680]" simstart="Rotenburg" simende="231-237" start="Hamburg Hbf" ende="Bremen Hbf"/>
+	  
+	  <rewrite zug="MEr 36653" simstart="231-237" simende="Rotenburg" start="Bremen Hbf" ende="Hamburg Hbf">
+		  <via>Rotenburg (W&#252;mme)</via>
+		  <via>Tostedt</via>
+		  <via>Hamburg-Harburg</via>
+	  </rewrite>
+	  
+      <!-- Metronom Bremen Hbf - Hamburg-Altona -->
+	  
+	  <rewrite zug="ME 8114[357]" simstart="231-237" simende="Rotenburg" start="Bremen Hbf" ende="Hamburg-Altona">
+		  <via>Rotenburg (W&#252;mme)</via>
+		  <via>Tostedt</via>
+		  <via>Hamburg Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ME 811[468]{2}" simstart="Rotenburg" simende="231-237" start="Hamburg-Altona" ende="Bremen Hbf"/>
+	  
+	  <!-- Nordwestbahn Bremen Hbf - Osnabrueck -->
+	  
+	  <rewrite zug="NWB 813[5-8][24680]" simstart="Delmenhorst" simende="Delmenhorst" start="Bremen Hbf" ende="Osnabr&#252;ck Hbf">
+		  <via>Delmenhorst</via>
+		  <via>Vechta</via>
+		  <via>Bramsche</via>
+	  </rewrite>
+	  
+	  <rewrite zug="NWB 813[5-8][13579]" simstart="Delmenhorst" simende="Gleis .*" start="Osnabr&#252;ck Hbf" ende="Bremen Hbf"/>
+	  
+	  <!-- Nordwestbahn Bremen Hbf - Wilhelmshaven Hbf -->
+	  
+	  <rewrite zug="NWB 8129[135]" simstart="Delmenhorst" simende="Delmenhorst" start="Bremen Hbf" ende="Wilhelmshaven Hbf">
+		  <via>Delmenhorst</via>
+		  <via>Oldenburg (Oldb)</via>
+		  <via>Varel (Oldb)</via>
+	  </rewrite>
+	  
+	  <rewrite zug="NWB 8129[024]" simstart="Delmenhorst" simende="Gleis .*" start="Wilhelmshaven Hbf" ende="Bremen Hbf"/>
+	  
+	  <!-- Regionalbahn Bremen-Vegesack - Verden (Aller) -->
+	  
+	  <rewrite zug="RB 245[0-6][13579]" simstart="Burg P" simende="Verden" start="Bremen-Vegesack" ende="Verden (Aller)">
+		  <via>Bremen-Mahndorf</via>
+		  <via>Achim</via>
+		  <via>Langwedel</via>
+	  </rewrite>
+	  
+	  <rewrite zug="RB 245[0-6][02468]" simstart="Verden" simende="Burg P" start="Verden (Aller)" ende="Bremen-Vegesack">
+		  <via>Bremen-Burg</via>
+		  <via>Bremen-St. Magnus</via>
+	  </rewrite>
+	  
+	  <!-- Regionalbahn Bremen-Vegesack - Bremen Hbf -->
+	  
+	  <rewrite zug="RB 2451[59]" simstart="Burg P" simende="Gleis .*" start="Bremen-Vegesack" ende="Bremen Hbf"/>
+	  
+	  <rewrite zug="RB 2452[37]" simstart="Burg P" simende="Gleis .*" start="Bremen-Vegesack" ende="Bremen Hbf"/>
+	  
+	  <rewrite zug="RB 245[56][19]" simstart="Burg P" simende="Gleis .*" start="Bremen-Vegesack" ende="Bremen Hbf"/>
+	  
+	  <rewrite zug="RB 2457[59]" simstart="Burg P" simende="231-237" start="Bremen-Vegesack" ende="Bremen Hbf"/>
+	  
+	  <rewrite zug="RB 245[23][02468]" simstart="Burg P" simende="Burg P" start="Bremen Hbf" ende="Bremen-Vegesack">
+		  <via>Bremen-Burg</via>
+		  <via>Bremen-St. Magnus</via>
+	  </rewrite>
+	  
+	  <rewrite zug="RB 24595" simstart="Burg P" simende="Burg P" start="Bremen Hbf" ende="Bremen-Vegesack">
+		  <via>Bremen-Burg</via>
+		  <via>Bremen-St. Magnus</via>
+	  </rewrite>
+	  
+	  <!-- Regionalbahn Bremerhaven-Lehe - Bremen Hbf -->
+	  
+	  <rewrite zug="RB 240[0-3][02468]" simstart="Burg P" simende="Burg P" start="Bremen Hbf" ende="Bremerhaven-Lehe">
+		  <via>Bremen-Burg</via>
+		  <via>Osterholz-Scharmbeck</via>
+		  <via>Lunestedt</via>
+	  </rewrite>
+	  
+	  <rewrite zug="RB 240[0-3][13579]" simstart="Burg P" simende="Gleis .*" start="Bremerhaven-Lehe" ende="Bremen Hbf"/>
+	  
+	  <rewrite zug="RB 2406[02]" simstart="Wagenhalle" simende="Burg P" start="Bremen Hbf" ende="Bremerhaven-Lehe">
+		  <via>Bremen-Burg</via>
+		  <via>Osterholz-Scharmbeck</via>
+		  <via>Lunestedt</via>
+	  </rewrite>
+	  
+	  <rewrite zug="RB 2405[357]" simstart="Burg P" simende="Wagenhalle" start="Bremerhaven-Lehe" ende="Bremen Hbf"/>
+	  
+	  <!-- Regionalbahn Oldenburg - Bremen Hbf -->
+	  
+	  <rewrite zug="RB 14802" simstart="231-237" simende="Delmenhorst" start="Bremen Hbf" ende="Oldenburg (Oldb)">
+		  <via>Heidkrug</via>
+		  <via>Delmenhorst</via>
+		  <via>Hude</via>
+	  </rewrite>
+	  
+	  <rewrite zug="RB 148[0-4][13579]" simstart="Delmenhorst" simende="Gleis .*" start="Oldenburg (Oldb)" ende="Bremen Hbf"/>
+	  
+	  <rewrite zug="RB 148[0-4][02468]" simstart="Delmenhorst" simende="Delmenhorst" start="Bremen Hbf" ende="Oldenburg (Oldb)">
+		  <via>Heidkrug</via>
+		  <via>Delmenhorst</via>
+		  <via>Hude</via>
+	  </rewrite>
+	  
+	  <rewrite zug="RB 14805" simstart="Delmenhorst" simende="Gleis .*" start="Oldenburg (Oldb)" ende="Bremen Hbf"/>
+	  
+	  <rewrite zug="RB 14851" simstart="Delmenhorst" simende="Delmenhorst" start="Bremen Hbf" ende="Oldenburg (Oldb)">
+		  <via>Heidkrug</via>
+		  <via>Delmenhorst</via>
+		  <via>Hude</via>
+	  </rewrite>
+	  
+	  <!-- Moorexpress Bremervoerde - Bremen Hbf -->
+	  
+	  <rewrite zug="EVB 81110" simstart="Burg P" simende="Gleis .*" start="Bremerv&#246;rde" ende="Bremen Hbf"/>
+	  
+	  <rewrite zug="EVB 81119" simstart="Burg P" simende="Burg P" start="Bremen Hbf" ende="Bremerv&#246;rde">
+		  <via>Bremen-Burg</via>
+		  <via>Ritterhude</via>
+		  <via>Osterholz-Scharmbeck</via>
+	  </rewrite>
+	  
+	  <!-- Moorexpress Stade - Bremen Hbf -->
+	  
+	  <rewrite zug="EVB 8111[246]" simstart="Burg P" simende="Gleis .*" start="Stade" ende="Bremen Hbf"/>
+	  
+	  <rewrite zug="EVB 8111[357]" simstart="Burg P" simende="Burg P" start="Bremen Hbf" ende="Stade">
+		 <via>Osterholz-Scharmbeck</via>
+		 <via>Bremerv&#246;rde</via>
+		 <via>Fredenbeck</via>
+	  </rewrite>
+	  
+      <!-- Regionalexpress Norddeich Mole - Hannover Hbf -->
+	  
+	  <rewrite zug="RE 44[0-3][13579]" simstart="Delmenhorst" simende="Verden" start="Norddeich Mole" ende="Hannover Hbf">
+		  <via>Achim</via>
+		  <via>Verden (Aller)</via>
+		  <via>Nienburg</via>
+	  </rewrite>
+	  
+	  <rewrite zug="RE 44[0-3][02468]" simstart="Verden" simende="Delmenhorst" start="Hannover Hbf" ende="Norddeich Mole">
+		  <via>Oldenburg (Oldb)</via>
+		  <via>Leer (Ostfriesl)</via>
+		  <via>Emden Hbf</via>
+	  </rewrite>
+	  
+	  <!-- Regionalexpress Bremen Hbf - Hannover Hbf -->
+	  
+	  <rewrite zug="RE 44[0-3][02468]" simstart="Verden" simende="Gleis .*" start="Hannover Hbf" ende="Bremen Hbf"/>
+	  
+	  <rewrite zug="RE 44[0-3][13579]" simstart="Verden" simende="Verden" start="Bremen Hbf" ende="Hannover Hbf">
+		  <via>Achim</via>
+		  <via>Verden (Aller)</via>
+		  <via>Nienburg</via>
+	  </rewrite>
+	  
+	  <rewrite zug="RE 44[0-3][13579]" simstart="" simende="Verden" start="Bremen Hbf" ende="Hannover Hbf">
+		  <via>Achim</via>
+		  <via>Verden (Aller)</via>
+		  <via>Nienburg</via>
+	  </rewrite>
+	  
+	  <!-- Regionalexpress Bremen Hbf - Oldenburg -->
+	  
+	  <rewrite zug="RE 14[05][49][135]" simstart="Delmenhorst" simende="(231-237||Gleis .*)" start="Oldenburg (Oldb)" ende="Bremen Hbf"/>
+	  
+	  <rewrite zug="RE 1409[02]" simstart="(231-237||Delmenhorst)" simende="Delmenhorst" start="Bremen Hbf" ende="Oldenburg (Oldb)">
+		  <via>Bremen-Neustadt</via>
+		  <via>Delmenhorst</via>
+		  <via>Hude</via>
+	  </rewrite>
+	  
+	  <rewrite zug="RE 14080" simstart="Verden" simende="Delmenhorst" start="Nienburg" ende="Norddeich Mole">
+		  <via>Oldenburg (Oldb)</via>
+		  <via>Leer (Ostfriesl)</via>
+		  <via>Emden Hbf</via>
+	  </rewrite>
+	  
+	  <!-- Regionalexpress Bremerhaven-Lehe - Osnabrueck -->
+	  
+	  <rewrite zug="RE 44[5-9][13579]" simstart="Burg P" simende="Kirchweyhe" start="Bremerhaven-Lehe" ende="Osnabr&#252;ck Hbf">
+		  <via>Syke</via>
+		  <via>Twistringen</via>
+		  <via>Diepholz</via>
+	  </rewrite>
+	  
+	  <rewrite zug="RE 44[5-8][02468]" simstart="Kirchweyhe" simende="Burg P" start="Osnabr&#252;ck Hbf" ende="Bremerhaven-Lehe">
+		  <via>Osterholz-Scharmbeck</via>
+	  </rewrite>
+	  
+	  <!-- Regionalexpress Bremen Hbf - Osnabrueck -->
+	  
+	  <rewrite zug="RE 44[5-7][1379]" simstart="(Kirchweyhe||Rotenburg)" simende="Kirchweyhe" start="Bremen Hbf" ende="Osnabr&#252;ck Hbf">
+		  <via>Syke</via>
+		  <via>Twistringen</via>
+		  <via>Diepholz</via>
+	  </rewrite>
+	  
+	  <rewrite zug="RE 44[567][046]" simstart="Kirchweyhe" simende="Gleis .*" start="Osnabr&#252;ck Hbf" ende="Bremen Hbf"/>
+	  
+	  <!-- Regionalexpress Bremen Hbf - Nordenham -->
+	  
+	  <rewrite zug="RE 146[6-9][02468]" simstart="Delmenhorst" simende="Delmenhorst" start="Bremen Hbf" ende="Nordenham">
+		  <via>Delmenhorst</via>
+		  <via>Hude</via>
+		  <via>Brake</via>
+	  </rewrite>
+	  
+	  <rewrite zug="RE 146[6-9][13579]" simstart="Delmenhorst" simende="Gleis .*" start="Nordenham" ende="Bremen Hbf"/>
+	  
+	  <!-- Regionalbahn Bremen Hbf - Uelzen -->
+	  
+	  <rewrite zug="RB 246[4-6][02468]" simstart="Verden" simende="Wagenhalle" start="Uelzen" ende="Bremen Hbf"/>
+	  
+	  <rewrite zug="RB 24634" simstart="Verden" simende="231-237" start="Soltau" ende="Bremen Hbf"/>
+	  
+	  <rewrite zug="RB 246[4-7][13579]" simstart="(Wagenhalle|231-237)" simende="Verden" start="Bremen Hbf" ende="Uelzen">
+		  <via>Langwedel</via>
+		  <via>Soltau</via>
+		  <via>Munster</via>
+	  </rewrite>
+	  
+	  <rewrite zug="RB 24649" simstart="231-237" simende="Verden" start="Bremen Hbf" ende="Soltau">
+		  <via>Achim</via>
+		  <via>Langwedel</via>
+	  </rewrite>
+	  
+	  <!-- CNL Muenchen-Ost - Hamburg-Altona -->
+	  
+	  <rewrite zug="CNL 1286" simstart="Verden" simende="Rotenburg" start="M&#252;nchen-Ost" ende="Hamburg-Altona">
+		  <via>Hamburg Hbf</via>
+	  </rewrite>
+	  
+	  <!-- DPE-Sonderzug Bremen Hbf - Bad Harzburg -->
+	  
+	  <rewrite zug="DPE 92819" simstart="231-237" simende="Verden" start="Bremen Hbf" ende="Bad Harzburg">
+		  <via>Hannover Hbf</via>
+		  <via>Hildesheim</via>
+		  <via>Goslar</via>
+	  </rewrite>
+	  
+	  <rewrite zug="DPE 92818" simstart="Verden" simende="231-237" start="Bad Harzburg" ende="Bremen Hbf"/>
+	  
+	  <!-- EC-Linie 30 Zuerich HB - Mannheim - Duisburg - Hamburg-Altona -->
+	  
+	  <rewrite zug="EC 100" simstart="Kirchweyhe" simende="Rotenburg" start="Z&#252;rich HB" ende="Hamburg-Altona">
+		  <via>Hamburg Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="EC 7" simstart="Rotenburg" simende="Kirchweyhe" start="Hamburg-Altona" ende="Z&#252;rich HB">
+		  <via>Dortmund Hbf</via>
+		  <via>K&#246;ln Hbf</via>
+		  <via>Karlsruhe Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="EC 101" simstart="Rotenburg" simende="Kirchweyhe" start="Hamburg-Altona" ende="Z&#252;rich HB">
+		  <via>Dortmund Hbf</via>
+		  <via>K&#246;ln Hbf</via>
+		  <via>Karlsruhe Hbf</via>
+	  </rewrite>
+	  
+	  <!-- IC-Linie 30 (Westerland (Sylt)/Ostseebad Binz - )Hamburg-Altona - Duisburg - (Frankfurt (Main) Hbf) - Mannheim - Stuttgart Hbf -->
+	  
+	  <rewrite zug="IC 211[24]" simstart="Kirchweyhe" simende="Rotenburg" start="Stuttgart Hbf" ende="Hamburg-Altona">
+		  <via>Hamburg Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 2307" simstart="Rotenburg" simende="Kirchweyhe" start="Hamburg-Altona" ende="Koblenz Hbf">
+		  <via>Dortmund Hbf</via>
+		  <via>Essen Hbf</via>
+		  <via>K&#246;ln Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 2212" simstart="Kirchweyhe" simende="Rotenburg" start="Koblenz Hbf" ende="Ostseebad Binz">
+		  <via>Hamburg Hbf</via>
+		  <via>Schwerin Hbf</via>
+		  <via>Stralsund Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 2113" simstart="Rotenburg" simende="Kirchweyhe" start="Hamburg-Altona" ende="Stuttgart Hbf">
+		  <via>Dortmund Hbf</via>
+		  <via>K&#246;ln Hbf</via>
+		  <via>Mannheim Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 2116" simstart="Kirchweyhe" simende="Rotenburg" start="Stuttgart Hbf" ende="Greifswald">
+		  <via>Hamburg Hbf</via>
+		  <via>Schwerin Hbf</via>
+		  <via>Stralsund Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 2115" simstart="Rotenburg" simende="Kirchweyhe" start="Greifswald" ende="Stuttgart Hbf">
+		  <via>Dortmund Hbf</via>
+		  <via>K&#246;ln Hbf</via>
+		  <via>Mannheim Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 2213" simstart="Rotenburg" simende="Kirchweyhe" start="Ostseebad Binz" ende="Stuttgart Hbf">
+		  <via>Dortmund Hbf</via>
+		  <via>K&#246;ln Hbf</via>
+		  <via>Mannheim Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 2311" simstart="Rotenburg" simende="Kirchweyhe" start="Westerland (Sylt)" ende="Stuttgart Hbf">
+		  <via>Dortmund Hbf</via>
+		  <via>K&#246;ln Hbf</via>
+		  <via>Mannheim Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 2315" simstart="Rotenburg" simende="Kirchweyhe" start="Westerland (Sylt)" ende="Frankfurt(M) Hbf">
+		  <via>Dortmund Hbf</via>
+		  <via>K&#246;ln Hbf</via>
+		  <via>Koblenz Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 2314" simstart="Kirchweyhe" simende="Rotenburg" start="K&#246;ln Hbf" ende="Westerland (Sylt)">
+		  <via>Hamburg Hbf</via>
+		  <via>Itzehoe</via>
+		  <via>Nieb&#252;ll</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 2310" simstart="Kirchweyhe" simende="Rotenburg" start="Frankfurt(M) Hbf" ende="Westerland (Sylt)">
+		  <via>Hamburg Hbf</via>
+		  <via>Itzehoe</via>
+		  <via>Nieb&#252;ll</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 1804" simstart="Kirchweyhe" simende="Rotenburg" start="K&#246;ln Hbf" ende="Greifswald">
+		  <via>Hamburg Hbf</via>
+		  <via>Schwerin Hbf</via>
+		  <via>Stralsund Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 1810" simstart="Kirchweyhe" simende="Rotenburg" start="K&#246;ln Hbf" ende="Flensburg">
+		  <via>Hamburg Hbf</via>
+		  <via>Rendsburg</via>
+		  <via>Schleswig</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 1806" simstart="Kirchweyhe" simende="Rotenburg" start="K&#246;ln Hbf" ende="Hamburg-Altona">
+		  <via>Hamburg Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 1803" simstart="Rotenburg" simende="Kirchweyhe" start="Flensburg" ende="K&#246;ln Hbf">
+		  <via>Dortmund Hbf</via>
+		  <via>Essen Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 1807" simstart="Rotenburg" simende="Kirchweyhe" start="Flensburg" ende="K&#246;ln Hbf">
+		  <via>Dortmund Hbf</via>
+		  <via>Essen Hbf</via>
+	  </rewrite>
+	  
+	  <!-- IC-Linie 31 (Kiel/Puttgarden - )Hamburg-Altona - Wuppertal - Frankfurt (Main) Hbf( - Passau) -->
+	  
+	  <rewrite zug="IC 2121" simstart="Rotenburg" simende="Kirchweyhe" start="Puttgarden" ende="Frankfurt(M) Hbf">
+		  <via>Dortmund Hbf</via>
+		  <via>K&#246;ln Hbf</via>
+		  <via>Mainz Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 2026" simstart="Kirchweyhe" simende="Rotenburg" start="Frankfurt(M) Hbf" ende="Hamburg-Altona">
+		  <via>Hamburg Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 202[359]" simstart="Rotenburg" simende="Kirchweyhe" start="Hamburg-Altona" ende="Frankfurt(M) Hbf">
+		  <via>Dortmund Hbf</via>
+		  <via>K&#246;ln Hbf</via>
+		  <via>Mainz Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 2327" simstart="Rotenburg" simende="Kirchweyhe" start="Puttgarden" ende="Passau Hbf">
+		  <via>Dortmund Hbf</via>
+		  <via>Frankfurt(M) Hbf</via>
+		  <via>N&#252;rnberg Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 2120" simstart="Kirchweyhe" simende="Rotenburg" start="Frankfurt(M) Hbf" ende="Puttgarden">
+		  <via>Hamburg Hbf</via>
+		  <via>L&#252;beck Hbf</via>
+		  <via>Oldenburg(Holst)</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 2128" simstart="Kirchweyhe" simende="Rotenburg" start="Dortmund Hbf" ende="Hamburg-Altona">
+		  <via>Hamburg Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 2020" simstart="Kirchweyhe" simende="Rotenburg" start="Frankfurt(M) Hbf" ende="Hamburg-Altona">
+		  <via>Hamburg Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 2028" simstart="Kirchweyhe" simende="Rotenburg" start="N&#252;rnberg Hbf" ende="Hamburg-Altona">
+		  <via>Hamburg Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 2024" simstart="Kirchweyhe" simende="Rotenburg" start="Passau Hbf" ende="Hamburg-Altona">
+		  <via>Hamburg Hbf</via>
+	  </rewrite>
+	  
+	  <!-- IC-Linie 56 (Norddeich-Mole - )Emden Hbf - Hannover Hbf - Magdeburg Hbf - (Berlin Hbf - Cottbus Hbf) Leipzig Hbf -->
+	  
+	  <rewrite zug="IC 213[06]" simstart="Verden" simende="Delmenhorst" start="Leipzig Hbf" ende="Oldenburg (Oldb)"/>
+	  
+	  <rewrite zug="IC 203[248]" simstart="Verden" simende="Delmenhorst" start="Leipzig Hbf" ende="Oldenburg (Oldb)"/>
+	  
+	  <rewrite zug="IC 203[359]" simstart="Delmenhorst" simende="Verden" start="Oldenburg (Oldb)" ende="Leipzig Hbf">
+		  <via>Hannover Hbf</via>
+		  <via>Magdeburg Hbf</via>
+		  <via>Halle (Saale) Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 213[37]" simstart="Delmenhorst" simende="Verden" start="Oldenburg (Oldb)" ende="Leipzig Hbf">
+		  <via>Hannover Hbf</via>
+		  <via>Magdeburg Hbf</via>
+		  <via>Halle (Saale) Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 2131" simstart="Delmenhorst" simende="Verden" start="Emden Au&#223;enhafen" ende="Cottbus Hbf">
+		  <via>Hannover Hbf</via>
+		  <via>Magdeburg Hbf</via>
+		  <via>Berlin Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 2132" simstart="Verden" simende="Delmenhorst" start="Cottbus Hbf" ende="Norddeich Mole">
+		  <via>Oldenburg (Oldb)</via>
+		  <via>Leer (Ostfriesl)</via>
+		  <via>Emden Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 2036" simstart="Verden" simende="Delmenhorst" start="Leipzig Hbf" ende="Norddeich Mole">
+		  <via>Oldenburg (Oldb)</via>
+		  <via>Leer (Ostfriesl)</via>
+		  <via>Emden Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 2037" simstart="Delmenhorst" simende="Verden" start="Norddeich Mole" ende="Leipzig Hbf">
+		  <via>Hannover Hbf</via>
+		  <via>Magdeburg Hbf</via>
+		  <via>Halle (Saale) Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 2134" simstart="Verden" simende="Delmenhorst" start="Leipzig Hbf" ende="Emden Au&#223;enhafen">
+		  <via>Oldenburg (Oldb)</via>
+		  <via>Leer (Ostfriesl)</via>
+		  <via>Emden Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 2135" simstart="Delmenhorst" simende="Verden" start="Norddeich Mole" ende="Leipzig Hbf">
+		  <via>Hannover Hbf</via>
+		  <via>Magdeburg Hbf</via>
+		  <via>Halle (Saale) Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="IC 1933" simstart="Delmenhorst" simende="Verden" start="Oldenburg (Oldb)" ende="Leipzig Hbf">
+		  <via>Hannover Hbf</via>
+		  <via>Magdeburg Hbf</via>
+		  <via>Halle (Saale) Hbf</via>
+	  </rewrite>
+	  
+	  <!-- IC 1887 Hamburg-Altona nach Passau Hbf -->
+	  
+	  <rewrite zug="IC 1887" simstart="Rotenburg" simende="Verden" start="Hamburg-Altona" ende="Passau Hbf">
+		  <via>Hannover Hbf</via>
+		  <via>Fulda</via>
+		  <via>Regensburg Hbf</via>
+	  </rewrite>
+	  
+	  <!-- ICE-Linie 22 Frankfurt (Main) Hbf - Kassel-Wilhelmshoehe - Hannover Hbf - Bremen Hbf - Oldenburg (Oldb) -->
+	  
+	  <rewrite zug="ICE 776" simstart="Verden" simende="Delmenhorst" start="Frankfurt(M) Hbf" ende="Oldenburg (Oldb)"/>
+	  
+	  <!-- ICE-Linie 25 (Oldenburg (Oldb) - )Bremen Hbf - Hannover Hbf - Fulda - (Nuernberg Hbf - )(Ingolstadt Hbf - )Muenchen Hbf -->
+	  
+	  <rewrite zug="ICE 636" simstart="Verden" simende="Gleis .*" start="Hannover Hbf" ende="Bremen Hbf"/>
+	  
+	  <rewrite zug="ICE 1035" simstart="Verden" simende="Verden" start="Bremen Hbf" ende="Frankfurt(M) Hbf">
+		  <via>Hannover Hbf</via>
+		  <via>Kassel-Wilhelmsh&#246;he</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ICE 531" simstart="Delmenhorst" simende="Verden" start="Oldenburg (Oldb)" ende="M&#252;nchen Hbf">
+		  <via>Hannover Hbf</via>
+		  <via>W&#252;rzburg Hbf</via>
+		  <via>N&#252;rnberg Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ICE 537" simstart="Verden" simende="Verden" start="Bremen Hbf" ende="M&#252;nchen Hbf">
+		  <via>Hannover Hbf</via>
+		  <via>W&#252;rzburg Hbf</via>
+		  <via>Augsburg Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ICE [56]3[1359]" simstart="Verden" simende="Verden" start="Bremen Hbf" ende="M&#252;nchen Hbf">
+		  <via>Hannover Hbf</via>
+		  <via>W&#252;rzburg Hbf</via>
+		  <via>Augsburg Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ICE 533" simstart="Delmenhorst" simende="Verden" start="Oldenburg (Oldb)" ende="Garmisch-Partenkirchen">
+		  <via>Hannover Hbf</via> 
+		  <via>W&#252;rzburg Hbf</via>
+		  <via>M&#252;nchen Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ICE 63[024]" simstart="Verden" simende="Gleis .*" start="M&#252;nchen Hbf" ende="Bremen Hbf"/>
+	  
+	  <rewrite zug="ICE 53[68]" simstart="Verden" simende="Gleis .*" start="M&#252;nchen Hbf" ende="Bremen Hbf"/>
+	  
+	  <!-- ICE-Linie Koeln Hbf nach Hamburg-Altona -->
+	  
+	  <rewrite zug="ICE 1102" simstart="Kirchweyhe" simende="Rotenburg" start="K&#246;ln Hbf" ende="Hamburg-Altona">
+		  <via>Hamburg Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ICE 1101" simstart="Rotenburg" simende="Kirchweyhe" start="Hamburg-Altona" ende="K&#246;ln Hbf">
+		  <via>M&#252;nster Hbf</via>
+		  <via>Gelsenkirchen</via>
+		  <via>D&#252;sseldorf Hbf</via>
+	  </rewrite>
+	  
+	  <!-- ICE-Linie 31 Kiel Hbf - Bremen Hbf - Wuppertal - Koeln Hbf - Mainz Hbf - Basel SBB/Regensburg Hbf -->
+	  
+	  <rewrite zug="ICE 1020" simstart="Wagenhalle" simende="Rotenburg" start="Bremen Hbf" ende="HAmburg-Altona">
+		  <via>Hamburg Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ICE 1125" simstart="Rotenburg" simende="Kirchweyhe" start="Kiel Hbf" ende="Regensburg Hbf">
+		  <via>Wuppertal Hbf</via>
+		  <via>Koblenz Hbf</via>
+		  <via>Hanau Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ICE 609" simstart="Rotenburg" simende="Kirchweyhe" start="Kiel Hbf" ende="Basel SBB">
+		  <via>Wuppertal Hbf</via>
+		  <via>Koblenz Hbf</via>
+		  <via>Freiburg (Brsg) Hbf</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ICE 608" simstart="Kirchweyhe" simende="Rotenburg" start="Basel SBB" ende="Kiel Hbf">
+		  <via>Hamburg Hbf</via>
+		  <via>Neum&#252;nster</via>
+	  </rewrite>
+	  
+	  <rewrite zug="ICE 1026" simstart="Kirchweyhe" simende="Rotenburg" start="Regensburg Hbf" ende="Kiel Hbf">
+		  <via>Hamburg Hbf</via>
+		  <via>Neum&#252;nster</via>
+	  </rewrite>
+	  
+	  <!-- ICE-Linie 42 Hamburg-Altona - Bremen Hbf - Wupperttal - Koeln Hbf - Siegburg - Mannheim Hbf - Stuttgart Hbf - Muenchen Hbf -->
+	  
+	  <rewrite zug="ICE 515" simstart="Rotenburg" simende="Kirchweyhe" start="Hamburg-Altona" ende="M&#252;nchen Hbf">
+		  <via>Wuppertal Hbf</via>
+		  <via>Frankfurt (Flghf)</via>
+		  <via>Stuttgart Hbf</via>
+	  </rewrite>
+	  
+   </rewrites>
+   
+   
+
+</zza>
+
+
+
