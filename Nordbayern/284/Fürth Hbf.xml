@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+Version 1.0 von Florian Ellebrecht
+Bei Fehlern bitte eine PN an mich (floflo). Mit Zuggattung, Zugnummer, reguläres Gleis, Abfahrtszeit und am besten noch Name der Einfahrt und Ausfahrt des Zuges.
+Es kann vorkommen, dass einzelne Zugnummern in der Datei fehlen. Bitte an mich melden.
+Ebenso kann es vorkommen, dass bei manchen Zügen trotz soundreplace und/oder richiger Schreibweise totaler Schwachsinn gesprochen wrd.
+-->
+<zza>
+   <bahnhoefe>
+      <bahnhof name="F&#252;rth Hbf" gleise="(|[2-7]|)" ende="(Gleis .*|Bw|F&#252;rth Hbf)"></bahnhof>
+   </bahnhoefe>
+   <soundreplaces>
+	<replace find="Hbf">Hauptbahnhof</replace>
+	<replace find="HB">Hauptbahnhof</replace>
+	<replace find="St\.">Sankt</replace>
+	<replace find="Neustadt">Neuschtadt</replace>
+	<replace find="\(Aisch\)"> an der Eisch</replace>
+	<replace find="Bibart">Biebart</replace>
+	<replace find="Cadolzburg">Kadolzburg</replace>
+	<replace find="\(Oberpf\)"> in der Oberpfalz</replace>
+	<replace find="\(Oberfr\)"> Oberfranken</replace>
+	<replace find="\/W&#252;rzburg Hbf"> weiter als err eh nach W&#252;rzburg Hauptbahnhof</replace>
+	<replace find="\/Regensburg Hbf"> weiter als err eh nach Regensburg Hauptbahnhof</replace>
+	<replace find="\/Plattling"> weiter als err eh nach Plattling</replace>
+	<replace find="Coburg">Koburg</replace>
+	<replace find="\(Th&#252;r\)"> in Th&#252;ringen</replace>
+   </soundreplaces>
+   <rewrites>
+	   
+	   <!-- RB-Linie 1 Neustadt(Aisch) - Nuernberg Hbf -->
+	   
+	   <rewrite zug="RB 3529[2468]" simstart="N&#252;rnbergHbf" simende="Neustadt" start="N&#252;rnberg Hbf" ende="Neustadt(Aisch)">
+		   <via>Siegelsdorf</via>
+		   <via>Emskirchen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 353[01][02468]" simstart="N&#252;rnbergHbf" simende="Neustadt" start="N&#252;rnberg Hbf" ende="Neustadt(Aisch)">
+		   <via>Siegelsdorf</via>
+		   <via>Emskirchen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3532[024]" simstart="N&#252;rnbergHbf" simende="Neustadt" start="N&#252;rnberg Hbf" ende="Neustadt(Aisch)">
+		   <via>Siegelsdorf</via>
+		   <via>Emskirchen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 353[012][13579]" simstart="Neustadt" simende="N&#252;rnbergHbf" start="Neustadt(Aisch)" ende="N&#252;rnberg Hbf"/>
+	   
+	   <rewrite zug="RB 3529[139]" simstart="Neustadt" simende="N&#252;rnbergHbf" start="Neustadt(Aisch)" ende="N&#252;rnberg Hbf"/>
+	   
+	   <rewrite zug="RB 35295" simstart="Neustadt" simende="N&#252;rnbergHbf" start="Markt Bibart" ende="N&#252;rnberg Hbf"/>
+	   
+	   <!-- RB-Linie 11 Cadolzburg - Zirndorf - Fuerth Hbf -->
+	   
+	   <rewrite zug="RB .*" simstart="Zirndorf" simende="Gleis .*" start="Cadolzburg" ende="F&#252;rth Hbf"/>
+	   
+	   <rewrite zug="RB .*" simstart="(Bw||Zirndorf)" simende="Zirndorf" start="F&#252;rth Hbf" ende="Cadolzburg">
+		   <via>Zirndorf</via>
+	   </rewrite>
+	   
+	   <!-- RB-Linie 12 Markt Erlbach - Fuerth Hbf -->
+	   
+	   <rewrite zug="RB 3538[1357]" simstart="Neustadt" simende="Gleis .*" start="Markt Erlbach" ende="F&#252;rth Hbf"/>
+	   
+	   <rewrite zug="RB 3539[13579]" simstart="Neustadt" simende="Gleis .*" start="Markt Erlbach" ende="F&#252;rth Hbf"/>
+	   
+	   <rewrite zug="RB 3540[357]" simstart="Neustadt" simende="Gleis .*" start="Markt Erlbach" ende="F&#252;rth Hbf"/>
+	   
+	   <rewrite zug="RB 3541[359]" simstart="Neustadt" simende="Gleis .*" start="Markt Erlbach" ende="F&#252;rth Hbf"/>
+	   
+	   <rewrite zug="RB 3542[135]" simstart="Neustadt" simende="Gleis .*" start="Markt Erlbach" ende="F&#252;rth Hbf"/>
+	   
+	   <rewrite zug="RB 3538[02468]" simstart="Neustadt" simende="Neustadt" start="F&#252;rth Hbf" ende="Markt Erlbach">
+		   <via>Siegelsdorf</via>
+		   <via>Wilhermsdorf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3539[0268]" simstart="Neustadt" simende="Neustadt" start="F&#252;rth Hbf" ende="Markt Erlbach">
+		   <via>Siegelsdorf</via>
+		   <via>Wilhermsdorf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3540[068]" simstart="(Neustadt||Bw)" simende="Neustadt" start="F&#252;rth Hbf" ende="Markt Erlbach">
+		   <via>Siegelsdorf</via>
+		   <via>Wilhermsdorf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3541[08]" simstart="(Neustadt||Bw)" simende="Neustadt" start="F&#252;rth Hbf" ende="Markt Erlbach">
+		   <via>Siegelsdorf</via>
+		   <via>Wilhermsdorf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3542[024]" simstart="(Neustadt||Bw)" simende="Neustadt" start="F&#252;rth Hbf" ende="Markt Erlbach">
+		   <via>Siegelsdorf</via>
+		   <via>Wilhermsdorf</via>
+	   </rewrite>
+	   
+	   <!-- RB-Linie 5 Forchheim - Erlangen - Fuerth - Nuernberg - Neumarkt -->
+	   
+	   <rewrite zug="RB 35485" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Forchheim(Oberfr)" ende="N&#252;rnberg Hbf"/>
+	   
+	   <rewrite zug="RB 35493" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Erlangen" ende="N&#252;rnberg Hbf"/>
+	   
+	   <rewrite zug="RB 3584[79]" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Forchheim(Oberfr)" ende="Neumarkt(Oberpf)">
+		   <via>N&#252;rnberg Hbf</via>
+		   <via>Feucht</via>
+		   <via>Ochenbruck</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 35859" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Forchheim(Oberfr)" ende="Neumarkt(Oberpf)">
+		   <via>N&#252;rnberg Hbf</via>
+		   <via>Feucht</via>
+		   <via>Ochenbruck</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3585[15]" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Erlangen" ende="Neumarkt(Oberpf)">
+		   <via>N&#252;rnberg Hbf</via>
+		   <via>Feucht</via>
+		   <via>Ochenbruck</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3586[15]" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Forchheim(Oberfr)" ende="Neumarkt(Oberpf)">
+		   <via>N&#252;rnberg Hbf</via>
+		   <via>Feucht</via>
+		   <via>Ochenbruck</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 35869" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Erlangen" ende="Neumarkt(Oberpf)">
+		   <via>N&#252;rnberg Hbf</via>
+		   <via>Feucht</via>
+		   <via>Ochenbruck</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3587[37]" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Erlangen" ende="Neumarkt(Oberpf)">
+		   <via>N&#252;rnberg Hbf</via>
+		   <via>Feucht</via>
+		   <via>Ochenbruck</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 35881" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Forchheim(Oberfr)" ende="Neumarkt(Oberpf)">
+		   <via>N&#252;rnberg Hbf</via>
+		   <via>Feucht</via>
+		   <via>Ochenbruck</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3588[57]" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Erlangen" ende="Neumarkt(Oberpf)">
+		   <via>N&#252;rnberg Hbf</via>
+		   <via>Feucht</via>
+		   <via>Ochenbruck</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 35484" simstart="N&#252;rnbergHbf" simende="Erlangen" start="Regensburg Hbf" ende="Forchheim(Oberfr)">
+		   <via>Erlangen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 35488" simstart="N&#252;rnbergHbf" simende="Erlangen" start="Regensburg Hbf" ende="Erlangen"/>
+	   
+	   <rewrite zug="RB 35854" simstart="N&#252;rnbergHbf" simende="Erlangen" start="Neumarkt(Oberpf)" ende="Forchheim(Oberfr)">
+		   <via>Erlangen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 35856" simstart="N&#252;rnbergHbf" simende="Erlangen" start="Neumarkt(Oberpf)" ende="Erlangen"/>
+	   
+	   <rewrite zug="RB 35860" simstart="N&#252;rnbergHbf" simende="Erlangen" start="Neumarkt(Oberpf)" ende="Erlangen"/>
+	   
+	   <rewrite zug="RB 3586[248]" simstart="N&#252;rnbergHbf" simende="Erlangen" start="Neumarkt(Oberpf)" ende="Forchheim(Oberfr)">
+		   <via>Erlangen</via>
+	   </rewrite>
+	   
+	    <rewrite zug="RB 35874" simstart="N&#252;rnbergHbf" simende="Erlangen" start="Neumarkt(Oberpf)" ende="Erlangen"/>
+	   
+	   <rewrite zug="RB 35882" simstart="N&#252;rnbergHbf" simende="Erlangen" start="Neumarkt(Oberpf)" ende="Forchheim(Oberfr)">
+		   <via>Erlangen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3588[46]" simstart="N&#252;rnbergHbf" simende="Erlangen" start="Neumarkt(Oberpf)" ende="Erlangen"/>
+	   
+	   <rewrite zug="RB 35486" simstart="N&#252;rnbergHbf" simende="Erlangen" start="N&#252;rnberg Hbf" ende="Erlangen"/>
+	   
+	   <rewrite zug="RB 35490" simstart="N&#252;rnbergHbf" simende="Erlangen" start="N&#252;rnberg Hbf" ende="Erlangen"/>
+	   
+	   <!-- Reginalbahnen der KBS 820 Lichtenfels - Nuernberg Hbf -->
+	   
+	   <rewrite zug="RB 3406[0248]" simstart="N&#252;rnbergHbf" simende="Erlangen" start="N&#252;rnberg Hbf" ende="Lichtenfels">
+		   <via>Forchheim(Oberfr)</via>
+		   <via>Bamberg</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3407[048]" simstart="N&#252;rnbergHbf" simende="Erlangen" start="N&#252;rnberg Hbf" ende="Lichtenfels">
+		   <via>Forchheim(Oberfr)</via>
+		   <via>Bamberg</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 34080" simstart="N&#252;rnbergHbf" simende="Erlangen" start="N&#252;rnberg Hbf" ende="Lichtenfels">
+		   <via>Forchheim(Oberfr)</via>
+		   <via>Bamberg</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 358[45]2" simstart="N&#252;rnbergHbf" simende="Erlangen" start="Neumarkt(Oberpf)" ende="Lichtenfels">
+		   <via>Forchheim(Oberfr)</via>
+		   <via>Bamberg</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 35848" simstart="N&#252;rnbergHbf" simende="Erlangen" start="Neumarkt(Oberpf)" ende="Lichtenfels">
+		   <via>Forchheim(Oberfr)</via>
+		   <via>Bamberg</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 358[67]6" simstart="N&#252;rnbergHbf" simende="Erlangen" start="Neumarkt(Oberpf)" ende="Lichtenfels">
+		   <via>Forchheim(Oberfr)</via>
+		   <via>Bamberg</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 35880" simstart="N&#252;rnbergHbf" simende="Erlangen" start="Neumarkt(Oberpf)" ende="Lichtenfels">
+		   <via>Forchheim(Oberfr)</via>
+		   <via>Bamberg</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 34058" simstart="N&#252;rnbergHbf" simende="Erlangen" start="Plattling" ende="Lichtenfels">
+		   <via>Forchheim(Oberfr)</via>
+		   <via>Bamberg</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 35482" simstart="N&#252;rnbergHbf" simende="Erlangen" start="N&#252;rnberg Hbf" ende="Bamberg/W&#252;rzburg Hbf">
+		   <via>Erlangen</via>
+		   <via>Forchheim(Oberfr)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 34059" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Lichtenfels" ende="N&#252;rnberg Hbf"/>
+	   
+	   <rewrite zug="RB 3406[13579]" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Lichtenfels" ende="N&#252;rnberg Hbf"/>
+	   
+	   <rewrite zug="RB 3407[17]" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Lichtenfels" ende="N&#252;rnberg Hbf"/>
+	   
+	   <rewrite zug="RB 3587[159]" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Lichtenfels" ende="Neumarkt(Oberpf)">
+		   <via>N&#252;rnberg Hbf</via>
+		   <via>Feucht</via>
+		   <via>Ochenbruck</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 35867" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Lichtenfels" ende="Neumarkt(Oberpf)">
+		   <via>N&#252;rnberg Hbf</via>
+		   <via>Feucht</via>
+		   <via>Ochenbruck</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 35883" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Lichtenfels" ende="Neumarkt(Oberpf)">
+		   <via>N&#252;rnberg Hbf</via>
+		   <via>Feucht</via>
+		   <via>Ochenbruck</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 35483" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Bamberg" ende="N&#252;rnberg Hbf/Regensburg Hbf"/>
+	   
+	   <rewrite zug="RB 35487" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Bamberg" ende="N&#252;rnberg Hbf/Plattling"/>
+	   
+	   <rewrite zug="RB 35489" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Bamberg" ende="N&#252;rnberg Hbf"/>
+	   
+	   <!-- Regionalexpress der KBS 805 Nuernberg Hbf - Kitzingen - Wuerzburg Hbf -->
+	   
+	   <rewrite zug="RE 3460[2468]" simstart="N&#252;rnbergHbf" simende="Neustadt" start="N&#252;rnberg Hbf" ende="W&#252;rzburg Hbf">
+		   <via>Neustadt(Aisch)</via>
+		   <via>Kitzingen</via>
+		   <via>Rottendorf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 346[12][02468]" simstart="N&#252;rnbergHbf" simende="Neustadt" start="N&#252;rnberg Hbf" ende="W&#252;rzburg Hbf">
+		   <via>Neustadt(Aisch)</via>
+		   <via>Kitzingen</via>
+		   <via>Rottendorf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 34638" simstart="N&#252;rnbergHbf" simende="Neustadt" start="N&#252;rnberg Hbf" ende="W&#252;rzburg Hbf">
+		   <via>Neustadt(Aisch)</via>
+		   <via>Kitzingen</via>
+		   <via>Rottendorf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3460[13579]" simstart="Neustadt" simende="N&#252;rnbergHbf" start="W&#252;rburg Hbf" ende="N&#252;rnberg Hbf"/>
+	   
+	   <rewrite zug="RE 346[12][13579]" simstart="Neustadt" simende="N&#252;rnbergHbf" start="W&#252;rburg Hbf" ende="N&#252;rnberg Hbf"/>
+	   
+	   <rewrite zug="RE 34629" simstart="Neustadt" simende="N&#252;rnbergHbf" start="W&#252;rburg Hbf" ende="N&#252;rnberg Hbf"/>
+	   
+	   <rewrite zug="RE 3463[39]" simstart="Neustadt" simende="N&#252;rnbergHbf" start="W&#252;rburg Hbf" ende="N&#252;rnberg Hbf"/>
+	   
+	   <!-- Regionalexpress der KBS 810 Nuernberg Hbf - Forchheim-Erlangen - Bamberg - Schweinfurt - Wuerzburg Hbf -->
+	   
+	   <rewrite zug="RE 478[13579]" simstart="Erlangen" simende="N&#252;rnbergHbf" start="W&#252;rzburg Hbf" ende="N&#252;rnberg Hbf"/>
+	   
+	   <rewrite zug="RE 478[2468]" simstart="N&#252;rnbergHbf" simende="Erlangen" start="N&#252;rnberg Hbf" ende="W&#252;rzburg Hbf">
+		   <via>Erlangen</via>
+		   <via>Bamberg</via>
+		   <via>Schweinfurt Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 479[02]" simstart="N&#252;rnbergHbf" simende="Erlangen" start="N&#252;rnberg Hbf" ende="W&#252;rzburg Hbf">
+		   <via>Erlangen</via>
+		   <via>Bamberg</via>
+		   <via>Schweinfurt Hbf</via>
+	   </rewrite>
+	   
+	   <!-- Regionalexpress der KBS 820 Nuernberg Hbf - Bamberg - Lichtenfels - Coburg - Sonneberg -->
+	   
+	   <rewrite zug="RE 497[02468]" simstart="N&#252;rnbergHbf" simende="Erlangen" start="N&#252;rnberg Hbf" ende="Sonnberg(Th&#252;r) Hbf">
+		   <via>Bamberg</via>
+		   <via>Lichtenfels</via>
+		   <via>Coburg</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 498[024]" simstart="N&#252;rnbergHbf" simende="Erlangen" start="N&#252;rnberg Hbf" ende="Sonnberg(Th&#252;r) Hbf">
+		   <via>Bamberg</via>
+		   <via>Lichtenfels</via>
+		   <via>Coburg</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3407[26]" simstart="N&#252;rnbergHbf" simende="Erlangen" start="N&#252;rnberg Hbf" ende="Kronach">
+		   <via>Bamberg</via>
+		   <via>Lichtenfels</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 35472" simstart="N&#252;rnbergHbf" simende="Erlangen" start="N&#252;rnberg Hbf" ende="Bamberg">
+		   <via>Erlangen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 34035" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Lichtenfels" ende="N&#252;rnberg Hbf"/>
+	   
+	   <rewrite zug="RE 34003" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Coburg" ende="N&#252;rnberg Hbf"/>
+	   
+	   <rewrite zug="RE 497[13579]" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Sonnberg(Th&#252;r) Hbf" ende="N&#252;rnberg Hbf"/>
+	   
+	   <rewrite zug="RE 498[135]" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Sonnberg(Th&#252;r) Hbf" ende="N&#252;rnberg Hbf"/>
+	   
+	   <rewrite zug="RE 3400[15]" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Sonnberg(Th&#252;r) Hbf" ende="N&#252;rnberg Hbf"/>
+	   
+	   <rewrite zug="RE 35473" simstart="Erlangen" simende="N&#252;rnbergHbf" start="Bamberg" ende="N&#252;rnberg Hbf"/>
+	   
+   </rewrites>
+</zza>
