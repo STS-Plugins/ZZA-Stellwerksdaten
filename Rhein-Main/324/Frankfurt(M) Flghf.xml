@@ -1,0 +1,1105 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Version 1.0 von Florian Ellebrecht
+-->
+<zza>
+	<bahnhoefe>
+		<bahnhof name="Frankfurt(M) Flghf" gleise="([1-7])" ende="(Gleis [1-7]|Frankfurt(M) Flghf)"></bahnhof>
+	</bahnhoefe>
+
+	<soundreplaces>
+		<replace find="Hbf">Hauptbahnhof</replace>
+		<replace find="HB">Hauptbahnhof</replace>
+		<replace find="\(M\)"> am Main</replace>
+		<replace find="Flghf">Flughafen</replace>
+		<replace find="\(Main\)"> am Main</replace>
+		<replace find="-Ost"> Ost</replace>
+		<replace find="-Altona">  Altona</replace>
+		<replace find="Idar-Oberstein">Idar Oberschtein</replace>
+		<replace find="Darmstadt">Darmschtadt</replace>
+		<replace find="Riedstadt-Goddelau">Ridschtadt Goddelau</replace>
+		<replace find="Koblenz">Kooblenz</replace>
+		<replace find="\(Sylt\)"> auf S&#252;lt</replace>
+		<replace find="Stuttgart">Schtuttgart</replace>
+		<replace find="Paris Gare de l&apos;Est">Pari Garr d&#246; lest</replace>
+		<replace find="TGV">Te sche we</replace>
+		<replace find="SBB">ess be be</replace>
+		<replace find="\(Brsg\)"> im Breisgau</replace>
+		<replace find="Hannover">Hannofer</replace>
+		<replace find="K&#246;ln Messe/Deutz">K&#246;ln Messe Deutz </replace>
+		<replace find="Siegburg/Bonn">Sigburg Bonn</replace>
+		<replace find="/Dortmund Hbf"> mit Zugteil nach Dortmund Hauptbahnhof (die Zugtrennung erfolgt in Sigburg Bonn) </replace>
+		<replace find="/K&#246;ln Hbf"> mit Zugteil nach K&#246;ln Hauptbahnhof. Der Zug wird hier geteilt. W&#228;hrend des Vorgangs bleiben die T&#252;ren verschlossen. Der vordere Zugteil f&#228;hrt weiter nach Essen Hauptbahnhof &#228;ber </replace>
+		<replace find="Amsterdam C">Amsterdam Zentral</replace>
+		<replace find="Liege-Guillemins">Lie&#228;sch Gihjem&#228;n</replace>
+		<replace find="Bruxelles-Midi">Br&#252;xell Midi</replace>
+		<replace find="Westbf">Westbahnhof</replace>
+		<replace find="Dresden">Dreesden</replace>
+		<replace find="Rhein">Rein</replace>
+		<replace find="-Gerau"> Gerau</replace>
+		<replace find="\(tief\)">tief</replace>
+		<replace find="Lohr">Lor</replace>
+		<replace find="\(Westf\)"> in Westfalen</replace>
+	</soundreplaces>
+
+	<rewrites>
+
+		<!--RB-Linie 32 Frankfurt(M) Hbf - Mainz Hbf - Bingen am Rhein-->
+
+		<rewrite zug="RB 12752" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Bingen am Rhein">
+			<via>R&#252;sselsheim</via>
+			<via>Mainz Hbf</via>
+			<via>Ingelheim</via>
+		</rewrite>
+
+		<rewrite zug="RB 12750" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Bingen am Rhein">
+			<via>R&#252;sselsheim</via>
+			<via>Mainz Hbf</via>
+			<via>Ingelheim</via>
+		</rewrite>
+
+		<!--RE-Linie 2 Koblenz Hbf - Bingen - Mainz - Frankfurt-->
+
+		<rewrite zug="RE 4361" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Koblenz Hbf" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="RE 12103" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Koblenz Hbf" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="RE 12105" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Koblenz Hbf" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="RE 4363" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Koblenz Hbf" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="RE 436[579]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Koblenz Hbf" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="RE 437[13]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Koblenz Hbf" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="RE 4360" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Koblenz Hbf">
+			<via>Mainz Hbf</via>
+			<via>Bingen am Rhein</via>
+			<via>Boppard</via>
+		</rewrite>
+
+		<rewrite zug="RE 4362" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Koblenz Hbf">
+			<via>Mainz Hbf</via>
+			<via>Bingen am Rhein</via>
+			<via>Boppard</via>
+		</rewrite>
+
+		<rewrite zug="RE 436[468]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Koblenz Hbf">
+			<via>Mainz Hbf</via>
+			<via>Bingen am Rhein</via>
+			<via>Boppard</via>
+		</rewrite>
+
+		<rewrite zug="RE 4370" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Koblenz Hbf">
+			<via>Mainz Hbf</via>
+			<via>Bingen am Rhein</via>
+			<via>Boppard</via>
+		</rewrite>
+
+		<rewrite zug="RE 12100" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Koblenz Hbf">
+			<via>Mainz Hbf</via>
+			<via>Bingen am Rhein</via>
+			<via>Boppard</via>
+		</rewrite>
+
+		<rewrite zug="RE 12104" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Koblenz Hbf">
+			<via>Mainz Hbf</via>
+			<via>Bingen am Rhein</via>
+			<via>Boppard</via>
+		</rewrite>
+
+		<!--RE-Linie 3 Saarbruecken - Bad Kreuznach - Mainz - Frankfurt-->
+
+		<rewrite zug="RE 330[1379]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Saarbr&#252;cken Hbf" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="RE 331[1357]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Saarbr&#252;cken Hbf" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="RE 3305" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Saarbr&#252;cken Hbf" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="RE 330[028]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Saarbr&#252;cken Hbf">
+			<via>Mainz Hbf</via>
+			<via>Bingen am Rhein</via>
+			<via>Bad Kreuznach</via>
+		</rewrite>
+
+		<rewrite zug="RE 331[0246]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Saarbr&#252;cken Hbf">
+			<via>Mainz Hbf</via>
+			<via>Bingen am Rhein</via>
+			<via>Bad Kreuznach</via>
+		</rewrite>
+
+		<rewrite zug="RE 3306" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Saarbr&#252;cken Hbf">
+			<via>Mainz Hbf</via>
+			<via>Bingen am Rhein</via>
+			<via>Bad Kreuznach</via>
+		</rewrite>
+
+		<!--RE-Linie 55 Hanau - Frankfurt Flughafen-->
+
+		<rewrite zug="RE 15100" simstart="FF-S&#252;d" simende="Gleis [1-7]" start="Hanau Hbf" ende="Frankfurt(M) Flghf"></rewrite>
+
+		<rewrite zug="RE 4635" simstart="" simende="FF-S&#252;d" start="Frankfurt(M) Flghf" ende="W&#252;rzburg Hbf">
+			<via>Aschaffenburg Hbf</via>
+			<via>Lohr(Main)</via>
+			<via>Gem&#252;nden(Main)</via>
+		</rewrite>
+
+		<rewrite zug="RE 4635" simstart="FF-S&#252;d" simende="FF-S&#252;d" start="Frankfurt(M) Flghf" ende="W&#252;rzburg Hbf">
+			<via>Aschaffenburg Hbf</via>
+			<via>Lohr(Main)</via>
+			<via>Gem&#252;nden(Main)</via>
+		</rewrite>
+
+		<rewrite zug="RE 4644" simstart="FF-S&#252;d" simende="Gleis [1-7]" start="W&#252;rzburg Hbf" ende="Frankfurt(M) Flghf"></rewrite>
+
+		<rewrite zug="RE 15102" simstart="FF-S&#252;d" simende="Gleis [1-7]" start="Hanau Hbf" ende="Frankfurt(M) Flghf"></rewrite>
+
+		<rewrite zug="RE 15101" simstart="" simende="FF-S&#252;d" start="Frankfurt(M) Flghf" ende="Hanau Hbf"></rewrite>
+
+		<rewrite zug="RE 15101" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="FF-S&#252;d" start="Frankfurt(M) Flghf" ende="Hanau Hbf"></rewrite>
+
+		<rewrite zug="RE 15103" simstart="" simende="FF-S&#252;d" start="Frankfurt(M) Flghf" ende="Hanau Hbf"></rewrite>
+
+		<rewrite zug="RE 15103" simstart="FF-S&#252;d" simende="FF-S&#252;d" start="Frankfurt(M) Flghf" ende="Hanau Hbf"></rewrite>
+
+		<!--S-Bahn-Linie 7 Riedstadt-Goddelau - Zeppelinheim - Frankfurt(M) Hbf-->
+
+		<rewrite zug="S 7 671[26]" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Riedstadt-Goddelau" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 7 672[048]" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Riedstadt-Goddelau" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 7 673[26]" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Riedstadt-Goddelau" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 7 674[048]" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Riedstadt-Goddelau" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 7 675[26]" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Riedstadt-Goddelau" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 7 676[048]" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Riedstadt-Goddelau" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 7 6772" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Riedstadt-Goddelau" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 7 6709" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Riedstadt-Goddelau">
+			<via>Gro&#223;-Gerau Dornberg</via>
+		</rewrite>
+
+		<rewrite zug="S 7 671[37]" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Riedstadt-Goddelau">
+			<via>Gro&#223;-Gerau Dornberg</via>
+		</rewrite>
+
+		<rewrite zug="S 7 672[159]" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Riedstadt-Goddelau">
+			<via>Gro&#223;-Gerau Dornberg</via>
+		</rewrite>
+
+		<rewrite zug="S 7 673[37]" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Riedstadt-Goddelau">
+			<via>Gro&#223;-Gerau Dornberg</via>
+		</rewrite>
+
+		<rewrite zug="S 7 674[15]" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Riedstadt-Goddelau">
+			<via>Gro&#223;-Gerau Dornberg</via>
+		</rewrite>
+
+		<rewrite zug="S 7 6753" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Riedstadt-Goddelau">
+			<via>Gro&#223;-Gerau Dornberg</via>
+		</rewrite>
+
+		<rewrite zug="S 7 676[159]" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Riedstadt-Goddelau">
+			<via>Gro&#223;-Gerau Dornberg</via>
+		</rewrite>
+
+		<rewrite zug="S 7 6718" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Riedstadt-Goddelau" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 7 6707" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Riedstadt-Goddelau">
+			<via>Gro&#223;-Gerau Dornberg</via>
+		</rewrite>
+
+		<rewrite zug="S 7 671[59]" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Riedstadt-Goddelau">
+			<via>Gro&#223;-Gerau Dornberg</via>
+		</rewrite>
+
+		<rewrite zug="S 7 6731" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Riedstadt-Goddelau">
+			<via>Gro&#223;-Gerau Dornberg</via>
+		</rewrite>
+
+		<rewrite zug="S 7 6747" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Riedstadt-Goddelau">
+			<via>Gro&#223;-Gerau Dornberg</via>
+		</rewrite>
+
+		<rewrite zug="S 7 6771" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Riedstadt-Goddelau">
+			<via>Gro&#223;-Gerau Dornberg</via>
+		</rewrite>
+
+		<rewrite zug="S 7 67[26]6" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Riedstadt-Goddelau" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 7 6734" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Riedstadt-Goddelau" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 7 6742" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Riedstadt-Goddelau" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 7 675[08]" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Riedstadt-Goddelau" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 7 6727" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Riedstadt-Goddelau">
+			<via>Gro&#223;-Gerau Dornberg</via>
+		</rewrite>
+
+		<rewrite zug="S 7 6735" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Riedstadt-Goddelau">
+			<via>Gro&#223;-Gerau Dornberg</via>
+		</rewrite>
+
+		<rewrite zug="S 7 6743" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Riedstadt-Goddelau">
+			<via>Gro&#223;-Gerau Dornberg</via>
+		</rewrite>
+
+		<rewrite zug="S 7 675[19]" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Riedstadt-Goddelau">
+			<via>Gro&#223;-Gerau Dornberg</via>
+		</rewrite>
+
+		<rewrite zug="S 7 673[08]" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Riedstadt-Goddelau" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 7 6754" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Riedstadt-Goddelau" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 7 6770" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Riedstadt-Goddelau" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 7 67[26]3" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Riedstadt-Goddelau">
+			<via>Gro&#223;-Gerau Dornberg</via>
+		</rewrite>
+
+		<rewrite zug="S 7 6739" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Riedstadt-Goddelau">
+			<via>Gro&#223;-Gerau Dornberg</via>
+		</rewrite>
+
+		<rewrite zug="S 7 6755" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Riedstadt-Goddelau">
+			<via>Gro&#223;-Gerau Dornberg</via>
+		</rewrite>
+
+		<rewrite zug="S 7 670[46]" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Riedstadt-Goddelau" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 7 6710" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Riedstadt-Goddelau" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 7 6749" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Riedstadt-Goddelau">
+			<via>Gro&#223;-Gerau Dornberg</via>
+		</rewrite>
+
+		<rewrite zug="S 7 6757" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Riedstadt-Goddelau">
+			<via>Gro&#223;-Gerau Dornberg</via>
+		</rewrite>
+
+		<rewrite zug="S 7 67[17]4" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Riedstadt-Goddelau" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 7 67[26]2" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Riedstadt-Goddelau" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 7 6746" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Riedstadt-Goddelau" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 7 6711" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Riedstadt-Goddelau">
+			<via>Gro&#223;-Gerau Dornberg</via>
+		</rewrite>
+
+		<rewrite zug="S 7 6767" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Riedstadt-Goddelau">
+			<via>Gro&#223;-Gerau Dornberg</via>
+		</rewrite>
+
+		<!--S-Bahn-Linie 8 Wiesbaden Hbf - Frankfurt - Hanau -->
+
+		<rewrite zug="S 8 680[3579]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Wiesbaden Hbf" ende="Hanau Hbf">
+			<via>Frankfurt(M) Hbf (tief)</via>
+			<via>Offenbach-Ost</via>
+		</rewrite>
+
+		<rewrite zug="S 8 681[135]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Wiesbaden Hbf" ende="Hanau Hbf">
+			<via>Frankfurt(M) Hbf (tief)</via>
+			<via>Offenbach-Ost</via>
+		</rewrite>
+
+		<rewrite zug="S 8 684[79]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Wiesbaden Hbf" ende="Hanau Hbf">
+			<via>Frankfurt(M) Hbf (tief)</via>
+			<via>Offenbach-Ost</via>
+		</rewrite>
+
+		<rewrite zug="S 8 685[1357]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Wiesbaden Hbf" ende="Hanau Hbf">
+			<via>Frankfurt(M) Hbf (tief)</via>
+			<via>Offenbach-Ost</via>
+		</rewrite>
+
+		<rewrite zug="S 8 6869" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Wiesbaden Hbf" ende="Hanau Hbf">
+			<via>Frankfurt(M) Hbf (tief)</via>
+			<via>Offenbach-Ost</via>
+		</rewrite>
+
+		<rewrite zug="S 8 6871" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Wiesbaden Hbf" ende="Hanau Hbf">
+			<via>Frankfurt(M) Hbf (tief)</via>
+			<via>Offenbach-Ost</via>
+		</rewrite>
+
+		<rewrite zug="S 8 6802" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Hanau Hbf" ende="Wiesbaden Hbf">
+			<via>R&#252;sselsheim</via>
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="S 8 681[02468]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Hanau Hbf" ende="Wiesbaden Hbf">
+			<via>R&#252;sselsheim</via>
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="S 8 6820" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Hanau Hbf" ende="Wiesbaden Hbf">
+			<via>R&#252;sselsheim</via>
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="S 8 781[79]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Wiesbaden Hbf" ende="Offenbach-Ost">
+			<via>Frankfurt(M) Hbf (tief)</via>
+		</rewrite>
+
+		<rewrite zug="S 8 78[23][13579]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Wiesbaden Hbf" ende="Offenbach-Ost">
+			<via>Frankfurt(M) Hbf (tief)</via>
+		</rewrite>
+
+		<rewrite zug="S 8 784[135]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Wiesbaden Hbf" ende="Offenbach-Ost">
+			<via>Frankfurt(M) Hbf (tief)</via>
+		</rewrite>
+
+		<rewrite zug="S 8 7859" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Wiesbaden Hbf" ende="Offenbach-Ost">
+			<via>Frankfurt(M) Hbf (tief)</via>
+		</rewrite>
+
+		<rewrite zug="S 8 786[1357]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Wiesbaden Hbf" ende="Offenbach-Ost">
+			<via>Frankfurt(M) Hbf (tief)</via>
+		</rewrite>
+
+		<rewrite zug="S 8 78[06][468]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Offenbach-Ost" ende="Wiesbaden Hbf">
+			<via>R&#252;sselsheim</via>
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="S 8 782[2468]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Offenbach-Ost" ende="Wiesbaden Hbf">
+			<via>R&#252;sselsheim</via>
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="S 78[34][02468]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Offenbach-Ost" ende="Wiesbaden Hbf">
+			<via>R&#252;sselsheim</via>
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="S 8 8817" simstart="" simende="(Niederrad|Niederrad S)" start="Frankfurt(M) Flghf" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 8 8817" simstart="(Niederrad|Niederrad S)" simende="(Niederrad|Niederrad S)" start="Frankfurt(M) Flghf" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 9 8969" simstart="" simende="(Niederrad|Niederrad S)" start="Frankfurt(M) Flghf" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 9 8969" simstart="(Niederrad|Niederrad S)" simende="(Niederrad|Niederrad S)" start="Frankfurt(M) Flghf" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 8 8814" simstart="(Niederrad|Niederrad S)" simende="Gleis [1-7]" start="Frankfurt(M) Hbf" ende="Frankfurt(M) Flghf"></rewrite>
+
+		<rewrite zug="S 8 881[02]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Kelsterbach"></rewrite>
+
+		<rewrite zug="S 8 884[26]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Kelsterbach"></rewrite>
+
+		<rewrite zug="S 8 8850" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Kelsterbach"></rewrite>
+
+		<rewrite zug="S 8 88[01]9" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Kelsterbach" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 8 8845" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Kelsterbach" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 8 8851" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Kelsterbach" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 8 8806" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Kelsterbach"></rewrite>
+
+		<rewrite zug="S 8 8848" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Kelsterbach"></rewrite>
+
+		<rewrite zug="S 8 8815" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Kelsterbach" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 8 884[79]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Kelsterbach" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 8 8808" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Kelsterbach"></rewrite>
+
+		<rewrite zug="S 8 8811" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Kelsterbach" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 8 8816" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Kelsterbach"></rewrite>
+
+		<rewrite zug="S 8 8813" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Kelsterbach" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 8 8844" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Kelsterbach"></rewrite>
+
+		<rewrite zug="S 8 8853" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Kelsterbach" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="S 8 685[2468]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Hanau Hbf" ende="Wiesbaden Hbf">
+			<via>R&#252;sselsheim</via>
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="S 8 686[02]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Hanau Hbf" ende="Wiesbaden Hbf">
+			<via>R&#252;sselsheim</via>
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<!--S-Bahn-Linie 9 Hanau - Frankfurt - Mainz - Wiebaden-->
+
+		<rewrite zug="S 9 690[68]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Hanau Hbf" ende="Wiesbaden Hbf">
+			<via>R&#252;sselsheim</via>
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="S 9 691[02468]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Hanau Hbf" ende="Wiesbaden Hbf">
+			<via>R&#252;sselsheim</via>
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="S 9 692[026]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Hanau Hbf" ende="Wiesbaden Hbf">
+			<via>R&#252;sselsheim</via>
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="S 9 693[048]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Hanau Hbf" ende="Wiesbaden Hbf">
+			<via>R&#252;sselsheim</via>
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="S 9 694[26]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Hanau Hbf" ende="Wiesbaden Hbf">
+			<via>R&#252;sselsheim</via>
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="S 9 69[57]0" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Hanau Hbf" ende="Wiesbaden Hbf">
+			<via>R&#252;sselsheim</via>
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="S 9 6966" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Hanau Hbf" ende="Wiesbaden Hbf">
+			<via>R&#252;sselsheim</via>
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="S 8 6874" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Hanau Hbf" ende="Wiesbaden Hbf">
+			<via>R&#252;sselsheim</via>
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="S 9 690[79]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Wiesbaden Hbf" ende="Hanau Hbf">
+			<via>Frankfurt(M) Hbf (tief)</via>
+			<via>Offenbach-Ost</via>
+		</rewrite>
+
+		<rewrite zug="S 9 69[12345][13579]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Wiesbaden Hbf" ende="Hanau Hbf">
+			<via>Frankfurt(M) Hbf (tief)</via>
+			<via>Offenbach-Ost</via>
+		</rewrite>
+
+		<rewrite zug="S 9 696[1357]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Wiesbaden Hbf" ende="Hanau Hbf">
+			<via>Frankfurt(M) Hbf (tief)</via>
+			<via>Offenbach-Ost</via>
+		</rewrite>
+
+		<rewrite zug="S 9 8971" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Wiesbaden Hbf" ende="Hanau Hbf">
+			<via>Frankfurt(M) Hbf (tief)</via>
+			<via>Offenbach-Ost</via>
+		</rewrite>
+
+		<rewrite zug="S 9 692[48]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Hanau Hbf" ende="Wiesbaden Hbf">
+			<via>R&#252;sselsheim</via>
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="S 9 693[26]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Hanau Hbf" ende="Wiesbaden Hbf">
+			<via>R&#252;sselsheim</via>
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="S 9 69[46][048]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Hanau Hbf" ende="Wiesbaden Hbf">
+			<via>R&#252;sselsheim</via>
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="S 9 695[2468]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Hanau Hbf" ende="Wiesbaden Hbf">
+			<via>R&#252;sselsheim</via>
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="S 9 6962" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Hanau Hbf" ende="Wiesbaden Hbf">
+			<via>R&#252;sselsheim</via>
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<!--IC-Linie 30 Frankfurt - linke Rheinstrecke - Bremen - Hamburg - Westerland-->
+
+		<rewrite zug="IC 2310" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Westerland(Sylt)">
+			<via>K&#246;ln Hbf</via>
+			<via>Bremen Hbf</via>
+			<via>Hamburg Hbf</via>
+		</rewrite>
+
+		<!--IC-Linie 31 Frankfurt - linke Rheinstrecke - Bremen - Hamburg-->
+
+		<rewrite zug="IC 2021" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="FF-S&#252;d" start="Hamburg Hbf" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="IC 2026" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Hamburg-Altona">
+			<via>K&#246;ln Hbf</via>
+			<via>Dortmund Hbf</via>
+			<via>Bremen Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 202[35]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Hamburg-Altona" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="IC 2029" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Hamburg-Altona" ende="N&#252;rnberg Hbf">
+			<via>Frankfurt(M) Hbf</via>
+			<via>W&#252;rzburg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2327" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Puttgarden" ende="Passau Hbf">
+			<via>Frankfurt(M) Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+			<via>Regensburg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2120" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Puttgarden">
+			<via>K&#246;ln Hbf</via>
+			<via>Bremen Hbf</via>
+			<via>Hamburg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2028" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="N&#252;rnberg Hbf" ende="Hamburg-Altona">
+			<via>K&#246;ln Hbf</via>
+			<via>Dortmund Hbf</via>
+			<via>Bremen Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2022" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Hamburg-Altona">
+			<via>K&#246;ln Hbf</via>
+			<via>Dortmund Hbf</via>
+			<via>Bremen Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2024" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Passau Hbf" ende="Hamburg-Altona">
+			<via>K&#246;ln Hbf</via>
+			<via>Dortmund Hbf</via>
+			<via>Bremen Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2870" simstart="FF-S&#252;d" simende="Gleis [1-7]" start="Dresden Hbf" ende="Frankfurt(M) Flghf"></rewrite>
+
+		<rewrite zug="IC 2871" simstart="" simende="FF-S&#252;d" start="Frankfurt(M) Flghf" ende="Dresden Hbf">
+			<via>Fulda</via>
+			<via>Erfurt Hbf</via>
+			<via>Leipzig Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2871" simstart="FF-S&#252;d" simende="FF-S&#252;d" start="Frankfurt(M) Flghf" ende="Dresden Hbf">
+			<via>Fulda</via>
+			<via>Erfurt Hbf</via>
+			<via>Leipzig Hbf</via>
+		</rewrite>
+
+		<!--ICE-Linie 12 Hamburg - Fulda - Frankfurt - Karlsruhe - Z&#252;rich-->
+
+		<rewrite zug="ICE 5" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Z&#252;rich HB">
+			<via>Karlsruhe Hbf</via>
+			<via>Freiburg(Brsg) Hbf</via>
+			<via>Basel SBB</via>
+		</rewrite>
+
+		<!--ICE-Linie 22 Stuttgart - Frankfurt - Kassel - Hannover - Hamburg-->
+
+		<rewrite zug="ICE 570" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Stuttgart Hbf" ende="Hamburg-Altona">
+			<via>Frankfurt(M) Hbf</via>
+			<via>Hannover Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 774" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Stuttgart Hbf" ende="Hamburg-Altona">
+			<via>Frankfurt(M) Hbf</via>
+			<via>Hannover Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 77[02]" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Stuttgart Hbf" ende="Hamburg-Altona">
+			<via>Frankfurt(M) Hbf</via>
+			<via>Hannover Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 57[268]" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Stuttgart Hbf" ende="Hamburg-Altona">
+			<via>Frankfurt(M) Hbf</via>
+			<via>Hannover Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 974" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Stuttgart Hbf" ende="Kiel Hbf">
+			<via>Frankfurt(M) Hbf</via>
+			<via>Hannover Hbf</via>
+			<via>Hamburg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 57[579]" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Hamburg-Altona" ende="Stuttgart Hbf">
+			<via>Mannheim Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 77[13]" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Hamburg-Altona" ende="Stuttgart Hbf">
+			<via>Mannheim Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 973" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Kiel Hbf" ende="Stuttgart Hbf">
+			<via>Mannheim Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 571" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Hamburg-Altona" ende="Stuttgart Hbf">
+			<via>Mannheim Hbf</via>
+		</rewrite>
+
+		<!--ICE-Linie 31 Kiel - Ruhrgebiet - Frankfurt - Regensburg-->
+
+		<rewrite zug="ICE 1125" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Kiel Hbf" ende="Regensburg">
+			<via>Frankfurt(M) Hbf</via>
+			<via>W&#252;rzburg Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 1026" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Regensburg Hbf" ende="Kiel Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Bremen Hbf</via>
+			<via>Hamburg Hbf</via>
+		</rewrite>
+
+		<!--ICE-Linie 41 M&#252;nchen - Stuttgart - Frankfurt - Ruhrgebiet-->
+
+		<rewrite zug="ICE 826" simstart="Gro&#223; Gerau" simende="FF-S&#252;d" start="Stuttgart Hbf" ende="Essen Hbf">
+			<via>Frankfurt(M) Hbf</via>
+			<via>K&#246;ln Messe/Deutz(tief)</via>
+		</rewrite>
+
+		<rewrite zug="ICE 826" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Stuttgart Hbf" ende="Essen Hbf">
+			<via>K&#246;ln Messe/Deutz(tief)</via>
+		</rewrite>
+
+		<rewrite zug="ICE 822" simstart="FF-S&#252;d" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="N&#252;rnberg Hbf" ende="Essen Hbf">
+			<via>K&#246;ln Messe/Deutz(tief)</via>
+		</rewrite>
+
+		<rewrite zug="ICE 820" simstart="FF-S&#252;d" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="M&#252;nchen Hbf" ende="Essen Hbf">
+			<via>K&#246;ln Messe/Deutz(tief)</via>
+		</rewrite>
+
+		<rewrite zug="ICE 72[26]" simstart="FF-S&#252;d" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="M&#252;nchen Hbf" ende="Essen Hbf">
+			<via>K&#246;ln Messe/Deutz(tief)</via>
+		</rewrite>
+
+		<rewrite zug="ICE 628" simstart="FF-S&#252;d" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="M&#252;nchen Hbf" ende="Essen Hbf">
+			<via>K&#246;ln Messe/Deutz(tief)</via>
+		</rewrite>
+
+		<rewrite zug="ICE 72[48]" simstart="FF-S&#252;d" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="M&#252;nchen Hbf" ende="K&#246;ln Hbf">
+			<via>Siegburg/Bonn</via>
+		</rewrite>
+
+		<rewrite zug="ICE 620" simstart="FF-S&#252;d" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="M&#252;nchen Hbf" ende="K&#246;ln Hbf">
+			<via>Siegburg/Bonn</via>
+		</rewrite>
+
+		<rewrite zug="ICE 626" simstart="FF-S&#252;d" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="M&#252;nchen Hbf" ende="K&#246;ln Hbf">
+			<via>Siegburg/Bonn</via>
+		</rewrite>
+
+		<rewrite zug="ICE 624" simstart="FF-S&#252;d" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="M&#252;nchen Hbf" ende="Dortmund Hbf">
+			<via>K&#246;ln Messe/Deutz(tief)</via>
+			<via>Essen Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 528" simstart="FF-S&#252;d" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="M&#252;nchen Hbf" ende="Dortmund Hbf">
+			<via>K&#246;ln Messe/Deutz(tief)</via>
+			<via>Essen Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 622" simstart="FF-S&#252;d" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="M&#252;nchen Hbf" ende="Dortmund Hbf">
+			<via>K&#246;ln Messe/Deutz(tief)</via>
+			<via>Essen Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 1128" simstart="FF-S&#252;d" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="M&#252;nchen Hbf" ende="Essen Hbf/K&#246;ln Hbf">
+			<via>K&#246;ln Messe/Deutz(tief)</via>
+		</rewrite>
+
+		<rewrite zug="ICE 1022" simstart="" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="M&#252;nchen Hbf" ende="K&#246;ln Hbf">
+			<via>Siegburg/Bonn</via>
+		</rewrite>
+
+		<rewrite zug="ICE 1022" simstart="FF-S&#252;d" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="M&#252;nchen Hbf" ende="K&#246;ln Hbf">
+			<via>Siegburg/Bonn</via>
+		</rewrite>
+
+		<rewrite zug="ICE 824" simstart="FF-S&#252;d" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Darmstadt Hbf" ende="Dortmund Hbf">
+			<via>K&#246;ln Messe/Deutz(tief)</via>
+			<via>Essen Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 629" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Essen Hbf" ende="M&#252;nchen Hbf">
+			<via>Frankfurt(M) Hbf</via>
+			<via>W&#252;rzburg Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 72[579]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Essen Hbf" ende="M&#252;nchen Hbf">
+			<via>Frankfurt(M) Hbf</via>
+			<via>W&#252;rzburg Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 529" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Essen Hbf" ende="M&#252;nchen Hbf">
+			<via>Frankfurt(M) Hbf</via>
+			<via>W&#252;rzburg Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 625" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Essen Hbf" ende="M&#252;nchen Hbf">
+			<via>Frankfurt(M) Hbf</via>
+			<via>W&#252;rzburg Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 921" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Essen Hbf" ende="M&#252;nchen Hbf">
+			<via>Frankfurt(M) Hbf</via>
+			<via>W&#252;rzburg Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 723" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Essen Hbf" ende="M&#252;nchen Hbf">
+			<via>Frankfurt(M) Hbf</via>
+			<via>W&#252;rzburg Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 525" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Dortmund Hbf" ende="M&#252;nchen Hbf">
+			<via>Frankfurt(M) Hbf</via>
+			<via>W&#252;rzburg Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 527" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Dortmund Hbf" ende="M&#252;nchen Hbf">
+			<via>Frankfurt(M) Hbf</via>
+			<via>W&#252;rzburg Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 621" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Essen Hbf" ende="M&#252;nchen Hbf">
+			<via>Frankfurt(M) Hbf</via>
+			<via>W&#252;rzburg Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 627" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="FF-S&#252;d" start="K&#246;ln Hbf" ende="M&#252;nchen Hbf">
+			<via>Frankfurt(M) Hbf</via>
+			<via>W&#252;rzburg Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 523" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Dortmund Hbf" ende="M&#252;nchen Hbf">
+			<via>Frankfurt(M) Hbf</via>
+			<via>W&#252;rzburg Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 623" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="K&#246;ln Hbf" ende="M&#252;nchen Hbf">
+			<via>Frankfurt(M) Hbf</via>
+			<via>W&#252;rzburg Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 821" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Oberhausen Hbf" ende="M&#252;nchen Hbf">
+			<via>Frankfurt(M) Hbf</via>
+			<via>W&#252;rzburg Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 521" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="FF-S&#252;d" start="K&#246;ln Hbf" ende="M&#252;nchen Hbf">
+			<via>Frankfurt(M) Hbf</via>
+			<via>W&#252;rzburg Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<!--ICE-Linie 42 M&#252;nchen - Stuttgart - Frankfurt - Ruhrgebiet-->
+
+		<rewrite zug="ICE 513" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="Gro&#223; Gerau" start="M&#252;nster(Westf) Hbf" ende="M&#252;nchen Hbf">
+			<via>Stuttgart Hbf</via>
+			<via>Augsburg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 51[79]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="Gro&#223; Gerau" start="Dortmund Hbf" ende="M&#252;nchen Hbf">
+			<via>Stuttgart Hbf</via>
+			<via>Augsburg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 61[135]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="Gro&#223; Gerau" start="Dortmund Hbf" ende="M&#252;nchen Hbf">
+			<via>Stuttgart Hbf</via>
+			<via>Augsburg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 511" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="Gro&#223; Gerau" start="K&#246;ln Hbf" ende="M&#252;nchen Hbf">
+			<via>Stuttgart Hbf</via>
+			<via>Augsburg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 515" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="Gro&#223; Gerau" start="Hamburg-Altona" ende="M&#252;nchen Hbf">
+			<via>Stuttgart Hbf</via>
+			<via>Augsburg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 61[024]" simstart="Gro&#223; Gerau" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="M&#252;nchen Hbf" ende="Dortmund Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Essen Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 518" simstart="Gro&#223; Gerau" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="M&#252;nchen Hbf" ende="Dortmund Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Essen Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 514" simstart="Gro&#223; Gerau" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="M&#252;nchen Hbf" ende="Hamburg-Altona">
+			<via>K&#246;ln Hbf</via>
+			<via>Dortmund Hbf</via>
+			<via>Bremen Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 512" simstart="Gro&#223; Gerau" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="M&#252;nchen Hbf" ende="M&#252;nster(Westf) Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Essen Hbf</via>
+			<via>Dortmund Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 616" simstart="Gro&#223; Gerau" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="M&#252;nchen Hbf" ende="Dortmund Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Essen Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 516" simstart="Gro&#223; Gerau" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="M&#252;nchen Hbf" ende="Dortmund Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Wuppertal Hbf</via>
+		</rewrite>
+
+		<!--ICE-Linie 43 Basel - Mannheim - Frankfurt - Ruhrgebiet - NL-->
+
+		<rewrite zug="ICE 604" simstart="Gro&#223; Gerau" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Basel Bad Bf" ende="K&#246;ln Hbf">
+			<via>Siegburg/Bonn</via>
+		</rewrite>
+
+		<rewrite zug="ICE 508" simstart="Gro&#223; Gerau" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Basel SBB" ende="K&#246;ln Hbf">
+			<via>Siegburg/Bonn</via>
+		</rewrite>
+
+		<rewrite zug="ICE 104" simstart="Gro&#223; Gerau" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Basel SBB" ende="Amsterdam C">
+			<via>K&#246;ln Hbf</via>
+			<via>Oberhausen Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 505" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="Gro&#223; Gerau" start="K&#246;ln Hbf" ende="Basel SBB">
+			<via>Karlsruhe Hbf</via>
+			<via>Freiburg(Brsg) Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 509" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="Gro&#223; Gerau" start="Dortmund Hbf" ende="Basel SBB">
+			<via>Karlsruhe Hbf</via>
+			<via>Freiburg(Brsg) Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 601" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="Gro&#223; Gerau" start="K&#246;ln Hbf" ende="Basel SBB">
+			<via>Karlsruhe Hbf</via>
+			<via>Freiburg(Brsg) Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 506" simstart="Gro&#223; Gerau" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Karlsruhe Hbf" ende="Dortmund Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Wuppertal Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 507" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="Gro&#223; Gerau" start="K&#246;ln Hbf" ende="Karlsruhe Hbf">
+			<via>Mannheim Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 1008" simstart="Gro&#223; Gerau" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Karlsruhe Hbf" ende="Essen Hbf">
+			<via>K&#246;ln Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 503" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="Gro&#223; Gerau" start="Hannover Hbf" ende="Karlsruhe Hbf">
+			<via>Mannheim Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 502" simstart="Gro&#223; Gerau" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Karlsruhe Hbf" ende="Hannover Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Dortmund Hbf</via>
+			<via>Bielefeld Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 603" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="Gro&#223; Gerau" start="K&#246;ln Hbf" ende="Basel SBB">
+			<via>Karlsruhe Hbf</via>
+			<via>Freiburg(Brsg) Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 602" simstart="Gro&#223; Gerau" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Basel SBB" ende="K&#246;ln Hbf">
+			<via>Siegburg/Bonn</via>
+		</rewrite>
+
+		<rewrite zug="ICE 500" simstart="Gro&#223; Gerau" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Basel SBB" ende="Dortmund Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Essen Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 501" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="Gro&#223; Gerau" start="Dortmund Hbf" ende="Basel SBB">
+			<via>Karlsruhe Hbf</via>
+			<via>Basel SBB</via>
+		</rewrite>
+
+		<rewrite zug="ICE 811" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="K&#246;ln Hbf" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="ICE 81[79]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="K&#246;ln Hbf" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="ICE 813" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Dortmund Hbf" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="ICE 815" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Dortmund Hbf" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="ICE 918" simstart="FF-S&#252;d" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Essen Hbf">
+			<via>K&#246;ln Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 818" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="K&#246;ln Hbf">
+			<via>Siegburg/Bonn</via>
+		</rewrite>
+
+		<rewrite zug="ICE 81[06]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="K&#246;ln Hbf">
+			<via>Siegburg/Bonn</via>
+		</rewrite>
+
+		<rewrite zug="ICE 812" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="K&#246;ln Hbf">
+			<via>Siegburg/Bonn</via>
+		</rewrite>
+
+		<rewrite zug="ICE 814" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="K&#246;ln Hbf/Dortmund Hbf">
+			<via>Siegburg/Bonn</via>
+		</rewrite>
+
+		<!--ICE-Linie 50 Dresden - Leipzig - Erfurt - Fulda - Frankfurt - Wiesbaden-->
+
+		<rewrite zug="ICE 1646" simstart="FF-S&#252;d" simende="Gleis [1-7]" start="Erfurt Hbf" ende="Frankfurt(M) Flghf"></rewrite>
+
+		<rewrite zug="ICE 1656" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Leipzig Hbf" ende="Wiesbaden Hbf">
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 1644" simstart="FF-S&#252;d" simende="Gleis [1-7]" start="Dresden Hbf" ende="Frankfurt(M) Flghf"></rewrite>
+
+		<rewrite zug="ICE 1654" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Berlin-Gesundbrunnen" ende="Wiesbaden hbf">
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 1642" simstart="FF-S&#252;d" simende="Gleis [1-7]" start="Dresden Hbf" ende="Frankfurt(M) Flghf"></rewrite>
+
+		<rewrite zug="ICE 165[02]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Dresden Hbf" ende="Wiesbaden Hbf">
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 155[68]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Dresden Hbf" ende="Wiesbaden Hbf">
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 154[268]" simstart="FF-S&#252;d" simende="Gleis [1-7]" start="Dresden Hbf" ende="Frankfurt(M) Flghf"></rewrite>
+
+		<rewrite zug="ICE 1554" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Dresden Hbf" ende="Wiesbaden Hbf">
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 154[579]" simstart="" simende="FF-S&#252;d" start="Frankfurt(M) Flghf" ende="Dresden Hbf">
+			<via>Fulda</via>
+			<via>Erfurt Hbf</via>
+			<via>Leipzig Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 154[579]" simstart="FF-S&#252;d" simende="FF-S&#252;d" start="Frankfurt(M) Flghf" ende="Dresden Hbf">
+			<via>Fulda</via>
+			<via>Erfurt Hbf</via>
+			<via>Leipzig Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 164[35]" simstart="" simende="FF-S&#252;d" start="Frankfurt(M) Flghf" ende="Dresden Hbf">
+			<via>Fulda</via>
+			<via>Erfurt Hbf</via>
+			<via>Leipzig Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 164[35]" simstart="FF-S&#252;d" simende="FF-S&#252;d" start="Frankfurt(M) Flghf" ende="Dresden Hbf">
+			<via>Fulda</via>
+			<via>Erfurt Hbf</via>
+			<via>Leipzig Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 1597" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Wiesbaden Hbf" ende="Frankfurt(M) Hbf"></rewrite>
+
+		<rewrite zug="ICE 1559" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Wiesbaden Hbf" ende="Dresden Hbf">
+			<via>Fulda</via>
+			<via>Erfurt Hbf</via>
+			<via>Leipzig Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 1659" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Wiesbaden Hbf" ende="Leipzig Hbf">
+			<via>Frankfurt(M) Hbf</via>
+			<via>Fulda</via>
+			<via>Erfurt Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 165[137]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Wiesbaden Hbf" ende="Dresden Hbf">
+			<via>Fulda</via>
+			<via>Erfurt Hbf</via>
+			<via>Leipzig Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 1655" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Wiesbaden Hbf" ende="Berlin-Gesundbrunnen">
+			<via>Fulda</via>
+			<via>Erfurt Hbf</via>
+			<via>Leipzig Hbf</via>
+		</rewrite>
+		
+		 <!-- ICE-Linie 78 ICE INTERNATIONAL Frankfurt - Amsterdam -->
+	   
+	  	 <rewrite zug="ICE 12[0268]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Amsterdam C">
+		   	<via>K&#246;ln Hbf</via>
+		   	<via>Oberhausen Hbf</via>
+	   	</rewrite>
+	   
+	   	<rewrite zug="ICE 12[13579]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Amsterdam C" ende="Frankfurt(M) Hbf"/>
+	   
+	   	<!-- ICE-Linie 79 ICE INTERNATIONAL Frankfurt - Bruxelles-Midi -->
+	   
+	  	 <rewrite zug="ICE 10" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Bruxelles-Midi">
+		 	  <via>K&#246;ln Hbf</via>
+		   	<via>Liege-Guillemins</via>
+	   	</rewrite>
+	   
+	   	<rewrite zug="ICE 1[46]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Frankfurt(M) Hbf" ende="Bruxelles-Midi/Amsterdam C">
+		   	<via>K&#246;ln Hbf</via>
+		   	<via>Liege-Guillemins</via>
+	   	</rewrite>
+	   
+	  	 <rewrite zug="ICE 1[15]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Bruxelles-Midi" ende="Frankfurt(M) Hbf"/>
+	   
+	   	<!-- ICE-Linie 82 Frankfurt - Paris Est -->
+	   
+	   	<rewrite zug="ICE 955[0468]" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Paris Gare de l&apos;Est">
+		   	<via>Mannheim Hbf</via>
+		   	<via>Saarbr&#252;cken Hbf</via>
+	   	</rewrite>
+	   
+	   	<rewrite zug="ICE 955[157]" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Paris Gare de l&apos;Est" ende="Frankfurt(M) Hbf"/>
+	   	
+	   	<!-- ICE-Linie 91 Frankfurt - Wien -->
+		
+	   	<rewrite zug="ICE 2[46]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Wien Westbf" ende="Dortmund Hbf">
+		   	<via>Mainz Hbf</via>
+		   	<via>K&#246;ln Hbf</via>
+	   	</rewrite>
+
+	   	<rewrite zug="ICE 2[357]" simstart="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" simende="(Niederrad|Niederrad S)" start="Dortmund Hbf" ende="Wien Westbf">
+		   	<via>N&#252;rnberg Hbf</via>
+		   	<via>Passau Hbf</via>
+		   	<via>Linz Hbf</via>
+	   	</rewrite>
+		
+		<!-- TGV-Linie Frankfurt(M) Hbf - Saarbruecken Hbf - Paris Gare de l'Est --> 
+	   
+	   	<rewrite zug="TGV 9552" simstart="(Niederrad|Niederrad S)" simende="Gro&#223; Gerau" start="Frankfurt(M) Hbf" ende="Paris Gare de l&apos;Est">
+		   	<via>Mannheim Hbf</via>
+		   	<via>Saarbr&#252;cken Hbf</via>
+	   	</rewrite>
+	   
+	   	<rewrite zug="TGV 9553" simstart="Gro&#223; Gerau" simende="(Niederrad|Niederrad S)" start="Paris Gare de l&apos;Est" ende="Frankfurt(M) Hbf"/>
+	   
+	</rewrites>
+
+</zza>
