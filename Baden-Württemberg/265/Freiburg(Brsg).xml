@@ -1,0 +1,1001 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+Version 1.0 von Florian Ellebrecht
+Bei Fehlern bitte eine PN an mich (floflo). Mit Zuggattung, Zugnummer, reguläres Gleis, Abfahrtszeit und am besten noch Name der Einfahrt und Ausfahrt des Zuges.
+Es kann vorkommen, dass einzelne Zugnummern in der Datei fehlen. Bitte an mich melden.
+Ebenso kann es vorkommen, dass bei manchen Zügen trotz soundreplace und/oder richiger Schreibweise totaler Schwachsinn gesprochen wrd.
+-->
+<zza>
+   <bahnhoefe>
+      <bahnhof name="Freiburg(Brsg) Hbf" gleise="RF [1-8]" ende="(Gleis RF .*|BW .*|Posthof|Freiburg(Brsg) Hbf)"></bahnhof>
+   </bahnhoefe>
+   <soundreplaces>
+	<replace find="Hbf">Hauptbahnhof</replace>
+	<replace find="HB">Hauptbahnhof</replace>
+	<replace find="Bad Bf">Badischer Bahnhof</replace>
+	<replace find="St\.">Sankt</replace>
+	<replace find="Neustadt">Neuschtadt</replace>
+	<replace find="\(Hohentwiel\)"> am Hohentwiel</replace>
+	<replace find="\(Htw\)"> am Hohentwiel</replace>
+	<replace find="\(Baden\)"> Baden</replace>
+	<replace find="\(Breisgau\)"> im Breisgau</replace>
+	<replace find="\(Brsg\)"> im Breisgau</replace>
+	<replace find="\(Schwarzw\)"> im Schwarzwald</replace>
+	<replace find="\(M\)"> am Main</replace>
+	<replace find="Rhein"> Rein</replace>
+	<replace find="Seebrugg">Sebrugg</replace>
+	<replace find="SBB"> ess be be</replace>
+	<replace find="SWE">es we e</replace>
+	<replace find="SDZ">es de zet</replace>
+	<replace find="CNL">Ze en ell</replace>
+	<replace find="Stuttg">Schtuttgart</replace>
+	<replace find="-Untert&#252;rkheim"> Untert&#252;rkheim zum Fusballschpil zwischen dem ess ze Freiburg und dem fau ef be Schtuttgart </replace>
+	<replace find="K&#248;benhavn">K&#246;benhaben Holb&#228;negor</replace>
+	<replace find="Odense">Ol ense</replace>
+	<replace find="/Moskva  "> mit Zugteil nach Moskfa Beloruskar &#252;ber Minsk. Die Zugtrennung erfolgt in Hannofer. Der andere Zugteil f&#228;hrt weiter </replace>
+	<replace find="/Moskva B"> mit Zugteil von Moskfa Beloruskar</replace>
+	<replace find="Amsterdam C">Amsterdam Zentral</replace>
+	<replace find="-Baden"> Baden</replace>
+	<replace find="-Altona"> Altona</replace>
+   </soundreplaces>
+   
+   <rewrites>
+	   
+	   <!-- Breisgau S-Bahn Freiburg - Denzlingen - Waldkirch - Elzach -->
+	   
+	   <rewrite zug="BSB 88203" simstart="BW 59" simende="BW 57" start="Waldkirch" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="BSB 8820[35]" simstart="" simende="BW 57" start="Waldkirch" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="BSB 88200" simstart="BW 59" simende="Gleis RWA .*" start="Freiburg(Brsg) Hbf" ende="Waldkirch">
+		   <via>Denzlingen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8820[468]" simstart="(BW 57|Ebringen)" simende="Gleis RWA .*" start="Freiburg(Brsg) Hbf" ende="Waldkirch">
+		   <via>Denzlingen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8820[468]" simstart="" simende="Gleis RWA .*" start="Freiburg(Brsg) Hbf" ende="Waldkirch">
+		   <via>Denzlingen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8813[13579]" simstart="Elzach" simende="Gleis RF .*" start="Elzach" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="BSB 88202" simstart="Elzach" simende="Gleis RWA .*" start="Freiburg(Brsg) Hbf" ende="Waldkirch">
+		   <via>Denzlingen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 88202" simstart="" simende="Gleis RWA .*" start="Freiburg(Brsg) Hbf" ende="Waldkirch">
+		   <via>Denzlingen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 88205" simstart="Elzach" simende="Gleis RF .*" start="Waldkirch" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="BSB 88130" simstart="BW 59" simende="Elzach" start="Freiburg(Brsg) Hbf" ende="Elzach">
+		   <via>Denzlingen</via>
+		   <via>Waldkirch</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 88132" simstart="Breisach" simende="Elzach" start="Freiburg(Brsg) Hbf" ende="Elzach">
+		   <via>Denzlingen</via>
+		   <via>Waldkirch</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8813[248]" simstart="" simende="Elzach" start="Freiburg(Brsg) Hbf" ende="Elzach">
+		   <via>Denzlingen</via>
+		   <via>Waldkirch</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8814[37]" simstart="Elzach" simende="Gleis RF .*" start="Elzach" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="BSB 8814[048]" simstart="Elzach" simende="Elzach" start="Freiburg(Brsg) Hbf" ende="Elzach">
+		   <via>Denzlingen</via>
+		   <via>Waldkirch</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 88158" simstart="Elzach" simende="Elzach" start="Freiburg(Brsg) Hbf" ende="Elzach">
+		   <via>Denzlingen</via>
+		   <via>Waldkirch</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8814[048]" simstart="" simende="Elzach" start="Freiburg(Brsg) Hbf" ende="Elzach">
+		   <via>Denzlingen</via>
+		   <via>Waldkirch</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 88158" simstart="" simende="Elzach" start="Freiburg(Brsg) Hbf" ende="Elzach">
+		   <via>Denzlingen</via>
+		   <via>Waldkirch</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8813[48]" simstart="Elzach" simende="Elzach" start="Freiburg(Brsg) Hbf" ende="Elzach">
+		   <via>Denzlingen</via>
+		   <via>Waldkirch</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 88136" simstart="BW 57" simende="Elzach" start="Freiburg(Brsg) Hbf" ende="Elzach">
+		   <via>Denzlingen</via>
+		   <via>Waldkirch</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8814[26]" simstart="BW 57" simende="Elzach" start="Freiburg(Brsg) Hbf" ende="Elzach">
+		   <via>Denzlingen</via>
+		   <via>Waldkirch</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8815[04]" simstart="BW 57" simende="Elzach" start="Freiburg(Brsg) Hbf" ende="Elzach">
+		   <via>Denzlingen</via>
+		   <via>Waldkirch</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 88160" simstart="BW 57" simende="Elzach" start="Freiburg(Brsg) Hbf" ende="Elzach">
+		   <via>Denzlingen</via>
+		   <via>Waldkirch</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8815[159]" simstart="Elzach" simende="Gleis RF .*" start="Elzach" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="BSB 8814[159]" simstart="Elzach" simende="BW 57" start="Elzach" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="BSB 8815[37]" simstart="Elzach" simende="BW 57" start="Elzach" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="BSB 881[56]2" simstart="Elzach" simende="Elzach" start="Freiburg(Brsg) Hbf" ende="Elzach">
+		   <via>Denzlingen</via>
+		   <via>Waldkirch</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 881[56]2" simstart="" simende="Elzach" start="Freiburg(Brsg) Hbf" ende="Elzach">
+		   <via>Denzlingen</via>
+		   <via>Waldkirch</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8820[79]" simstart="(BW 57|Ebringen)" simende="Gleis RF .*" start="Waldkirch" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="BSB 882[12][13579]" simstart="(BW 57|Ebringen)" simende="Gleis RF .*" start="Waldkirch" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="BSB 8820[79]" simstart="" simende="Gleis RF .*" start="Waldkirch" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="BSB 882[12][13579]" simstart="" simende="Gleis RF .*" start="Waldkirch" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="BSB 8821[0248]" simstart="(BW 57|Ebringen)" simende="Gleis RWA .*" start="Freiburg(Brsg) Hbf" ende="Waldkirch">
+		   <via>Denzlingen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8821[02468]" simstart="" simende="Gleis RWA .*" start="Freiburg(Brsg) Hbf" ende="Waldkirch">
+		   <via>Denzlingen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8822[0246]" simstart="(BW 57|Ebringen)" simende="Gleis RWA .*" start="Freiburg(Brsg) Hbf" ende="Waldkirch">
+		   <via>Denzlingen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8822[0246]" simstart="" simende="Gleis RWA .*" start="Freiburg(Brsg) Hbf" ende="Waldkirch">
+		   <via>Denzlingen</via>
+	   </rewrite>
+	   
+	   <!-- Breisgau S-Bahn Freiburg - Gottenheim - Breisach -->
+	   
+	   <rewrite zug="BSB 881[02][13579]" simstart="Breisach" simende="Gleis RF .*" start="Breisach" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="BSB 8811[1359]" simstart="Breisach" simende="Gleis RF .*" start="Breisach" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="BSB 8823[3579]" simstart="Breisach" simende="Gleis RF .*" start="Breisach" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="BSB 8824[13579]" simstart="Breisach" simende="Gleis RF .*" start="Breisach" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="BSB 8825[13579]" simstart="Breisach" simende="Gleis RF .*" start="Breisach" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="BSB 8826[135]" simstart="Breisach" simende="Gleis RF .*" start="Breisach" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="BSB 88112" simstart="BW 57" simende="Breisach" start="Freiburg(Brsg) Hbf" ende="Breisach">
+		   <via>Gottenheim</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8810[0248]" simstart="Breisach" simende="Breisach" start="Freiburg(Brsg) Hbf" ende="Breisach">
+		   <via>Gottenheim</via>
+	   </rewrite>
+	   
+	    <rewrite zug="BSB 88136" simstart="Breisach" simende="Breisach" start="Freiburg(Brsg) Hbf" ende="Breisach">
+		   <via>Gottenheim</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8814[048]" simstart="Breisach" simende="Breisach" start="Freiburg(Brsg) Hbf" ende="Breisach">
+		   <via>Gottenheim</via>
+	   </rewrite>
+	   
+	    <rewrite zug="BSB 8815[26]" simstart="Breisach" simende="Breisach" start="Freiburg(Brsg) Hbf" ende="Breisach">
+		   <via>Gottenheim</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 88160" simstart="Breisach" simende="Breisach" start="Freiburg(Brsg) Hbf" ende="Breisach">
+		   <via>Gottenheim</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8810[0248]" simstart="" simende="Breisach" start="Freiburg(Brsg) Hbf" ende="Breisach">
+		   <via>Gottenheim</via>
+	   </rewrite>
+	   
+	    <rewrite zug="BSB 88136" simstart="" simende="Breisach" start="Freiburg(Brsg) Hbf" ende="Breisach">
+		   <via>Gottenheim</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8814[048]" simstart="" simende="Breisach" start="Freiburg(Brsg) Hbf" ende="Breisach">
+		   <via>Gottenheim</via>
+	   </rewrite>
+	   
+	    <rewrite zug="BSB 8815[26]" simstart="" simende="Breisach" start="Freiburg(Brsg) Hbf" ende="Breisach">
+		   <via>Gottenheim</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 88160" simstart="" simende="Breisach" start="Freiburg(Brsg) Hbf" ende="Breisach">
+		   <via>Gottenheim</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8811[0468]" simstart="(Breisach|Elzach)" simende="Breisach" start="Freiburg(Brsg) Hbf" ende="Breisach">
+		   <via>Gottenheim</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8812[02468]" simstart="Breisach" simende="Breisach" start="Freiburg(Brsg) Hbf" ende="Breisach">
+		   <via>Gottenheim</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8811[0468]" simstart="" simende="Breisach" start="Freiburg(Brsg) Hbf" ende="Breisach">
+		   <via>Gottenheim</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8812[02468]" simstart="" simende="Breisach" start="Freiburg(Brsg) Hbf" ende="Breisach">
+		   <via>Gottenheim</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8823[0248]" simstart="Breisach" simende="Breisach" start="Freiburg(Brsg) Hbf" ende="Breisach">
+		   <via>Gottenheim</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8824[26]" simstart="Breisach" simende="Breisach" start="Freiburg(Brsg) Hbf" ende="Breisach">
+		   <via>Gottenheim</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8825[048]" simstart="Breisach" simende="Breisach" start="Freiburg(Brsg) Hbf" ende="Breisach">
+		   <via>Gottenheim</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8823[0248]" simstart="" simende="Breisach" start="Freiburg(Brsg) Hbf" ende="Breisach">
+		   <via>Gottenheim</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8824[26]" simstart="" simende="Breisach" start="Freiburg(Brsg) Hbf" ende="Breisach">
+		   <via>Gottenheim</via>
+	   </rewrite>
+	   
+	   <rewrite zug="BSB 8825[048]" simstart="" simende="Breisach" start="Freiburg(Brsg) Hbf" ende="Breisach">
+		   <via>Gottenheim</via>
+	   </rewrite>
+	   
+	   <!-- RB-Linie 703 Basel Bad Bf - Freiburg - Offenburg -->
+	   
+	   <rewrite zug="RB 31092" simstart="Ebringen" simende="K&#246;ndrigen" start="Basel Bad Bf" ende="Offenburg">
+		   <via>Emmendingen</via>
+		   <via>Herbolzheim</via>
+		   <via>Lahr(Schwarzw)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3101[28]" simstart="Ebringen" simende="K&#246;ndrigen" start="Basel Bad Bf" ende="Offenburg">
+		   <via>Emmendingen</via>
+		   <via>Herbolzheim</via>
+		   <via>Lahr(Schwarzw)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 310[24]4" simstart="Ebringen" simende="K&#246;ndrigen" start="Basel Bad Bf" ende="Offenburg">
+		   <via>Emmendingen</via>
+		   <via>Herbolzheim</via>
+		   <via>Lahr(Schwarzw)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 310[56]0" simstart="Ebringen" simende="K&#246;ndrigen" start="Basel Bad Bf" ende="Offenburg">
+		   <via>Emmendingen</via>
+		   <via>Herbolzheim</via>
+		   <via>Lahr(Schwarzw)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 311[013]5" simstart="K&#246;ndrigen" simende="Ebringen" start="Offenburg" ende="Basel Bad Bf">
+		   <via>Bad Krozingen</via>
+		   <via>M&#252;llheim(Baden)</via>
+		   <via>Weil am Rhein</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31047" simstart="K&#246;ndrigen" simende="Ebringen" start="Offenburg" ende="Basel Bad Bf">
+		   <via>Bad Krozingen</via>
+		   <via>M&#252;llheim(Baden)</via>
+		   <via>Weil am Rhein</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31109" simstart="K&#246;ndrigen" simende="Ebringen" start="Offenburg" ende="Basel Bad Bf">
+		   <via>Bad Krozingen</via>
+		   <via>M&#252;llheim(Baden)</via>
+		   <via>Weil am Rhein</via>
+	   </rewrite>
+	   
+	   <!-- RB-Linie 703A Offenburg - Freiburg -->
+	   
+	   <rewrite zug="RB 31071" simstart="K&#246;ndrigen" simende="Gleis RF .*" start="Offenburg" ende="Freiburg(Brsg) Hbf"/>
+	   
+	    <rewrite zug="RB 31074" simstart="BW 57" simende="K&#246;ndrigen" start="Freiburg(Brsg) Hbf" ende="Offenburg">
+		   <via>Emmendingen</via>
+		   <via>Herbolzheim</via>
+		   <via>Lahr(Schwarzw)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 4768" simstart="Ebringen" simende="K&#246;ndrigen" start="Freiburg(Brsg) Hbf" ende="Offenburg">
+		   <via>Emmendingen</via>
+		   <via>Herbolzheim</via>
+		   <via>Lahr(Schwarzw)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 4768" simstart="" simende="K&#246;ndrigen" start="Freiburg(Brsg) Hbf" ende="Offenburg">
+		   <via>Emmendingen</via>
+		   <via>Herbolzheim</via>
+		   <via>Lahr(Schwarzw)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31042" simstart="Ebringen" simende="K&#246;ndrigen" start="M&#252;llheim(Baden)" ende="Offenburg">
+		   <via>Emmendingen</via>
+		   <via>Herbolzheim</via>
+		   <via>Lahr(Schwarzw)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31170" simstart="BW 57" simende="Gleis REMM .*" start="Freiburg(Brsg) Hbf" ende="Emmendingen">
+		   <via>Denzlingen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31069" simstart="Ebringen" simende="BW 57" start="Emmendingen" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RB 31069" simstart="" simende="BW 57" start="Emmendingen" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <!-- RB-Linie 703C Neuenburg - Freiburg -->
+	   
+	   <rewrite zug="RB 310[689]7" simstart="K&#246;ndrigen" simende="Ebringen" start="Offenburg" ende="Neuenburg(Baden)">
+		   <via>Bad Krozingen</via>
+		   <via>M&#252;llheim(Baden)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3112[39]" simstart="K&#246;ndrigen" simende="Ebringen" start="Offenburg" ende="Neuenburg(Baden)">
+		   <via>Bad Krozingen</via>
+		   <via>M&#252;llheim(Baden)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31101" simstart="K&#246;ndrigen" simende="Ebringen" start="Offenburg" ende="Neuenburg(Baden)">
+		   <via>Bad Krozingen</via>
+		   <via>M&#252;llheim(Baden)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31175" simstart="BW 58" simende="Ebringen" start="Freiburg(Brsg) Hbf" ende="Neuenburg(Baden)">
+		   <via>Bad Krozingen</via>
+		   <via>M&#252;llheim(Baden)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31181" simstart="BW 58" simende="Ebringen" start="Freiburg(Brsg) Hbf" ende="Neuenburg(Baden)">
+		   <via>Bad Krozingen</via>
+		   <via>M&#252;llheim(Baden)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31171" simstart="BW 57" simende="Ebringen" start="Emmendingen" ende="Neuenburg(Baden)">
+		   <via>Bad Krozingen</via>
+		   <via>M&#252;llheim(Baden)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31171" simstart="" simende="Ebringen" start="Emmendingen" ende="Neuenburg(Baden)">
+		   <via>Bad Krozingen</via>
+		   <via>M&#252;llheim(Baden)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31079" simstart="Ebringen" simende="Ebringen" start="Freiburg(Brsg) Hbf" ende="Neuenburg(Baden)">
+		   <via>Bad Krozingen</via>
+		   <via>M&#252;llheim(Baden)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31079" simstart="" simende="Ebringen" start="Freiburg(Brsg) Hbf" ende="Neuenburg(Baden)">
+		   <via>Bad Krozingen</via>
+		   <via>M&#252;llheim(Baden)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31133" simstart="BW 57" simende="Ebringen" start="Freiburg(Brsg) Hbf" ende="Neuenburg(Baden)">
+		   <via>Bad Krozingen</via>
+		   <via>M&#252;llheim(Baden)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31082" simstart="Ebringen" simende="K&#246;ndrigen" start="Neuenburg(Baden)" ende="Offenburg">
+		   <via>Emmendingen</via>
+		   <via>Herbolzheim</via>
+		   <via>Lahr(Schwarzw)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31096" simstart="Ebringen" simende="K&#246;ndrigen" start="Neuenburg(Baden)" ende="Offenburg">
+		   <via>Emmendingen</via>
+		   <via>Herbolzheim</via>
+		   <via>Lahr(Schwarzw)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 311[04]2" simstart="Ebringen" simende="K&#246;ndrigen" start="Neuenburg(Baden)" ende="Offenburg">
+		   <via>Emmendingen</via>
+		   <via>Herbolzheim</via>
+		   <via>Lahr(Schwarzw)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31052" simstart="Ebringen" simende="Gleis REMM .*" start="Neuenburg(Baden)" ende="Emmendingen">
+		   <via>Denzlingen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31176" simstart="Ebringen" simende="BW 57" start="Neuenburg(Baden)" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RB 31064" simstart="Ebringen" simende="Gleis RF .*" start="Neuenburg(Baden)" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RB 31070" simstart="Ebringen" simende="BW 57" start="Neuenburg(Baden)" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RB 31180" simstart="Ebringen" simende="BW 57" start="Neuenburg(Baden)" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RB 31132" simstart="Ebringen" simende="Gleis RF .*" start="Neuenburg(Baden)" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <!-- Hoellentalbahn Freiburg - Titisee - Neustadt -->
+	   
+	   <rewrite zug="RB 3156[68]" simstart="Freiburg-Wiehre" simende="Gleis RF .*" start="Neustadt(Schwarzw)" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RB 3157[026]" simstart="Freiburg-Wiehre" simende="Gleis RF .*" start="Neustadt(Schwarzw)" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RB 3158[28]" simstart="Freiburg-Wiehre" simende="Gleis RF .*" start="Neustadt(Schwarzw)" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RB 315[59]4" simstart="Freiburg-Wiehre" simende="Gleis RF .*" start="Neustadt(Schwarzw)" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RB 3160[06]" simstart="Freiburg-Wiehre" simende="Gleis RF .*" start="Neustadt(Schwarzw)" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RB 3161[048]" simstart="Freiburg-Wiehre" simende="Gleis RF .*" start="Neustadt(Schwarzw)" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RB 3162[26]" simstart="Freiburg-Wiehre" simende="Gleis RF .*" start="Neustadt(Schwarzw)" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RB 31634" simstart="Freiburg-Wiehre" simende="Gleis RF .*" start="Neustadt(Schwarzw)" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RB 31[56]50" simstart="Freiburg-Wiehre" simende="Gleis RF .*" start="Neustadt(Schwarzw)" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RB 31557" simstart="(Freiburg-Wiehre|BW 58)" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Neustadt(Schwarzw)">
+		   <via>Kirchzarten</via>
+		   <via>Hinterzarten</via>
+		   <via>Titisee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 316[25]1" simstart="(Freiburg-Wiehre|BW 58)" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Neustadt(Schwarzw)">
+		   <via>Kirchzarten</via>
+		   <via>Hinterzarten</via>
+		   <via>Titisee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31579" simstart="(Freiburg-Wiehre|BW 58)" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Neustadt(Schwarzw)">
+		   <via>Kirchzarten</via>
+		   <via>Hinterzarten</via>
+		   <via>Titisee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31585" simstart="(Freiburg-Wiehre|BW 58)" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Neustadt(Schwarzw)">
+		   <via>Kirchzarten</via>
+		   <via>Hinterzarten</via>
+		   <via>Titisee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3159[17]" simstart="(Freiburg-Wiehre|BW 58)" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Neustadt(Schwarzw)">
+		   <via>Kirchzarten</via>
+		   <via>Hinterzarten</via>
+		   <via>Titisee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3160[157]" simstart="(Freiburg-Wiehre|BW 58)" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Neustadt(Schwarzw)">
+		   <via>Kirchzarten</via>
+		   <via>Hinterzarten</via>
+		   <via>Titisee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3161[159]" simstart="(Freiburg-Wiehre|BW 58)" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Neustadt(Schwarzw)">
+		   <via>Kirchzarten</via>
+		   <via>Hinterzarten</via>
+		   <via>Titisee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31557" simstart="" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Neustadt(Schwarzw)">
+		   <via>Kirchzarten</via>
+		   <via>Hinterzarten</via>
+		   <via>Titisee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 316[25]1" simstart="" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Neustadt(Schwarzw)">
+		   <via>Kirchzarten</via>
+		   <via>Hinterzarten</via>
+		   <via>Titisee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31579" simstart="" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Neustadt(Schwarzw)">
+		   <via>Kirchzarten</via>
+		   <via>Hinterzarten</via>
+		   <via>Titisee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31585" simstart="" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Neustadt(Schwarzw)">
+		   <via>Kirchzarten</via>
+		   <via>Hinterzarten</via>
+		   <via>Titisee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3159[17]" simstart="" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Neustadt(Schwarzw)">
+		   <via>Kirchzarten</via>
+		   <via>Hinterzarten</via>
+		   <via>Titisee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3160[157]" simstart="" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Neustadt(Schwarzw)">
+		   <via>Kirchzarten</via>
+		   <via>Hinterzarten</via>
+		   <via>Titisee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3161[159]" simstart="" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Neustadt(Schwarzw)">
+		   <via>Kirchzarten</via>
+		   <via>Hinterzarten</via>
+		   <via>Titisee</via>
+	   </rewrite>
+	   
+	    <rewrite zug="RB 31667" simstart="BW 57" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Himmelreich">
+		   <via>Kirchzarten</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31666" simstart="Freiburg-Wiehre" simende="BW 59" start="Himmelreich" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RB 31551" simstart="BW 59" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Neustadt(Schwarzw)">
+		   <via>Kirchzarten</via>
+		   <via>Hinterzarten</via>
+		   <via>Titisee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3156[37]" simstart="Freiburg-Wiehre" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Neustadt(Schwarzw)">
+		   <via>Kirchzarten</via>
+		   <via>Hinterzarten</via>
+		   <via>Titisee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3156[37]" simstart="" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Neustadt(Schwarzw)">
+		   <via>Kirchzarten</via>
+		   <via>Hinterzarten</via>
+		   <via>Titisee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31627" simstart="Freiburg-Wiehre" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Neustadt(Schwarzw)">
+		   <via>Kirchzarten</via>
+		   <via>Hinterzarten</via>
+		   <via>Titisee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31627" simstart="" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Neustadt(Schwarzw)">
+		   <via>Kirchzarten</via>
+		   <via>Hinterzarten</via>
+		   <via>Titisee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31571" simstart="K&#246;ndrigen" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Neustadt(Schwarzw)">
+		   <via>Kirchzarten</via>
+		   <via>Hinterzarten</via>
+		   <via>Titisee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31571" simstart="" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Neustadt(Schwarzw)">
+		   <via>Kirchzarten</via>
+		   <via>Hinterzarten</via>
+		   <via>Titisee</via>
+	   </rewrite>
+	   
+	   <!-- Dreiseenbahn Freiburg - Titisee - Seebrugg -->
+	   
+	   <rewrite zug="RB 31569" simstart="Freiburg-Wiehre" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Seebrugg">
+		   <via>Kirchzarten</via>
+		   <via>Titisee</via>
+		   <via>Schluchsee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3157[37]" simstart="Freiburg-Wiehre" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Seebrugg">
+		   <via>Kirchzarten</via>
+		   <via>Titisee</via>
+		   <via>Schluchsee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3158[17]" simstart="Freiburg-Wiehre" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Seebrugg">
+		   <via>Kirchzarten</via>
+		   <via>Titisee</via>
+		   <via>Schluchsee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3159[59]" simstart="Freiburg-Wiehre" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Seebrugg">
+		   <via>Kirchzarten</via>
+		   <via>Titisee</via>
+		   <via>Schluchsee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3160[39]" simstart="Freiburg-Wiehre" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Seebrugg">
+		   <via>Kirchzarten</via>
+		   <via>Titisee</via>
+		   <via>Schluchsee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3161[37]" simstart="Freiburg-Wiehre" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Seebrugg">
+		   <via>Kirchzarten</via>
+		   <via>Titisee</via>
+		   <via>Schluchsee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31659" simstart="Freiburg-Wiehre" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Seebrugg">
+		   <via>Kirchzarten</via>
+		   <via>Titisee</via>
+		   <via>Schluchsee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31569" simstart="" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Seebrugg">
+		   <via>Kirchzarten</via>
+		   <via>Titisee</via>
+		   <via>Schluchsee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3157[37]" simstart="" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Seebrugg">
+		   <via>Kirchzarten</via>
+		   <via>Titisee</via>
+		   <via>Schluchsee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3158[17]" simstart="" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Seebrugg">
+		   <via>Kirchzarten</via>
+		   <via>Titisee</via>
+		   <via>Schluchsee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3159[59]" simstart="" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Seebrugg">
+		   <via>Kirchzarten</via>
+		   <via>Titisee</via>
+		   <via>Schluchsee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3160[39]" simstart="" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Seebrugg">
+		   <via>Kirchzarten</via>
+		   <via>Titisee</via>
+		   <via>Schluchsee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 3161[37]" simstart="" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Seebrugg">
+		   <via>Kirchzarten</via>
+		   <via>Titisee</via>
+		   <via>Schluchsee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31659" simstart="" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Seebrugg">
+		   <via>Kirchzarten</via>
+		   <via>Titisee</via>
+		   <via>Schluchsee</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RB 31652" simstart="Freiburg-Wiehre" simende="Gleis RF .*" start="Seebrugg" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RB 31574" simstart="Freiburg-Wiehre" simende="Gleis RF .*" start="Seebrugg" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RB 3158[04]" simstart="Freiburg-Wiehre" simende="Gleis RF .*" start="Seebrugg" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RB 3159[08]" simstart="Freiburg-Wiehre" simende="Gleis RF .*" start="Seebrugg" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RB 3160[248]" simstart="Freiburg-Wiehre" simende="Gleis RF .*" start="Seebrugg" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RB 3161[26]" simstart="Freiburg-Wiehre" simende="Gleis RF .*" start="Seebrugg" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RB 31620" simstart="Freiburg-Wiehre" simende="Gleis RF .*" start="Seebrugg" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RB 31560" simstart="Freiburg-Wiehre" simende="Gleis RF .*" start="Seebrugg" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <!-- RE-Linie 703 Offenburg - Freiburg - Basel -->
+	   
+	   <rewrite zug="RE 4743" simstart="K&#246;ndrigen" simende="BW 58" start="Karlsruhe Hbf" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RE 3100[79]" simstart="K&#246;ndrigen" simende="Ebringen" start="Offenburg" ende="Basel Bad Bf">
+		   <via>Bad Krozingen</via>
+		   <via>M&#252;llheim(Baden)</via>
+		   <via>Weil am Rhein</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3101[13579]" simstart="K&#246;ndrigen" simende="Ebringen" start="Offenburg" ende="Basel Bad Bf">
+		   <via>Bad Krozingen</via>
+		   <via>M&#252;llheim(Baden)</via>
+		   <via>Weil am Rhein</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 31029" simstart="K&#246;ndrigen" simende="Ebringen" start="Offenburg" ende="Basel Bad Bf">
+		   <via>Bad Krozingen</via>
+		   <via>M&#252;llheim(Baden)</via>
+		   <via>Weil am Rhein</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3103[139]" simstart="K&#246;ndrigen" simende="Ebringen" start="Offenburg" ende="Basel Bad Bf">
+		   <via>Bad Krozingen</via>
+		   <via>M&#252;llheim(Baden)</via>
+		   <via>Weil am Rhein</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 31053" simstart="K&#246;ndrigen" simende="Ebringen" start="Offenburg" ende="Basel Bad Bf">
+		   <via>Bad Krozingen</via>
+		   <via>M&#252;llheim(Baden)</via>
+		   <via>Weil am Rhein</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 517[135]" simstart="K&#246;ndrigen" simende="Ebringen" start="Offenburg" ende="Basel SBB">
+		   <via>Bad Krozingen</via>
+		   <via>M&#252;llheim(Baden)</via>
+		   <via>Basel Bad Bf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 5155" simstart="K&#246;ndrigen" simende="Ebringen" start="Offenburg" ende="Basel SBB">
+		   <via>Bad Krozingen</via>
+		   <via>M&#252;llheim(Baden)</via>
+		   <via>Basel Bad Bf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3100[468]" simstart="Ebringen" simende="K&#246;ndrigen" start="Basel Bad Bf" ende="Offenburg">
+		   <via>Emmendingen</via>
+		   <via>Herbolzheim</via>
+		   <via>Lahr(Schwarzw)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 31030" simstart="Ebringen" simende="K&#246;ndrigen" start="Basel Bad Bf" ende="Offenburg">
+		   <via>Emmendingen</via>
+		   <via>Herbolzheim</via>
+		   <via>Lahr(Schwarzw)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 3101[024]" simstart="Ebringen" simende="K&#246;ndrigen" start="Basel Bad Bf" ende="Offenburg">
+		   <via>Emmendingen</via>
+		   <via>Herbolzheim</via>
+		   <via>Lahr(Schwarzw)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 31048" simstart="Ebringen" simende="K&#246;ndrigen" start="Basel Bad Bf" ende="Offenburg">
+		   <via>Emmendingen</via>
+		   <via>Herbolzheim</via>
+		   <via>Lahr(Schwarzw)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 31056" simstart="Ebringen" simende="K&#246;ndrigen" start="Basel Bad Bf" ende="Offenburg">
+		   <via>Emmendingen</via>
+		   <via>Herbolzheim</via>
+		   <via>Lahr(Schwarzw)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 515[02]" simstart="Ebringen" simende="K&#246;ndrigen" start="Basel SBB" ende="Offenburg">
+		   <via>Emmendingen</via>
+		   <via>Herbolzheim</via>
+		   <via>Lahr(Schwarzw)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 516[68]" simstart="Ebringen" simende="K&#246;ndrigen" start="Basel SBB" ende="Offenburg">
+		   <via>Emmendingen</via>
+		   <via>Herbolzheim</via>
+		   <via>Lahr(Schwarzw)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 26870" simstart="BW 57" simende="K&#246;ndrigen" start="Freiburg(Brsg) Hbf" ende="Stuttg-Untert&#252;rkheim">
+		   <via>Offenburg</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 26871" simstart="K&#246;ndrigen" simende="BW 57" start="Stuttg-Untert&#252;rkheim" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <!-- RE-Linie 703A Offenburg - Freiburg -->
+	   
+	   <rewrite zug="RE 31131" simstart="K&#246;ndrigen" simende="BW 59" start="Offenburg" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RE 31036" simstart="Ebringen" simende="K&#246;ndrigen" start="M&#252;llheim(Baden)" ende="Offenburg"/>
+	   
+	   <rewrite zug="RE 31100" simstart="BW 57" simende="K&#246;ndrigen" start="Freiburg(Brsg) Hbf" ende="Offenburg"/>
+	   
+	   <!-- RE-Linie 703B Freiburg - Basel -->
+	   
+	   <rewrite zug="RE 5153" simstart="BW 57" simende="Ebringen" start="Freiburg(Brsg) Hbf" ende="Basel SBB">
+		   <via>Bad Krozingen</via>
+		   <via>M&#252;llheim(Baden)</via>
+		   <via>Basel Bad Bf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="RE 5170" simstart="Ebringen" simende="BW 57" start="Basel SBB" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="RE 31024" simstart="Ebringen" simende="BW 57" start="Basel Bad Bf" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <!-- SWE-Linie 725 Freiburg - Staufen -->
+	   
+	   <rewrite zug="SWE 31161" simstart="Ebringen" simende="Ebringen" start="Freiburg(Brsg) Hbf" ende="Staufen(Breisgau)">
+		   <via>Bad Krozingen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="SWE 31161" simstart="" simende="Ebringen" start="Freiburg(Brsg) Hbf" ende="Staufen(Breisgau)">
+		   <via>Bad Krozingen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="SWE 31163" simstart="BW 57" simende="Ebringen" start="Freiburg(Brsg) Hbf" ende="M&#252;nstertal(Schwarzw)">
+		   <via>Bad Krozingen</via>
+		   <via>Staufen(Brsg)</via>
+	   </rewrite>
+	   
+	   <rewrite zug="SWE 31165" simstart="BW 57" simende="Ebringen" start="Freiburg(Brsg) Hbf" ende="Staufen(Breisgau)">
+		   <via>Bad Krozingen</via>
+	   </rewrite>
+	   
+	   <rewrite zug="SWE 31160" simstart="Ebringen" simende="Gleis RF .*" start="M&#252;nstertal(Schwarzw)" ende="Freiburg(Brsg) Hbf"/>
+	   
+	   <rewrite zug="SWE 3116[24]" simstart="Ebringen" simende="Gleis RF .*" start="Staufen(Breisgau)" ende="Freiburg(Brsg) Hbf"/> 
+	   
+	   <!-- Sonderzug Freiburg - Titisee - Donaueschingen - Horb -->
+	   
+	   <rewrite zug="SDZ 97331" simstart="BW 59" simende="Freiburg-Wiehre" start="Freiburg(Brsg) Hbf" ende="Horb">
+		   <via>Donaueschingen</via>
+		   <via>Villingen</via>
+		   <via>Rottweil</via>
+	   </rewrite>
+	   
+	   <!-- CNL von Zuerich nach Deutschland -->
+	   
+	   <rewrite zug="CNL 458" simstart="K&#246;ndrigen" simende="Ebringen" start="Dresden Hbf" ende="Z&#252;rich HB">
+		   <via>Basel SBB</via>
+	   </rewrite>
+	   
+	   <rewrite zug="CNL 479" simstart="K&#246;ndrigen" simende="Ebringen" start="Dresden Hbf" ende="Z&#252;rich HB">
+		   <via>Basel SBB</via>
+	   </rewrite>
+	   
+	   <rewrite zug="CNL 472" simstart="Ebringen" simende="K&#246;ndrigen" start="Basel SBB" ende="K&#248;benhavn/Moskva  ">
+		   <via>Flensburg</via>
+		   <via>Odense</via>
+	   </rewrite>
+	   
+	   <rewrite zug="CNL 473" simstart="K&#246;ndrigen" simende="Ebringen" start="K&#248;benhavn/Moskva B" ende="Basel SBB"/>
+	   
+	   <!-- IC-Linie 61 Basel SBB - Karlsruhe - Nuernberg -->
+	   
+	   <rewrite zug="IC 210[135]" simstart="Ebringen" simende="K&#246;ndrigen" start="Basel SBB" ende="N&#252;rnberg Hbf">
+		   <via>Karlsruhe Hbf</via>
+		   <via>Stuttgart Hbf</via>
+		   <via>Ansbach</via>
+	   </rewrite>
+	   
+	   <rewrite zug="IC 210[02]" simstart="K&#246;ndrigen" simende="Ebringen" start="N&#252;rnberg Hbf" ende="Basel SBB"/>
+	   
+	   <!-- ICE-Linie 12 Interlaken - Zuerich - Karlsruhe - Frankfurt - Berlin -->
+	   
+	   <rewrite zug="ICE 87[02]" simstart="Ebringen" simende="K&#246;ndrigen" start="Basel SBB" ende="Berlin Ostbahnhof">
+		   <via>Karlsruhe Hbf</via>
+		   <via>Frankfurt(M) Hbf</via>
+		   <via>Wolfsburg Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 676" simstart="Ebringen" simende="K&#246;ndrigen" start="Basel SBB" ende="Mannheim Hbf">
+		   <via>Baden-Baden</via>
+		   <via>Karlsruhe Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 374" simstart="Ebringen" simende="K&#246;ndrigen" start="Bern" ende="Berlin Ostbahnhof">
+		   <via>Karlsruhe Hbf</via>
+		   <via>Frankfurt(M) Hbf</via>
+		   <via>Wolfsburg Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 270" simstart="Ebringen" simende="K&#246;ndrigen" start="Z&#252;rich HB" ende="Frankfurt(M) Hbf">
+		   <via>Karlsruhe Hbf</via>
+		   <via>Mannheim Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 27[68]" simstart="Ebringen" simende="K&#246;ndrigen" start="Interlaken Ost" ende="Berlin Ostbahnhof">
+		   <via>Karlsruhe Hbf</via>
+		   <via>Frankfurt(M) Hbf</via>
+		   <via>Wolfsburg Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 370" simstart="Ebringen" simende="K&#246;ndrigen" start="Interlaken Ost" ende="Berlin Ostbahnhof">
+		   <via>Karlsruhe Hbf</via>
+		   <via>Frankfurt(M) Hbf</via>
+		   <via>Wolfsburg Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 371" simstart="K&#246;ndrigen" simende="Ebringen" start="Karlsruhe Hbf" ende="Interlaken Ost">
+		   <via>Basel SBB</via>
+		   <via>Bern</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 271" simstart="K&#246;ndrigen" simende="Ebringen" start="Frankfurt(M) Hbf" ende="Bern">
+		   <via>Basel SBB</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 87[13]" simstart="K&#246;ndrigen" simende="Ebringen" start="Berlin Ostbahnhof" ende="Basel SBB"/>
+	   
+	   <rewrite zug="ICE 37[35]" simstart="K&#246;ndrigen" simende="Ebringen" start="Berlin Ostbahnhof" ende="Interlaken Ost">
+		   <via>Basel SBB</via>
+		   <via>Bern</via>
+	   </rewrite>
+
+	   <rewrite zug="ICE 27[79]" simstart="K&#246;ndrigen" simende="Ebringen" start="Berlin Ostbahnhof" ende="Interlaken Ost">
+		   <via>Basel SBB</via>
+		   <via>Bern</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 5" simstart="K&#246;ndrigen" simende="Ebringen" start="Frankfurt(M) Hbf" ende="Z&#252;rich HB">
+		   <via>Basel SBB</via>
+	   </rewrite>
+	   
+	   <!-- ICE-Linie 20 Zuerich - Frankfurt - Hannover - Hamburg - Kiel -->
+	   
+	   <rewrite zug="ICE 272" simstart="Ebringen" simende="K&#246;ndrigen" start="Z&#252;rich HB" ende="Hamburg-Altona">
+		   <via>Karlsruhe Hbf</via>
+		   <via>Frankfurt(M) Hbf</via>
+		   <via>Hannover Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 70" simstart="Ebringen" simende="K&#246;ndrigen" start="Basel SBB" ende="Hamburg-Altona">
+		   <via>Karlsruhe Hbf</via>
+		   <via>Frankfurt(M) Hbf</via>
+		   <via>Hannover Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 376" simstart="Ebringen" simende="K&#246;ndrigen" start="Interlaken Ost" ende="Hamburg-Altona">
+		   <via>Karlsruhe Hbf</via>
+		   <via>Frankfurt(M) Hbf</via>
+		   <via>Hannover Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 7[28]" simstart="Ebringen" simende="K&#246;ndrigen" start="Z&#252;rich HB" ende="Hamburg-Altona">
+		   <via>Karlsruhe Hbf</via>
+		   <via>Frankfurt(M) Hbf</via>
+		   <via>Hannover Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 7[46]" simstart="Ebringen" simende="K&#246;ndrigen" start="Z&#252;rich HB" ende="Kiel Hbf">
+		   <via>Frankfurt(M) Hbf</via>
+		   <via>Hannover Hbf</via>
+		   <via>Hamburg Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 7[579]" simstart="K&#246;ndrigen" simende="Ebringen" start="Hamburg-Altona" ende="Z&#252;rich HB">
+		   <via>Basel SBB</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 73" simstart="K&#246;ndrigen" simende="Ebringen" start="Kiel Hbf" ende="Z&#252;rich HB">
+		   <via>Basel SBB</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 71" simstart="K&#246;ndrigen" simende="Ebringen" start="Hamburg-Altona" ende="Basel SBB"/>
+	   
+	   <!-- ICE-Linie 43 Basel - Mannheim - Koeln - Dortmund - Amsterdam -->
+	   
+	   <rewrite zug="ICE 604" simstart="Ebringen" simende="K&#246;ndrigen" start="Basel Bad Bf" ende="K&#246;ln Hbf">
+		   <via>Karlsruhe Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 602" simstart="Ebringen" simende="K&#246;ndrigen" start="Basel SBB" ende="K&#246;ln Hbf">
+		   <via>Karlsruhe Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 500" simstart="Ebringen" simende="K&#246;ndrigen" start="Basel SBB" ende="Dortmund Hbf">
+		   <via>Karlsruhe Hbf</via>
+		   <via>K&#246;ln Hbf</via>
+		   <via>Essen Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 508" simstart="Ebringen" simende="K&#246;ndrigen" start="Basel SBB" ende="K&#246;ln Hbf">
+		   <via>Karlsruhe Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 104" simstart="Ebringen" simende="K&#246;ndrigen" start="Basel SBB" ende="Amsterdam C">
+		   <via>Karlsruhe Hbf</via>
+		   <via>K&#246;ln Hbf</via>
+		   <via>Oberhausen Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="ICE 505" simstart="K&#246;ndrigen" simende="Ebringen" start="Amsterdam C" ende="Basel SBB"/>
+	   
+	   <rewrite zug="ICE 50[19]" simstart="K&#246;ndrigen" simende="Ebringen" start="Dortmund Hbf" ende="Basel SBB"/>
+	   
+	   <rewrite zug="ICE 601" simstart="K&#246;ndrigen" simende="Ebringen" start="K&#246;ln Hbf" ende="Basel SBB"/>
+	   
+   </rewrites>
+   
+</zza>
