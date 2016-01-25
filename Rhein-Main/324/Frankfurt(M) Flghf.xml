@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Version 1.0 von Florian Ellebrecht
+Bei Fehlern bitte eine PN an mich (floflo). Mit Zuggattung, Zugnummer, reguläres Gleis, Abfahrtszeit und am besten noch Name der Einfahrt und Ausfahrt des Zuges.
+Es kann vorkommen, dass einzelne Zugnummern in der Datei fehlen. Bitte an mich melden.
+Ebenso kann es vorkommen, dass bei manchen Zügen trotz soundreplace und/oder richiger Schreibweise totaler Schwachsinn gesprochen wrd.
 -->
 <zza>
 	<bahnhoefe>
