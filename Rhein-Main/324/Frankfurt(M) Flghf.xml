@@ -376,7 +376,7 @@ Ebenso kann es vorkommen, dass bei manchen Zügen trotz soundreplace und/oder ri
 			<via>Mainz Hbf</via>
 		</rewrite>
 
-		<rewrite zug="S 78[34][02468]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Offenbach-Ost" ende="Wiesbaden Hbf">
+		<rewrite zug="S 8 78[34][02468]" simstart="(Niederrad|Niederrad S)" simende="(R&#252;sselsheim|R&#252;sselsheim S|R&#252;sselsheim Fern)" start="Offenbach-Ost" ende="Wiesbaden Hbf">
 			<via>R&#252;sselsheim</via>
 			<via>Mainz Hbf</via>
 		</rewrite>
