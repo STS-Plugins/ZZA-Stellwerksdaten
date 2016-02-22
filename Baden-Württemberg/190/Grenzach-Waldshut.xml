@@ -239,15 +239,15 @@ Ebenso kann es vorkommen, dass bei manchen Zügen trotz soundreplace und/oder ri
 	   
 	   <!-- S-Bahn Zuerich S41 Winterthur - Koblenz - Waldshut -->
 	   
-	   <rewrite zug="198[1-9]{2}" simstart="Koblenz (CH)" simende="RWU 5" start="Winterthur" ende="Waldshut"/>
+	   <rewrite zug="198[1-9]{2}" simstart="Koblenz \(CH\)" simende="RWU 5" start="Winterthur" ende="Waldshut"/>
 	   
-	   <rewrite zug="198[1-9]{2}" simstart="" simende="Koblenz (CH)" start="Waldshut" ende="Winterthur">
+	   <rewrite zug="198[1-9]{2}" simstart="" simende="Koblenz \(CH\)" start="Waldshut" ende="Winterthur">
 		   <via>Koblenz</via>
 		   <via>Eglisau</via>
 		   <via>B&#252;lach</via>
 	   </rewrite>
 	   
-	   <rewrite zug="198[1-9]{2}" simstart="Koblenz (CH)" simende="Koblenz (CH)" start="Waldshut" ende="Winterthur">
+	   <rewrite zug="198[1-9]{2}" simstart="Koblenz \(CH\)" simende="Koblenz \(CH\)" start="Waldshut" ende="Winterthur">
 		   <via>Koblenz</via>
 		   <via>Eglisau</via>
 		   <via>B&#252;lach</via>
@@ -255,18 +255,18 @@ Ebenso kann es vorkommen, dass bei manchen Zügen trotz soundreplace und/oder ri
 	   
 	   <!-- S-Bahn Zuerich S27 Baden - Koblenz - Waldshut -->
 	   
-	   <rewrite zug="25911" simstart="" simende="Koblenz (CH)" start="Waldshut" ende="Rekingen AG">
+	   <rewrite zug="25911" simstart="" simende="Koblenz \(CH\)" start="Waldshut" ende="Rekingen AG">
 		   <via>Koblenz</via>
 		   <via>Rietheim</via>
 	   </rewrite>
 	   
-	   <rewrite zug="25915" simstart="" simende="Koblenz (CH)" start="Waldshut" ende="Koblenz"/>
+	   <rewrite zug="25915" simstart="" simende="Koblenz \(CH\)" start="Waldshut" ende="Koblenz"/>
 	   
-	   <rewrite zug="25915" simstart="Koblenz (CH)" simende="Koblenz (CH)" start="Waldshut" ende="Koblenz"/>
+	   <rewrite zug="25915" simstart="Koblenz \(CH\)" simende="Koblenz \(CH\)" start="Waldshut" ende="Koblenz"/>
 	   
-	   <rewrite zug="259[01]9" simstart="Koblenz (CH)" simende="Gleis RWU 5" start="Koblenz" ende="Waldshut"/>
+	   <rewrite zug="259[01]9" simstart="Koblenz \(CH\)" simende="Gleis RWU 5" start="Koblenz" ende="Waldshut"/>
 	   
-	   <rewrite zug="25913" simstart="Koblenz (CH)" simende="Gleis RWU 5" start="Koblenz" ende="Waldshut"/>
+	   <rewrite zug="25913" simstart="Koblenz \(CH\)" simende="Gleis RWU 5" start="Koblenz" ende="Waldshut"/>
 	   
 	   <rewrite zug="259[1-9]{2}" simstart="" simende="Koblenz \(CH\)" start="Waldshut" ende="Baden">
 		   <via>Koblenz</via>
