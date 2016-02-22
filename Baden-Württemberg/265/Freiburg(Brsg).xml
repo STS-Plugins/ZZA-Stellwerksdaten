@@ -996,6 +996,28 @@ Ebenso kann es vorkommen, dass bei manchen Zügen trotz soundreplace und/oder ri
 	   
 	   <rewrite zug="ICE 601" simstart="K&#246;ndrigen" simende="Ebringen" start="K&#246;ln Hbf" ende="Basel SBB"/>
 	   
+	   <!-- EC-Linie 30 Chur - Hamburg -->
+	   
+	   <rewrite zug="EC 100" simstart="Ebringen" simende="K&#246;ndrigen" start="Chur" ende="Hamburg-Altona">
+		   <via>Karlsruhe Hbf</via>
+		   <via>K&#246;ln Hbf</via>
+		   <via>Bremen Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="EC 6" simstart="Ebringen" simende="K&#246;ndrigen" start="Chur" ende="Hamburg-Altona">
+		   <via>Karlsruhe Hbf</via>
+		   <via>K&#246;ln Hbf</via>
+		   <via>Bremen Hbf</via>
+	   </rewrite>
+	   
+	   <rewrite zug="EC 7" simstart="K&#246;ndrigen" simende="Ebringen" start="Hamburg-Altona" ende="Z&#252;rich HB">
+		   <via>Basel SBB</via>
+	   </rewrite>
+	   
+	   <rewrite zug="EC 101" simstart="K&#246;ndrigen" simende="Ebringen" start="Hamburg-Altona" ende="Z&#252;rich HB">
+		   <via>Basel SBB</via>
+	   </rewrite>
+	   
    </rewrites>
    
 </zza>
