@@ -1,0 +1,1336 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Version 1.0 von Florian Ellebrecht
+Beinhaltet den Regional- und Fernverkehr.
+Bei Fehlern bitte eine PN an mich (floflo).
+Es kann vorkommen, dass einzelne Zugnummern in der Datei fehlen.
+Ebenso kann es vorkommen, dass bei manchen Zügen trotz soundreplace und/oder richiger Schreibweise totaler Schwachsinn gesprochen wrd.
+-->
+<zza>
+	<bahnhoefe>
+		<bahnhof name="Duisburg Hbf" gleise="([1-6]|8|9|1[0-3])" ende="(Gleis .*|Abstell 2|Abstellung|Duisburg Hbf)"></bahnhof>
+	</bahnhoefe>
+
+	<soundreplaces>
+		<replace find="([0-9]{2})([0-9]{2})">$1 $2</replace>
+		<replace find="Hbf">Hauptbahnhof</replace>
+	  	<replace find="HB">Hauptbahnhof</replace>
+		<replace find="Duisburg">D&#252;sburg</replace>
+		<replace find="\(Rhein\)"> am Rein</replace>
+		<replace find="Rhein">Rein</replace>
+		<replace find="NWB">en we be</replace>
+		<replace find="Moers">M&#246;rs</replace>
+		<replace find="Flghf">Flughafen</replace>
+		<replace find="-Entenfang"> Entenfang</replace>
+		<replace find="\(Westf\)"> in Westfalen</replace>
+		<replace find="Wanne-Eickel">Wanne Eickel</replace>
+		<replace find="-Dorstfeld"> Dorstfeld</replace>
+		<replace find="Do ">Dortmund </replace>
+		<replace find="Do-">Dortmund </replace>
+		<replace find="Signal-Iduna-Park">Signal Iduna Park</replace>
+		<replace find="Eltville">Eltwille</replace>
+		<replace find="S 1">S 1</replace>
+		<replace find="S 2">S 2</replace>
+		<replace find="Stuttgart">Schtuttgart</replace>
+		<replace find="SBB">es be be</replace>
+		<replace find="Chur">Kur</replace>
+		<replace find="Hannover">Hannofer</replace>
+		<replace find="\(Main\)"> am Main</replace>
+		<replace find="\(Sylt\)"> Sylt</replace>
+		<replace find="Aachen">Achen</replace>
+		<replace find="Luxembourg">L&#252;xombur</replace>
+		<replace find="Trier">Trir</replace>
+		<replace find="\(Ostfriesl\)"> Ostfriesland</replace>
+		<replace find="K&#246;ln\/Bonn">K&#246;ln Bonn</replace>
+		<replace find="Darmstadt">Darmschtat</replace>
+		<replace find="K&#246;ln Messe\/Deutz \(tief\)">K&#246;ln Messe Deutz tief</replace>
+		<replace find="\(M\)"> am Main</replace>
+		<replace find="Amsterdam C">Amsterdam Zentraal</replace>
+		<replace find="Utrecht C">&#220;tr&#228;cht Zentraal</replace>
+		<replace find="M&#252;nchen\/Z&#252;rich">M&#252;nchen Hauptbahnhof und Z&#252;rich Hauptbahnhof</replace>
+		<replace find="Amsterdam Ce">Amsterdam Zentraal. Der Zug h&#228;lt nur zum Ausstieg! Bitte nicht einsteigen!</replace>
+	</soundreplaces>
+
+	<rewrites>
+
+		<!--NWB-Linie 31 Xanten - Moers - Rheinhausen - Duisburg Hbf-->
+
+		<rewrite zug="NWB 2010[3579]" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="Gleis .*" start="Xanten" ende="Duisburg Hbf"></rewrite>
+
+		<rewrite zug="NWB 201[12][13579]" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="Gleis .*" start="Xanten" ende="Duisburg Hbf"></rewrite>
+
+		<rewrite zug="NWB 2013[135]" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="Gleis .*" start="Xanten" ende="Duisburg Hbf"></rewrite>
+
+		<rewrite zug="NWB 201[012][02468]" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="Duisburg Hbf" ende="Xanten">
+			<via>Rheinhausen</via>
+			<via>Moers</via>
+		</rewrite>
+
+		<rewrite zug="NWB 201[012][02468]" simstart="" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="Duisburg Hbf" ende="Xanten">
+			<via>Rheinhausen</via>
+			<via>Moers</via>
+		</rewrite>
+
+		<rewrite zug="NWB 2013[02]" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="Duisburg Hbf" ende="Xanten">
+			<via>Rheinhausen</via>
+			<via>Moers</via>
+		</rewrite>
+
+		<rewrite zug="NWB 2013[02]" simstart="" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="Duisburg Hbf" ende="Xanten">
+			<via>Rheinhausen</via>
+			<via>Moers</via>
+		</rewrite>
+
+		<rewrite zug="NWB 201[567][02468]" simstart="Abstell 2" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="Duisburg Hbf" ende="Moers">
+			<via>Rheinhausen</via>
+		</rewrite>
+
+		<rewrite zug="NWB 20180" simstart="Abstell 2" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="Duisburg Hbf" ende="Moers">
+			<via>Rheinhausen</via>
+		</rewrite>
+
+		<rewrite zug="NWB 201[567][13579]" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="Abstellung" start="Moers" ende="Duisburg Hbf"></rewrite>
+
+		<rewrite zug="NWB 2018[13]" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="Abstellung" start="Moers" ende="Duisburg Hbf"></rewrite>
+
+		<!--RB-Linie 33 Aachen - M&#246;nchengladbach - Krefeld - Duisburg-->
+
+		<rewrite zug="RB 110[567][02468]" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="Gleis .*" start="Aachen Hbf" ende="Duisburg Hbf"></rewrite>
+
+		<rewrite zug="RB 1108[02]" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="Gleis .*" start="Aachen Hbf" ende="Duisburg Hbf"></rewrite>
+
+		<rewrite zug="RB 11048" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="Gleis .*" start="Aachen Hbf" ende="Duisburg Hbf"></rewrite>
+
+		<rewrite zug="RB 110[567][13579]" simstart="" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="Duisburg Hbf" ende="Aachen Hbf">
+			<via>Krefeld</via>
+			<via>M&#246;nchengladbach</via>
+			<via>Herzogenrath</via>
+		</rewrite>
+
+		<rewrite zug="RB 1108[135]" simstart="" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="Duisburg Hbf" ende="Aachen Hbf">
+			<via>Krefeld</via>
+			<via>M&#246;nchengladbach</via>
+			<via>Herzogenrath</via>
+		</rewrite>
+
+		<rewrite zug="RB 110[567][13579]" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="Duisburg Hbf" ende="Aachen Hbf">
+			<via>Krefeld</via>
+			<via>M&#246;nchengladbach</via>
+			<via>Herzogenrath</via>
+		</rewrite>
+
+		<rewrite zug="RB 1108[135]" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="Duisburg Hbf" ende="Aachen Hbf">
+			<via>Krefeld</via>
+			<via>M&#246;nchengladbach</via>
+			<via>Herzogenrath</via>
+		</rewrite>
+
+		<!--RB-Linie 33 Wesel - Duisburg - Krefeld - M&#246;nchengladbach-->
+
+		<rewrite zug="RB 20299" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="Wesel" ende="M&#246;nchengladbach">
+			<via>Rheinhausen</via>
+			<via>Krefeld</via>
+			<via>Viersen</via>
+		</rewrite>
+
+		<rewrite zug="RB 2030[37]" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="Wesel" ende="M&#246;nchengladbach">
+			<via>Rheinhausen</via>
+			<via>Krefeld</via>
+			<via>Viersen</via>
+		</rewrite>
+
+		<rewrite zug="RB 2031[159]" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="Wesel" ende="M&#246;nchengladbach">
+			<via>Rheinhausen</via>
+			<via>Krefeld</via>
+			<via>Viersen</via>
+		</rewrite>
+
+		<rewrite zug="RB 2032[37]" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="Wesel" ende="M&#246;nchengladbach">
+			<via>Rheinhausen</via>
+			<via>Krefeld</via>
+			<via>Viersen</via>
+		</rewrite>
+
+		<rewrite zug="RB 2033[159]" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="Wesel" ende="M&#246;nchengladbach">
+			<via>Rheinhausen</via>
+			<via>Krefeld</via>
+			<via>Viersen</via>
+		</rewrite>
+
+		<rewrite zug="RB 2034[37]" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="Wesel" ende="M&#246;nchengladbach">
+			<via>Rheinhausen</via>
+			<via>Krefeld</via>
+			<via>Viersen</via>
+		</rewrite>
+
+		<rewrite zug="RB 2035[15]" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="Wesel" ende="M&#246;nchengladbach">
+			<via>Rheinhausen</via>
+			<via>Krefeld</via>
+			<via>Viersen</via>
+		</rewrite>
+
+		<rewrite zug="RB 20296" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="M&#246;nchengladbach" ende="Wesel">
+			<via>Oberhausen</via>
+		</rewrite>
+
+		<rewrite zug="RB 2030[048]" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="M&#246;nchengladbach" ende="Wesel">
+			<via>Oberhausen</via>
+		</rewrite>
+
+		<rewrite zug="RB 2031[26]" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="M&#246;nchengladbach" ende="Wesel">
+			<via>Oberhausen</via>
+		</rewrite>
+
+		<rewrite zug="RB 2032[048]" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="M&#246;nchengladbach" ende="Wesel">
+			<via>Oberhausen</via>
+		</rewrite>
+
+		<rewrite zug="RB 2033[26]" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="M&#246;nchengladbach" ende="Wesel">
+			<via>Oberhausen</via>
+		</rewrite>
+
+		<rewrite zug="RB 2034[15]" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="M&#246;nchengladbach" ende="Wesel">
+			<via>Oberhausen</via>
+		</rewrite>
+
+		<rewrite zug="RB 20356" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="Abstellung" start="M&#246;nchengladbach" ende="Duisburg Hbf"></rewrite>
+
+		<!--RB-Linie 35 D�sseldorf - Duisburg - Wesel - Emmerich-->
+
+		<rewrite zug="RB 20508" simstart="Abstellung" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Duisburg Hbf" ende="Wesel">
+			<via>Oberhausen</via>
+		</rewrite>
+
+		<rewrite zug="RB 2051[02468]" simstart="Abstellung" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Duisburg Hbf" ende="Wesel">
+			<via>Oberhausen</via>
+		</rewrite>
+
+		<rewrite zug="RB 20520" simstart="Abstellung" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Duisburg Hbf" ende="Wesel">
+			<via>Oberhausen</via>
+		</rewrite>
+
+		<rewrite zug="RB 2054[04]" simstart="Abstellung" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Duisburg Hbf" ende="Wesel">
+			<via>Oberhausen</via>
+		</rewrite>
+
+		<rewrite zug="RB 20502" simstart="Abstellung" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Duisburg Hbf" ende="Emmerich">
+			<via>Oberhausen</via>
+			<via>Wesel</via>
+			<via>Empel</via>
+		</rewrite>
+
+		<rewrite zug="RB 20504" simstart="Abstellung" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Duisburg Hbf" ende="Emmerich">
+			<via>Oberhausen</via>
+			<via>Wesel</via>
+			<via>Empel</via>
+		</rewrite>
+
+		<rewrite zug="RB 20522" simstart="Abstellung" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Duisburg Hbf" ende="Emmerich">
+			<via>Oberhausen</via>
+			<via>Wesel</via>
+			<via>Empel</via>
+		</rewrite>
+
+		<rewrite zug="RB 20506" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="D&#252;sseldorf Hbf" ende="Wesel">
+			<via>Oberhausen</via>
+		</rewrite>
+
+		<rewrite zug="RB 205[23]4" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="D&#252;sseldorf Hbf" ende="Emmerich">
+			<via>Oberhausen</via>
+			<via>Wesel</via>
+			<via>Empel</via>
+		</rewrite>
+
+		<rewrite zug="RB 20538" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="D&#252;sseldorf Hbf" ende="Emmerich">
+			<via>Oberhausen</via>
+			<via>Wesel</via>
+			<via>Empel</via>
+		</rewrite>
+
+		<rewrite zug="RB 20536" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="D&#252;sseldorf Hbf" ende="Wesel">
+			<via>Oberhausen</via>
+		</rewrite>
+
+		<rewrite zug="RB 20530" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="D&#252;sseldorf Hbf" ende="Wesel">
+			<via>Oberhausen</via>
+		</rewrite>
+
+		<rewrite zug="RB 2053[13579]" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="Abstell 2" start="Wesel" ende="Duisburg Hbf"></rewrite>
+
+		<rewrite zug="RB 2054[13]" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="Abstell 2" start="Wesel" ende="Duisburg Hbf"></rewrite>
+
+		<rewrite zug="RB 2055[59]" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="Abstell 2" start="Wesel" ende="Duisburg Hbf"></rewrite>
+
+		<rewrite zug="RB 20529" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="Abstell 2" start="Emmerich" ende="Duisburg Hbf"></rewrite>
+
+		<rewrite zug="RB 20507" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Emmerich" ende="D&#252;sseldorf Hbf">
+			<via>D&#252;sseldorf Flughafen</via>
+		</rewrite>
+
+		<rewrite zug="RB 20545" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Wesel" ende="D&#252;sseldorf Hbf">
+			<via>D&#252;sseldorf Flughafen</via>
+		</rewrite>
+
+		<rewrite zug="RB 20505" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="Abstell 2" start="Emmerich" ende="Duisburg Hbf"></rewrite>
+
+		<rewrite zug="RB 20549" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="Abstell 2" start="Emmerich" ende="Duisburg Hbf"></rewrite>
+
+		<rewrite zug="RB 20515" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Emmerich" ende="D&#252;sseldorf Hbf">
+			<via>D&#252;sseldorf Flughafen</via>
+		</rewrite>
+
+		<rewrite zug="RB 20527" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Emmerich" ende="D&#252;sseldorf Hbf">
+			<via>D&#252;sseldorf Flughafen</via>
+		</rewrite>
+
+		<rewrite zug="RB 20521" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Wesel" ende="D&#252;sseldorf Hbf">
+			<via>D&#252;sseldorf Flughafen</via>
+		</rewrite>
+
+		<rewrite zug="RB 20551" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="Abstell 2" start="Wesel" ende="Duisburg Hbf"></rewrite>
+
+		<rewrite zug="RB 20513" simstart="Abstell 2" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Duisburg Hbf" ende="D&#252;sseldorf Hbf">
+			<via>D&#252;sseldorf Flughafen</via>
+		</rewrite>
+
+		<rewrite zug="RB 20519" simstart="Abstellung" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Duisburg Hbf" ende="D&#252;sseldorf Hbf">
+			<via>D&#252;sseldorf Flughafen</via>
+		</rewrite>
+
+		<!--RB-Linie 37 Duisburg Hbf - Duisburg-Entenfang-->
+
+		<rewrite zug="RB 204.*" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="Gleis .*" start="Duisburg-Entenfang" ende="Duisburg Hbf"></rewrite>
+
+		<rewrite zug="RB 20399" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="Gleis .*" start="Duisburg-Entenfang" ende="Duisburg Hbf"></rewrite>
+
+		<rewrite zug="RB 204.*" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="Duisburg Hbf" ende="Duisburg-Entenfang"></rewrite>
+
+		<rewrite zug="RB 20398" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="Duisburg Hbf" ende="Duisburg-Entenfang"></rewrite>
+
+		<rewrite zug="RB 204.*" simstart="" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="Duisburg Hbf" ende="Duisburg-Entenfang"></rewrite>
+
+		<rewrite zug="RB 20398" simstart="" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="Duisburg Hbf" ende="Duisburg-Entenfang"></rewrite>
+
+		<!--RE-Linie 1 Aachen - K&#246;ln - Dortmund - Hamm-->
+
+		<rewrite zug="RE 1010[37]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Aachen Hbf" ende="Hamm(Westf)">
+			<via>Essen Hbf</via>
+			<via>Bochum Hbf</via>
+			<via>Dortmund Hbf</via>
+		</rewrite>
+
+		<rewrite zug="RE 1011[159]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Aachen Hbf" ende="Hamm(Westf)">
+			<via>Essen Hbf</via>
+			<via>Bochum Hbf</via>
+			<via>Dortmund Hbf</via>
+		</rewrite>
+
+		<rewrite zug="RE 1012[37]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Aachen Hbf" ende="Hamm(Westf)">
+			<via>Essen Hbf</via>
+			<via>Bochum Hbf</via>
+			<via>Dortmund Hbf</via>
+		</rewrite>
+
+		<rewrite zug="RE 1013[159]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Aachen Hbf" ende="Hamm(Westf)">
+			<via>Essen Hbf</via>
+			<via>Bochum Hbf</via>
+			<via>Dortmund Hbf</via>
+		</rewrite>
+
+		<rewrite zug="RE 101[02][159]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Aachen Hbf" ende="Hamm(Westf)">
+			<via>Essen Hbf</via>
+			<via>Bochum Hbf</via>
+			<via>Dortmund Hbf</via>
+		</rewrite>
+
+		<rewrite zug="RE 101[13][37]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Aachen Hbf" ende="Hamm(Westf)">
+			<via>Essen Hbf</via>
+			<via>Bochum Hbf</via>
+			<via>Dortmund Hbf</via>
+		</rewrite>
+
+		<rewrite zug="RE 1010[68]" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Hamm(Westf)" ende="Aachen Hbf">
+			<via>D&#252;sseldorf Hbf</via>
+			<via>K&#246;ln Hbf</via>
+			<via>D&#252;ren</via>
+		</rewrite>
+
+		<rewrite zug="RE 1011[02468]" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Hamm(Westf)" ende="Aachen Hbf">
+			<via>D&#252;sseldorf Hbf</via>
+			<via>K&#246;ln Hbf</via>
+			<via>D&#252;ren</via>
+		</rewrite>
+
+		<rewrite zug="RE 1012[02468]" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Hamm(Westf)" ende="Aachen Hbf">
+			<via>D&#252;sseldorf Hbf</via>
+			<via>K&#246;ln Hbf</via>
+			<via>D&#252;ren</via>
+		</rewrite>
+
+		<rewrite zug="RE 1013[02468]" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Hamm(Westf)" ende="Aachen Hbf">
+			<via>D&#252;sseldorf Hbf</via>
+			<via>K&#246;ln Hbf</via>
+			<via>D&#252;ren</via>
+		</rewrite>
+
+		<rewrite zug="RE 10140" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Hamm(Westf)" ende="Aachen Hbf">
+			<via>D&#252;sseldorf Hbf</via>
+			<via>K&#246;ln Hbf</via>
+			<via>D&#252;ren</via>
+		</rewrite>
+
+		<!--RE-Linie 2 M&#246;nchengladbach - Krefeld - Duisburg - Essen - Wanne-Eickel - D&#252;lmen - M&#252;nster-->
+
+		<rewrite zug="RE 102[012][13579]" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="(Essen|Essen S-Bahn)" start="M&#246;nchengladbach" ende="M&#252;nster(Westf) Hbf">
+			<via>Essen Hbf</via>
+			<via>Wanne-Eickel</via>
+			<via>D&#252;lmen</via>
+		</rewrite>
+
+		<rewrite zug="RE 1023[135]" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="(Essen|Essen S-Bahn)" start="M&#246;nchengladbach" ende="M&#252;nster(Westf) Hbf">
+			<via>Essen Hbf</via>
+			<via>Wanne-Eickel</via>
+			<via>D&#252;lmen</via>
+		</rewrite>
+
+		<rewrite zug="RE 10199" simstart="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" simende="(Essen|Essen S-Bahn)" start="M&#246;nchengladbach" ende="M&#252;nster(Westf) Hbf">
+			<via>Essen Hbf</via>
+			<via>Wanne-Eickel</via>
+			<via>D&#252;lmen</via>
+		</rewrite>
+
+		<rewrite zug="RE 102[012][02468]" simstart="(Essen|Essen S-Bahn)" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="M&#252;nster(Westf) Hbf" ende="M&#246;nchengladbach">
+			<via>Rheinhausen</via>
+			<via>Krefeld</via>
+			<via>Viersen</via>
+		</rewrite>
+
+		<rewrite zug="RE 1023[024]" simstart="(Essen|Essen S-Bahn)" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="M&#252;nster(Westf) Hbf" ende="M&#246;nchengladbach">
+			<via>Rheinhausen</via>
+			<via>Krefeld</via>
+			<via>Viersen</via>
+		</rewrite>
+
+		<rewrite zug="RE 10198" simstart="(Essen|Essen S-Bahn)" simende="(Rheinhausen G|Rheinhausen\/Wedau|Rheinhausen)" start="M&#252;nster(Westf) Hbf" ende="M&#246;nchengladbach">
+			<via>Rheinhausen</via>
+			<via>Krefeld</via>
+			<via>Viersen</via>
+		</rewrite>
+
+		<!--ERB-Linie 3 D&#252;sseldorf - Oberhausen - Gelsenkirchen - Castrop-Rauxel - Dortmund - Kamen - Hamm-->
+
+		<rewrite zug="ERB 103[012][13579]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="D&#252;sseldorf Hbf" ende="Hamm(Westf)">
+			<via>Gelsenkirchen</via>
+			<via>Castrop-Rauxel</via>
+			<via>Dortmund Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ERB 1033[13]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="D&#252;sseldorf Hbf" ende="Hamm(Westf)">
+			<via>Gelsenkirchen</via>
+			<via>Castrop-Rauxel</via>
+			<via>Dortmund Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ERB 103[12][02468]" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Hamm(Westf)" ende="D&#252;sseldorf Hbf"></rewrite>
+
+		<rewrite zug="ERB 10330" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Hamm(Westf)" ende="D&#252;sseldorf Hbf"></rewrite>
+
+		<rewrite zug="ERB 1030[2468]" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Hamm(Westf)" ende="D&#252;sseldorf Hbf"></rewrite>
+
+		<rewrite zug="ERB 10332" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Dortmund Hbf" ende="D&#252;sseldorf Hbf"></rewrite>
+
+		<!--RE-Linie 5 Koblenz - Andernach - Remagen - Bonn - K&#246;ln - D&#252;sseldorf - Oberhausen - Wesel - Emmerich-->
+
+		<rewrite zug="RE 11006" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Koblenz Hbf" ende="Emmerich">
+			<via>Oberhausen Hbf</via>
+			<via>Wesel</via>
+			<via>Empel</via>
+		</rewrite>
+
+		<rewrite zug="RE 1101[048]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Koblenz Hbf" ende="Emmerich">
+			<via>Oberhausen Hbf</via>
+			<via>Wesel</via>
+			<via>Empel</via>
+		</rewrite>
+
+		<rewrite zug="RE 11022" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Koblenz Hbf" ende="Emmerich">
+			<via>Oberhausen Hbf</via>
+			<via>Wesel</via>
+			<via>Empel</via>
+		</rewrite>
+
+		<rewrite zug="RE 1103[04]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Koblenz Hbf" ende="Emmerich">
+			<via>Oberhausen Hbf</via>
+			<via>Wesel</via>
+			<via>Empel</via>
+		</rewrite>
+
+		<rewrite zug="RE 1100[48]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Koblenz Hbf" ende="Emmerich">
+			<via>Oberhausen Hbf</via>
+			<via>Wesel</via>
+			<via>Empel</via>
+		</rewrite>
+
+		<rewrite zug="RE 110[13][26]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Koblenz Hbf" ende="Emmerich">
+			<via>Oberhausen Hbf</via>
+			<via>Wesel</via>
+			<via>Empel</via>
+		</rewrite>
+
+		<rewrite zug="RE 1102[048]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Koblenz Hbf" ende="Emmerich">
+			<via>Oberhausen Hbf</via>
+			<via>Wesel</via>
+			<via>Empel</via>
+		</rewrite>
+
+		<rewrite zug="RE 11026" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Koblenz Hbf" ende="Emmerich">
+			<via>Oberhausen Hbf</via>
+			<via>Wesel</via>
+			<via>Empel</via>
+		</rewrite>
+
+		<rewrite zug="RE 11000" simstart="Abstellung" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Duisburg Hbf" ende="Emmerich">
+			<via>Oberhausen Hbf</via>
+			<via>Wesel</via>
+			<via>Empel</via>
+		</rewrite>
+
+		<rewrite zug="RE 11002" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Duisburg Hbf" ende="Emmerich">
+			<via>Oberhausen Hbf</via>
+			<via>Wesel</via>
+			<via>Empel</via>
+		</rewrite>
+
+		<rewrite zug="RE 1100[3579]" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Emmerich" ende="Koblenz Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Bonn Hbf</via>
+			<via>Remagen</via>
+		</rewrite>
+
+		<rewrite zug="RE 110[12][13579]" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Emmerich" ende="Koblenz Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Bonn Hbf</via>
+			<via>Remagen</via>
+		</rewrite>
+
+		<rewrite zug="RE 1103[135]" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Emmerich" ende="Koblenz Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Bonn Hbf</via>
+			<via>Remagen</via>
+		</rewrite>
+
+		<!--RE-Linie 6 D&#252;sseldorf - Essen - Bochum - Dortmund - Hamm - Bielefeld - Minden-->
+
+		<rewrite zug="RE 43[12][13579]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="D&#252;sseldorf Hbf" ende="Minden(Westf)">
+			<via>Bochum Hbf</via>
+			<via>Dortmund Hbf</via>
+			<via>Bielefeld Hbf</via>
+		</rewrite>
+
+		<rewrite zug="RE 433[135]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="D&#252;sseldorf Hbf" ende="Minden(Westf)">
+			<via>Bochum Hbf</via>
+			<via>Dortmund Hbf</via>
+			<via>Bielefeld Hbf</via>
+		</rewrite>
+
+		<rewrite zug="RE 431[02468]" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Minden(Westf)" ende="D&#252;sseldorf Hbf"></rewrite>
+
+		<rewrite zug="RE 432[02468]" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Minden(Westf)" ende="D&#252;sseldorf Hbf"></rewrite>
+
+		<rewrite zug="RE 433[02]" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Minden(Westf)" ende="D&#252;sseldorf Hbf"></rewrite>
+
+		<rewrite zug="RE 430[68]" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Minden(Westf)" ende="D&#252;sseldorf Hbf"></rewrite>
+
+		<!--RE-Linie 11 D&#252;sseldorf - Essen - Dortmund - Hamm - Paderborn-->
+
+		<rewrite zug="RE 29115" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="D&#252;sseldorf Hbf" ende="Paderborn Hbf">
+			<via>Bochum Hbf</via>
+			<via>Dortmund Hbf</via>
+			<via>Hamm(Westf)</via>
+		</rewrite>
+
+		<rewrite zug="RE 2910[13579]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="D&#252;sseldorf Hbf" ende="Paderborn Hbf">
+			<via>Bochum Hbf</via>
+			<via>Dortmund Hbf</via>
+			<via>Hamm(Westf)</via>
+		</rewrite>
+
+		<rewrite zug="RE 29111" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="D&#252;sseldorf Hbf" ende="Paderborn Hbf">
+			<via>Bochum Hbf</via>
+			<via>Dortmund Hbf</via>
+			<via>Hamm(Westf)</via>
+		</rewrite>
+
+		<rewrite zug="RE 2910[2468]" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Paderborn Hbf" ende="D&#252;sseldorf Hbf"></rewrite>
+
+		<rewrite zug="RE 2911[024]" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Paderborn Hbf" ende="D&#252;sseldorf Hbf"></rewrite>
+
+		<!--S-Bahn-Linie 1 Dortmund - Essen - D&#252;sseldorf - Solingen-->
+
+		<rewrite zug="S 1" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Dortmund Hbf" ende="Solingen Hbf">
+			<via>D&#252;sseldorf Flghf</via>
+			<via>D&#252;sseldorf Hbf</via>
+			<via>Hilden</via>
+		</rewrite>
+
+		<rewrite zug="S 1" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Solingen Hbf" ende="Dortmund Hbf">
+			<via>Essen Hbf</via>
+			<via>Bochum Hbf</via>
+			<via>Dortmund-Dorstfeld</via>
+		</rewrite>
+
+		<rewrite zug="S 9101" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="D&#252;sseldorf Hbf" ende="Dortmund Hbf">
+			<via>Gelsenkirchen</via>
+			<via>Wanne-Eickel</via>
+			<via>Bochum Hbf</via>
+		</rewrite>
+
+		<rewrite zug="S 9103" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Essen|Essen S-Bahn)" start="Oberhausen Hbf" ende="Dortmund Hbf">
+			<via>Essen Hbf</via>
+			<via>Bochum Hbf</via>
+			<via>Dortmund-Dorstfeld</via>
+		</rewrite>
+
+		<rewrite zug="S 9104" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Dortmund Hbf" ende="D&#252;sseldorf Hbf">
+			<via>D&#252;sseldorf Flghf</via>
+		</rewrite>
+
+		<rewrite zug="S 9198" simstart="(Essen|Essen S-Bahn)" simende="(Essen|Essen S-Bahn)" start="Duisburg Hbf" ende="Do Signal-Iduna-Park">
+			<via>Essen Hbf</via>
+			<via>Bochum Hbf</via>
+		</rewrite>
+
+		<rewrite zug="S 9198" simstart="" simende="(Essen|Essen S-Bahn)" start="Duisburg Hbf" ende="Do Signal-Iduna-Park">
+			<via>Essen Hbf</via>
+			<via>Bochum Hbf</via>
+		</rewrite>
+
+		<rewrite zug="S 9199" simstart="(Essen|Essen S-Bahn)" simende="Gleis .*" start="Do Signal-Iduna-Park" ende="Duisburg Hbf"></rewrite>
+
+		<!--S-Bahn-Linie 2 Duisburg - Wanne-Eickel - Dortmund-->
+
+		<rewrite zug="S 2" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Duisburg Hbf" ende="Dortmund Hbf">
+			<via>Gelsenkirchen</via>
+			<via>Wanne-Eickel</via>
+			<via>Do-Mengede</via>
+		</rewrite>
+
+		<rewrite zug="S 2" simstart="" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Duisburg Hbf" ende="Dortmund Hbf">
+			<via>Gelsenkirchen</via>
+			<via>Wanne-Eickel</via>
+			<via>Do-Mengede</via>
+		</rewrite>
+
+		<rewrite zug="S 2" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="Gleis .*" start="Dortmund Hbf" ende="Duisburg Hbf"></rewrite>
+
+		<rewrite zug="S 9296" simstart="(Essen|Essen S-Bahn)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Duisburg Hbf" ende="Do Signal-Iduna-Park">
+			<via>Gelsenkirchen</via>
+			<via>Wanne-Eickel</via>
+			<via>Do-Mengede</via>
+		</rewrite>
+
+		<rewrite zug="S 9296" simstart="" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Duisburg Hbf" ende="Do Signal-Iduna-Park">
+			<via>Gelsenkirchen</via>
+			<via>Wanne-Eickel</via>
+			<via>Do-Mengede</via>
+		</rewrite>
+
+		<rewrite zug="S 9297" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="Gleis .*" start="Do Signal-Iduna-Park" ende="Duisburg Hbf"></rewrite>
+
+		<!--D-Zug 1829 S&#228;uferzug Dortmund - Duisburg - K&#246;ln - Linz(Rhein) - Eltville-->
+
+		<rewrite zug="D 1829" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Dortmund Hbf" ende="Eltville">
+			<via>K&#246;ln Hbf</via>
+			<via>Linz(Rhein)</via>
+		</rewrite>
+
+		<!--EC-Linie 30 Hamburg - Ruhrgebiet - Karlsruhe - Basel - Chur-->
+
+		<rewrite zug="EC 100" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Z&#252;rich HB" ende="Hamburg-Altona">
+			<via>Dortmund Hbf</via>
+			<via>Bremen Hbf</via>
+		</rewrite>
+
+		<rewrite zug="EC 7" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Hamburg-Altona" ende="Chur">
+			<via>Mannheim Hbf</via>
+			<via>Basel SBB</via>
+			<via>Z&#252;rich HB</via>
+		</rewrite>
+
+		<rewrite zug="EC 101" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Hamburg-Altona" ende="Z&#252;rich HB">
+			<via>K&#246;ln Hbf</via>
+			<via>Mannheim Hbf</via>
+			<via>Basel SBB</via>
+		</rewrite>
+
+		<rewrite zug="EC 6" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Chur" ende="Hamburg-Altona">
+			<via>Dortmund Hbf</via>
+			<via>Bremen Hbf</via>
+		</rewrite>
+
+		<!--EC-Linie 62 M&#252;nster - Stuttgart - M&#252;nchen - Klagenfurt-->
+
+		<rewrite zug="EC 115" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="M&#252;nster(Westf) Hbf" ende="Klagenfurt Hbf">
+			<via>Stuttgart Hbf</via>
+			<via>M&#252;nchen Hbf</via>
+			<via>Salzburg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="EC 114" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Klagenfurt Hbf" ende="Dortmund Hbf">
+			<via>Essen Hbf</via>
+		</rewrite>
+
+		<!--IC-Linie 10 Berlin - Hannover - Dortmund - K&#246;ln-->
+
+		<rewrite zug="IC 2860" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Berlin Ostbahnhof" ende="K&#246;ln Hbf">
+			<via>D&#252;sseldorf Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2861" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="K&#246;ln Hbf" ende="Berlin Ostbahnhof">
+			<via>Dortmund Hbf</via>
+			<via>Hannover Hbf</via>
+		</rewrite>
+
+		<!--IC-Linie 30 Stuttgart - Ruhrgebiet - Bremen - Hamburg - Sylt/Stralsund - Greifswald/R&#252;gen-->
+
+		<rewrite zug="IC 211[24]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Stuttgart Hbf" ende="Hamburg-Altona">
+			<via>Dortmund Hbf</via>
+			<via>Bremen Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2212" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Koblenz Hbf" ende="Ostseebad Binz">
+			<via>Dortmund Hbf</via>
+			<via>Hamburg Hbf</via>
+			<via>Rostock Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2113" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Hamburg-Altona" ende="Stuttgart Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Mannheim Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2319" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Dortmund Hbf" ende="Stuttgart Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Mannheim Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2116" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Stuttgart Hbf" ende="Greifswald">
+			<via>Dortmund Hbf</via>
+			<via>Hamburg Hbf</via>
+			<via>Rostock Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2115" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Greifswald" ende="Stuttgart Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Mannheim Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2213" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Ostseebad Binz" ende="Stuttgart Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Mannheim Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2311" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Westerland(Sylt)" ende="Stuttgart Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Mannheim Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2315" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Westerland(Sylt)" ende="Frankfurt(Main) Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Mainz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2314" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="K&#246;ln Hbf" ende="Westerland(Sylt)">
+			<via>Dortmund Hbf</via>
+			<via>Hamburg Hbf</via>
+			<via>Husum</via>
+		</rewrite>
+
+		<rewrite zug="IC 2310" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Frankfurt(Main) Hbf" ende="Westerland(Sylt)">
+			<via>Dortmund Hbf</via>
+			<via>Hamburg Hbf</via>
+			<via>Husum</via>
+		</rewrite>
+
+		<rewrite zug="IC 1804" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="K&#246;ln Hbf" ende="Seebad Heringsdorf">
+			<via>Bremen Hbf</via>
+			<via>Hamburg Hbf</via>
+			<via>Greifswald</via>
+		</rewrite>
+
+		<rewrite zug="IC 1810" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="K&#246;ln Hbf" ende="Flensburg Hbf">
+			<via>Bremen Hbf</via>
+			<via>Hamburg Hbf</via>
+			<via>Neum&#252;nster</via>
+		</rewrite>
+
+		<rewrite zug="IC 1806" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="K&#246;ln Hbf" ende="Hamburg-Altona">
+			<via>Gelsenkirchen Hbf</via>
+			<via>Osnabr&#252;ck Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 1803" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Flensburg Hbf" ende="K&#246;ln Hbf">
+			<via>D&#252;sseldorf Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 1807" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Flensburg Hbf" ende="K&#246;ln Hbf">
+			<via>D&#252;sseldorf Hbf</via>
+		</rewrite>
+
+		<!--IC-Linie 31 Frankfurt - K&#246;ln - Essen - Dortmund - Bremen - Hamburg-->
+
+		<rewrite zug="IC 2022" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Frankfurt(Main) Hbf" ende="Hamburg-Altona">
+			<via>Dortmund Hbf</via>
+			<via>Bremen Hbf</via>
+		</rewrite>
+
+		<!--IC-Linie 32 Berlin/M&#252;nster - Dortmund - K&#246;ln - Aachen/Frankfurt - Stuttgart - M&#252;nchen - Salzburg-->
+
+		<rewrite zug="IC 2010" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="T&#252;bingen Hbf" ende="Berlin S&#252;dkreuz">
+			<via>Dortmund Hbf</via>
+			<via>Bielefeld Hbf</via>
+			<via>Hannover Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 1926" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="K&#246;ln Hbf" ende="Berlin S&#252;dkreuz">
+			<via>Dortmund Hbf</via>
+			<via>Bielefeld Hbf</via>
+			<via>Hannover Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 1918" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Aachen Hbf" ende="Berlin S&#252;dkreuz">
+			<via>Dortmund Hbf</via>
+			<via>Hannover Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 1922" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="K&#246;ln Hbf" ende="Berlin S&#252;dkreuz">
+			<via>Dortmund Hbf</via>
+			<via>Osnabr&#252;ck Hbf</via>
+			<via>Hannover Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 1916" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Salzburg Hbf" ende="Berlin S&#252;dkreuz">
+			<via>Dortmund Hbf</via>
+			<via>Hannover Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 1912" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="D&#252;sseldorf Hbf" ende="Berlin S&#252;dkreuz">
+			<via>Dortmund Hbf</via>
+			<via>Hannover Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 118" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Salzburg Hbf" ende="M&#252;nster(Westf) Hbf">
+			<via>Gelsenkirchen Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2246" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Leipzig Hbf" ende="M&#252;nchen Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Mannheim Hbf</via>
+			<via>Stuttgart Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2348" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Hamburg-Altona" ende="D&#252;sseldorf Hbf"></rewrite>
+
+		<rewrite zug="IC 1915" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Berlin S&#252;dkreuz" ende="Stuttgart Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Koblenz Hbf</via>
+			<via>Mannheim Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 1917" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Berlin S&#252;dkreuz" ende="K&#246;ln Hbf">
+			<via>D&#252;sseldorf Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 1921" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Leipzig Hbf" ende="K&#246;ln Hbf">
+			<via>D&#252;sseldorf Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 1923" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Berlin S&#252;dkreuz" ende="K&#246;ln Hbf">
+			<via>D&#252;sseldorf Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 119" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="M&#252;nster(Westf) Hbf" ende="Innsbruck Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Stuttgart Hbf</via>
+			<via>Lindau Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 1911" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Dortmund Hbf" ende="Stuttgart Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Koblenz Hbf</via>
+			<via>Mannheim Hbf</via>
+		</rewrite>
+
+		<!--IC-Linie 35 Norddeich Mole - Emden - M&#252;nster - K&#246;ln - Koblenz - Trier - Luxembourg-->
+
+		<rewrite zug="IC 330" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Norddeich Mole" ende="Luxembourg">
+			<via>K&#246;ln Hbf</via>
+			<via>Koblenz Hbf</via>
+			<via>Trier Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2332" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Emden Au&#223;enhafen" ende="K&#246;ln Hbf">
+			<via>D&#252;sseldorf Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2005" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Emden Hbf" ende="Konstanz">
+			<via>K&#246;ln Hbf</via>
+			<via>Karlsruhe Hbf</via>
+			<via>Donaueschingen</via>
+		</rewrite>
+
+		<rewrite zug="IC 336" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Emden Hbf" ende="Luxembourg">
+			<via>K&#246;ln Hbf</via>
+			<via>Koblenz Hbf</via>
+			<via>Trier Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 334" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Norddeich Mole" ende="Luxembourg">
+			<via>K&#246;ln Hbf</via>
+			<via>Koblenz Hbf</via>
+			<via>Trier Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2338" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Dortmund Hbf" ende="Koblenz Hbf">
+			<via>K&#246;ln Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 332" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Norddeich Mole" ende="Luxembourg">
+			<via>K&#246;ln Hbf</via>
+			<via>Koblenz Hbf</via>
+			<via>Trier Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2331" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="K&#246;ln Hbf" ende="Norddeich Mole">
+			<via>Gelsenkirchen Hbf</via>
+			<via>M&#252;nster(Westf) Hbf</via>
+			<via>Emden Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2333" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="K&#246;ln Hbf" ende="Norddeich Mole">
+			<via>Gelsenkirchen Hbf</via>
+			<via>M&#252;nster(Westf) Hbf</via>
+			<via>Emden Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 331" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Luxembourg" ende="Emden Au&#223;enhafen">
+			<via>Gelsenkirchen Hbf</via>
+			<via>M&#252;nster(Westf) Hbf</via>
+			<via>Leer(Ostfriesl)</via>
+		</rewrite>
+
+		<rewrite zug="IC 33[35]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Luxembourg" ende="Norddeich Mole">
+			<via>Gelsenkirchen Hbf</via>
+			<via>M&#252;nster(Westf) Hbf</via>
+			<via>Emden Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 337" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Luxembourg" ende="Emden Hbf">
+			<via>Gelsenkirchen Hbf</via>
+			<via>M&#252;nster(Westf) Hbf</via>
+			<via>Meppen</via>
+		</rewrite>
+
+		<rewrite zug="IC 2004" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Konstanz" ende="Emden Hbf">
+			<via>Gelsenkirchen Hbf</via>
+			<via>M&#252;nster(Westf) Hbf</via>
+			<via>Meppen</via>
+		</rewrite>
+
+		<!--IC-Linie 51 Stralsund - Berlin - Kassel - K&#246;ln-->
+
+		<rewrite zug="IC 2357" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="K&#246;ln Hbf" ende="Berlin-Gesundbrunnen">
+			<via>Dortmund Hbf</via>
+			<via>Kassel-Wilhelmsh&#246;he</via>
+			<via>Erfurt Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2157" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="K&#246;ln Hbf" ende="Stralsund Hbf">
+			<via>Dortmund Hbf</via>
+			<via>Erfurt Hbf</via>
+			<via>Berlin Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2359" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="K&#246;ln Hbf" ende="Stralsund Hbf">
+			<via>Dortmund Hbf</via>
+			<via>Erfurt Hbf</via>
+			<via>Berlin Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2151" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="D&#252;sseldorf Hbf" ende="Berlin-Gesundbrunnen">
+			<via>Dortmund Hbf</via>
+			<via>Kassel-Wilhelmsh&#246;he</via>
+			<via>Erfurt Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2153" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="D&#252;sseldorf Hbf" ende="Erfurt Hbf">
+			<via>Dortmund Hbf</via>
+			<via>Kassel-Wilhelmsh&#246;he</via>
+		</rewrite>
+
+		<rewrite zug="IC 2156" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Erfurt Hbf" ende="D&#252;sseldorf Hbf">
+			<via>D&#252;sseldorf Flughafen</via>
+		</rewrite>
+
+		<rewrite zug="IC 215[24]" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Berlin-Gesundbrunnen" ende="D&#252;sseldorf Hbf">
+			<via>D&#252;sseldorf Flughafen</via>
+		</rewrite>
+
+		<rewrite zug="IC 2150" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Stralsund Hbf" ende="D&#252;sseldorf Hbf">
+			<via>D&#252;sseldorf Flughafen</via>
+		</rewrite>
+
+		<rewrite zug="IC 2254" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Ostseebad Binz" ende="K&#246;ln Hbf">
+			<via>D&#252;sseldorf Hbf</via>
+		</rewrite>
+
+		<!--IC-Linie 55 Leipzig - Hannover - Dortmund - K&#246;ln - Mainz - Stuttgart - Ulm - Oberstdorf-->
+
+		<rewrite zug="IC 2013" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Magdeburg Hbf" ende="Oberstdorf">
+			<via>K&#246;ln Hbf</via>
+			<via>Stuttgart Hbf</via>
+			<via>Ulm Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2012" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Oberstdorf" ende="Magdeburg Hbf">
+			<via>Dortmund Hbf</via>
+			<via>Bielefeld Hbf</via>
+			<via>Hannover Hbf</via>
+		</rewrite>
+
+		<rewrite zug="IC 2644" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="K&#246;ln Hbf" ende="Hannover Hbf">
+			<via>Dortmund Hbf</via>
+			<via>Bielefeld Hbf</via>
+		</rewrite>
+
+		<!--ICE-Linie 10 Berlin - Hannover - Hamm - Dortmund - Essen - Duisburg - D&#252;sseldorf - K&#246;ln-->
+
+		<rewrite zug="ICE 94[04]" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Berlin Ostbahnhof" ende="D&#252;sseldorf Hbf">
+			<via>D&#252;sseldorf Flughafen</via>
+		</rewrite>
+
+		<rewrite zug="ICE 848" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Berlin Ostbahnhof" ende="D&#252;sseldorf Hbf">
+			<via>D&#252;sseldorf Flughafen</via>
+		</rewrite>
+
+		<rewrite zug="ICE 942" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Berlin Ostbahnhof" ende="K&#246;ln/Bonn Flughafen">
+			<via>D&#252;sseldorf Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 640" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Berlin Ostbahnhof" ende="D&#252;sseldorf Hbf">
+			<via>D&#252;sseldorf Flughafen</via>
+		</rewrite>
+
+		<rewrite zug="ICE 548" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Berlin Ostbahnhof" ende="K&#246;ln/Bonn Flughafen">
+			<via>D&#252;sseldorf Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 544" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Berlin Ostbahnhof" ende="K&#246;ln Hbf">
+			<via>D&#252;sseldorf Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 644" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Berlin Ostbahnhof" ende="K&#246;ln/Bonn Flughafen">
+			<via>D&#252;sseldorf Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 845" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="K&#246;ln/Bonn Flughafen" ende="Berlin Ostbahnhof">
+			<via>Dortmund Hbf</via>
+			<via>Hannover Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 54[79]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="K&#246;ln/Bonn Flughafen" ende="Berlin Ostbahnhof">
+			<via>Dortmund Hbf</via>
+			<via>Hannover Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 64[35]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="K&#246;ln/Bonn Flughafen" ende="Berlin Ostbahnhof">
+			<via>Dortmund Hbf</via>
+			<via>Hannover Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 849" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="D&#252;sseldorf Hbf" ende="Berlin Ostbahnhof">
+			<via>Dortmund Hbf</via>
+			<via>Hannover Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 94[1357]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="D&#252;sseldorf Hbf" ende="Berlin Ostbahnhof">
+			<via>Dortmund Hbf</via>
+			<via>Hannover Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 847" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="D&#252;sseldorf Hbf" ende="Berlin Ostbahnhof">
+			<via>Dortmund Hbf</via>
+			<via>Hannover Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 946" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Berlin Ostbahnhof" ende="D&#252;sseldorf Hbf">
+			<via>D&#252;sseldorf Flughafen</via>
+		</rewrite>
+
+		<rewrite zug="ICE 646" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Berlin Ostbahnhof" ende="K&#246;ln/Bonn Flughafen">
+			<via>D&#252;sseldorf Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 843" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="K&#246;ln Hbf" ende="Berlin Ostbahnhof">
+			<via>Dortmund Hbf</via>
+			<via>Hannover Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 545" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Aachen Hbf" ende="Berlin Ostbahnhof">
+			<via>Dortmund Hbf</via>
+			<via>Hannover Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 1046" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Berlin Ostbahnhof" ende="M&#246;nchengladbach">
+			<via>D&#252;sseldorf Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 541" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="K&#246;ln Hbf" ende="Berlin Ostbahnhof">
+			<via>Dortmund Hbf</via>
+			<via>Hannover Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 546" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Berlin Ostbahnhof" ende="K&#246;ln/Bonn Flughafen">
+			<via>D&#252;sseldorf Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 543" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="K&#246;ln Hbf" ende="Berlin Ostbahnhof">
+			<via>Dortmund Hbf</via>
+			<via>Hannover Hbf</via>
+		</rewrite>
+
+		<!--ICE-Sprinter 1095-->
+
+		<rewrite zug="ICE 1095" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="K&#246;ln Hbf" ende="Hamburg-Altona">
+			<via>Essen Hbf</via>
+		</rewrite>
+
+		<!--ICE-Linie 30 K&#246;ln - Bremen - Hamburg-->
+
+		<rewrite zug="ICE 1102" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="K&#246;ln Hbf" ende="Hamburg-Altona">
+			<via>Gelsenkirchen Hbf</via>
+			<via>Bremen Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 1101" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Hamburg-Altona" ende="K&#246;ln Hbf">
+			<via>D&#252;sseldorf Hbf</via>
+		</rewrite>
+
+		<!--ICE-Linie 31 (einzelner Zug) Basel - Ruhrgebiet - Hamburg - Kiel-->
+
+		<rewrite zug="ICE 608" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Basel SBB" ende="Kiel Hbf">
+			<via>Dortmund Hbf</via>
+			<via>Bremen Hbf</via>
+			<via>Hamburg Hbf</via>
+		</rewrite>
+
+		<!--ICE-Linie 41 M&#252;nchen - N&#252;rnberg - Frankfurt Hbf - Ruhrgebiet-->
+
+		<rewrite zug="ICE 822" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="N&#252;rnberg Hbf" ende="Essen Hbf"></rewrite>
+
+		<rewrite zug="ICE 72[26]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="M&#252;nchen Hbf" ende="Essen Hbf"></rewrite>
+
+		<rewrite zug="ICE 628" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="M&#252;nchen Hbf" ende="Essen Hbf"></rewrite>
+
+		<rewrite zug="ICE 820" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="M&#252;nchen Hbf" ende="Essen Hbf"></rewrite>
+
+		<rewrite zug="ICE 624" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="M&#252;nchen Hbf" ende="Dortmund Hbf">
+			<via>Essen Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 622" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="M&#252;nchen Hbf" ende="Dortmund Hbf">
+			<via>Essen Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 1128" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="M&#252;nchen Hbf" ende="Essen Hbf"></rewrite>
+
+		<rewrite zug="ICE 826" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Stuttgart Hbf" ende="Essen Hbf"></rewrite>
+
+		<rewrite zug="ICE 824" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Darmstadt Hbf" ende="Dortmund Hbf">
+			<via>Essen Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 629" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Essen Hbf" ende="M&#252;nchen Hbf">
+			<via>K&#246;ln Messe/Deutz (tief)</via>
+			<via>Frankfurt(M) Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 72[579]" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Essen Hbf" ende="M&#252;nchen Hbf">
+			<via>K&#246;ln Messe/Deutz (tief)</via>
+			<via>Frankfurt(M) Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 529" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Essen Hbf" ende="M&#252;nchen Hbf">
+			<via>K&#246;ln Messe/Deutz (tief)</via>
+			<via>Frankfurt(M) Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 625" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Essen Hbf" ende="M&#252;nchen Hbf">
+			<via>K&#246;ln Messe/Deutz (tief)</via>
+			<via>Frankfurt(M) Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 921" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Essen Hbf" ende="M&#252;nchen Hbf">
+			<via>K&#246;ln Messe/Deutz (tief)</via>
+			<via>Frankfurt(M) Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 723" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Essen Hbf" ende="M&#252;nchen Hbf">
+			<via>K&#246;ln Messe/Deutz (tief)</via>
+			<via>Frankfurt(M) Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 525" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Dortmund Hbf" ende="M&#252;nchen Hbf">
+			<via>K&#246;ln Messe/Deutz (tief)</via>
+			<via>Frankfurt(M) Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 527" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Dortmund Hbf" ende="M&#252;nchen Hbf">
+			<via>K&#246;ln Messe/Deutz (tief)</via>
+			<via>Frankfurt(M) Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 621" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Essen Hbf" ende="M&#252;nchen Hbf">
+			<via>K&#246;ln Messe/Deutz (tief)</via>
+			<via>Frankfurt(M) Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 821" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Oberhausen Hbf" ende="M&#252;nchen Hbf">
+			<via>K&#246;ln Messe/Deutz (tief)</via>
+			<via>Frankfurt(M) Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+		</rewrite>
+
+		<!--ICE-Linie 42 M&#252;nchen - Stuttgart - Frankfurt Flughafen - K&#246;ln - Dortmund-->
+
+		<rewrite zug="ICE 513" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="M&#252;nster(Westf) Hbf" ende="M&#252;nchen Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Frankfurt(M) Flghf</via>
+			<via>Stuttgart Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 51[79]" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Dortmund Hbf" ende="M&#252;nchen Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Frankfurt(M) Flghf</via>
+			<via>Stuttgart Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 61[135]" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Dortmund Hbf" ende="M&#252;nchen Hbf">
+			<via>K&#246;ln Hbf</via>
+			<via>Frankfurt(M) Flghf</via>
+			<via>Stuttgart Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 61[0246]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="M&#252;nchen Hbf" ende="Dortmund Hbf">
+			<via>Essen Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 518" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="M&#252;nchen Hbf" ende="Dortmund Hbf">
+			<via>Essen Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 514" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="M&#252;nchen Hbf" ende="Hamburg-Altona">
+			<via>Dortmund Hbf</via>
+			<via>Bremen Hbf</via>
+		</rewrite>
+
+		<!--ICE-Linie 43 Basel SBB - Mannheim - Frankfurt - K&#246;ln - Amsterdam/Dortmund-->
+
+		<rewrite zug="ICE 605" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Dortmund Hbf" ende="Karlsruhe Hbf">
+			<via>K&#246;ln Messe/Deutz (tief)</via>
+			<via>Frankfurt(M) Flghf</via>
+			<via>Mannheim Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 105" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Amsterdam C" ende="Basel SBB">
+			<via>K&#246;ln Hbf</via>
+			<via>Frankfurt(M) Flghf</via>
+			<via>Karlsruhe Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 104" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Basel SBB" ende="Amsterdam C">
+			<via>Oberhausen Hbf</via>
+			<via>Utrecht C</via>
+		</rewrite>
+
+		<rewrite zug="ICE 806" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Karlsruhe Hbf" ende="Oberhausen Hbf"></rewrite>
+
+		<rewrite zug="ICE 1008" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Karlsruhe Hbf" ende="Essen Hbf"></rewrite>
+
+		<!--ICE-Linie 45 Dortmund - K&#246;ln - Wiesbaden - Stuttgart-->
+
+		<rewrite zug="ICE 711" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Dortmund Hbf" ende="Stuttgart Hbf">
+			<via>K&#246;ln Messe/Deutz (tief)</via>
+			<via>Wiesbaden Hbf</via>
+			<via>Mannheim Hbf</via>
+		</rewrite>
+
+		<!--ICE-Linie 49 Frankfurt - K&#246;ln - Dortmund-->
+
+		<rewrite zug="ICE 815" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Dortmund Hbf" ende="Frankfurt(Main) Hbf">
+			<via>K&#246;ln Messe/Deutz (tief)</via>
+			<via>Limburg S&#252;d</via>
+		</rewrite>
+
+		<rewrite zug="ICE 918" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Frankfurt(Main) Hbf" ende="Essen Hbf"></rewrite>
+
+		<rewrite zug="ICE 914" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Essen|Essen S-Bahn)" start="Frankfurt(Main) Hbf" ende="Dortmund Hbf">
+			<via>Essen Hbf</via>
+		</rewrite>
+
+		<!--ICE-Linie 78 K&#246;ln - Amsterdam-->
+
+		<rewrite zug="ICE 226" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Frankfurt(Main) Hbf" ende="Amsterdam C">
+			<via>Oberhausen Hbf</via>
+			<via>Utrecht C</via>
+		</rewrite>
+
+		<rewrite zug="ICE 124" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Frankfurt(Main) Hbf" ende="Amsterdam C">
+			<via>Oberhausen Hbf</via>
+			<via>Utrecht C</via>
+		</rewrite>
+
+		<rewrite zug="ICE 12[0268]" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="Frankfurt(Main) Hbf" ende="Amsterdam C">
+			<via>Oberhausen Hbf</via>
+			<via>Utrecht C</via>
+		</rewrite>
+
+		<rewrite zug="ICE 12[3579]" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Amsterdam C" ende="Frankfurt(Main) Hbf">
+			<via>K&#246;ln Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 227" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Amsterdam C" ende="Frankfurt(Main) Hbf">
+			<via>K&#246;ln Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 121" simstart="(Oberhausen D|Oberhausen G|Oberhausen E)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Amsterdam C" ende="Frankfurt(Main) Hbf">
+			<via>K&#246;ln Messe/Deutz (tief)</via>
+		</rewrite>
+
+		<rewrite zug="ICE 23" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Dortmund Hbf" ende="Wien Westbahnhof">
+			<via>Frankfurt(M) Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+			<via>Linz Hbf</via>
+		</rewrite>
+
+		<rewrite zug="ICE 27" simstart="(Essen|Essen S-Bahn)" simende="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" start="Dortmund Hbf" ende="Wien Westbahnhof">
+			<via>Frankfurt(M) Hbf</via>
+			<via>N&#252;rnberg Hbf</via>
+			<via>Linz Hbf</via>
+		</rewrite>
+
+		<!--CNL 418 Pollux-->
+
+		<rewrite zug="CNL 418" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="M&#252;nchen/Z&#252;rich" ende="Amsterdam C"></rewrite>
+	</rewrites>
+
+</zza>
