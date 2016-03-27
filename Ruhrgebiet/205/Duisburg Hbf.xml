@@ -1330,7 +1330,7 @@ Ebenso kann es vorkommen, dass bei manchen Zügen trotz soundreplace und/oder ri
 
 		<!--CNL 418 Pollux-->
 
-		<rewrite zug="CNL 418" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="M&#252;nchen/Z&#252;rich" ende="Amsterdam C"></rewrite>
+		<rewrite zug="CNL 418" simstart="(Buchholz|D&#252;sseldorf Flughafen Fern|D&#252;sseldorf Flughafen Nah)" simende="(Oberhausen D|Oberhausen G|Oberhausen E)" start="M&#252;nchen/Z&#252;rich" ende="Amsterdam Ce"></rewrite>
 	</rewrites>
 
 </zza>
